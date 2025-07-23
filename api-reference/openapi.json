@@ -5,7 +5,35 @@
     "version": "0.0.1"
   },
   "components": {
-    "schemas": {}
+    "schemas": {
+      "SubscriptionRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*?)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+          }
+        },
+        "required": ["name", "email"]
+      },
+      "SubscriptionResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "required": ["name", "email"],
+        "additionalProperties": false
+      }
+    }
   },
   "paths": {
     "/subscriptions": {
@@ -18,18 +46,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "email": {
-                    "type": "string",
-                    "format": "email",
-                    "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*?)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
-                  }
-                },
-                "required": ["name", "email"]
+                "$ref": "#/components/schemas/SubscriptionRequest"
               }
             }
           }
@@ -40,17 +57,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    },
-                    "email": {
-                      "type": "string"
-                    }
-                  },
-                  "required": ["name", "email"],
-                  "additionalProperties": false
+                  "$ref": "#/components/schemas/SubscriptionResponse"
                 }
               }
             }
