@@ -94,3 +94,12 @@
     }
   }
 }
+{
+  // … outras configurações
+  "background": {
+    "image": {
+      "light": "/images/banner-light.png",
+      "dark": "/images/banner-dark.png"
+    }
+  }
+}
