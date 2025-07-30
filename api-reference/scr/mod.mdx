@@ -1,4 +1,40 @@
 ---
 title: "Modalidades "
-description: "Modalidades da Consulta"
+description: "As modalidades de operação representam a classificação detalhada das operações de crédito registradas no SCR Bacen. Cada operação é identificada por um código único (modalidade) e está vinculada a um grupo de modalidades mais amplo, conforme estrutura definida pelo Banco Central."
 ---
+
+A estrutura é composta por:
+
+- **Categorias:** representam agrupamentos amplos de operações com características similares, como _Empréstimos_, _Financiamentos_, _Direitos Creditórios_, entre outras. 
+- **Modalidades:** são operações específicas dentro de cada categoria, que definem com maior precisão o tipo de contrato informado ao SCR. Exemplos incluem: _Crédito Pessoal Consignado_, _Crédito Rotativo_, _Vendor_, _Financiamento de Veículos_, entre outros.
+
+Cada código `Modalidade` deve ser interpretado de forma consistente com sua descrição oficial e utilizado conforme a natureza da operação e o contexto do relatório, conforme detalhado a seguir:
+
+### Categoria: Adiantamentos a Depositantes
+
+| Código | Modalidade                    |
+|--------|-------------------------------|
+| 0101   | Adiantamentos a Depositantes  |
+
+### Categoria: Empréstimos
+
+| Código | Modalidade                                                                 |
+|--------|---------------------------------------------------------------------------|
+| 0202   | Crédito Pessoal - com Consignação em Folha de Pagamento                  |
+| 0203   | Crédito Pessoal - sem Consignação em Folha de Pagamento                  |
+| 0204   | Crédito Rotativo Vinculado a Cartão de Crédito                           |
+| 0207   | Vendor                                                                    |
+| 0208   | Compror                                                                   |
+| 0209   | ARO - Adiantamento de Receitas Orçamentárias                             |
+| 0210   | Cartão de Crédito – Compra, Fatura Parcelada ou Saque Financiado pela Instituição Emitente do Cartão |
+| 0211   | Home Equity                                                               |
+| 0212   | Microcrédito                                                              |
+| 0213   | Cheque Especial                                                           |
+| 0214   | Conta Garantida                                                           |
+| 0215   | Capital de Giro com Prazo de Vencimento Até 365 Dias                     |
+| 0216   | Capital de Giro com Prazo Vencimento Superior 365 Dias                   |
+| 0217   | Capital de Giro com Teto Rotativo                                         |
+| 0218   | Cartão de Crédito - Não Migrado                                          |
+| 0250   | Recebíveis Adquiridos                                                     |
+| 0290   | Financiamento de Projeto                                                  |
+| 0299   | Outros Empréstimos                                                        |
