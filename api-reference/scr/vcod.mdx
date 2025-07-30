@@ -1,7 +1,6 @@
 ---
 title: "Faixas de Vencimentos"
-description: "As faixas de vencimento, identificadas pelos códigos vCOD, classificam as operações de crédito de acordo com sua linha do tempo: quanto falta para o vencimento, quando os recursos serão liberados, há quanto tempo estão vencidas ou se já foram baixadas da carteira. 
-
+description: "As faixas de vencimento, identificadas pelos códigos vCOD, classificam as operações de crédito de acordo com sua linha do tempo: quanto falta para o vencimento, quando os recursos serão liberados, há quanto tempo estão vencidas ou se já foram baixadas da carteira.   
 Essa estrutura facilita a leitura e análise do portfólio de crédito, ajudando instituições a entender melhor seus riscos e a tomar decisões mais rápidas e informadas."
 ---
 
@@ -9,13 +8,64 @@ Os códigos `vCOD` são aplicáveis às seguintes categorias de valores:
 
 - **Limites de Crédito** (`v20`, `v40`)
 - **Créditos a Liberar** (`v60`, `v80`)
-- **Créditos a Vencer** (`v110` a `v190`)
-- **Créditos Vencidos** (`v210` a `v240`)
+- **Créditos a Vencer** (`v110` a `v199`)
+- **Créditos Vencidos** (`v205` a `v290`)
 - **Créditos Baixados** (`v310` a `v330`)
 
-**Limite de Crédito**
+A seguir, estão listadas todas as faixas disponíveis e seus respectivos significados, que deverão ser refletidos na estrutura da consulta e nas regras de negócio.
 
-| vCOD | Descrição (Dias)                                   |
-| :--- | :------------------------------------------------- |
-| v20  | Limite de Crédito com Vencimento até 360 dias      |
-| v40  | Limite de Crédito com Vencimento acima de 360 dias |
+- **Limite de Crédito**
+
+| **vCOD** | **Descrição **                                     |
+| :------: | :------------------------------------------------- |
+| v20      | Limite de Crédito com Vencimento até 360 dias      |
+| v40      | Limite de Crédito com Vencimento acima de 360 dias |
+
+- **Créditos a Liberar**
+
+| **vCOD** | **Descrição **                       |
+| :------: | :----------------------------------- |
+| v60      | Créditos a Liberar até 360 dias      |
+| v80      | Créditos a Liberar acima de 360 dias |
+
+- \*\*Créditos a Vencer \*\*
+
+| **vCOD** | **Descrição**                             |
+| :------: | :---------------------------------------- |
+| v110     | Créditos a Vencer até 30 dias             |
+| v120     | Créditos a Vencer de 31 a 60 dias         |
+| v130     | Créditos a Vencer de 61 a 90 dias         |
+| v140     | Créditos a Vencer de 91 a 180 dias        |
+| v150     | Créditos a Vencer de 181 a 360 dias       |
+| v160     | Créditos a Vencer de 361 a 720 dias       |
+| v165     | Créditos a Vencer de 721 a 1080 dias      |
+| v170     | Créditos a Vencer de 1081 a 1440 dias     |
+| v175     | Créditos a Vencer de 1441 a 1800 dias     |
+| v180     | Créditos a Vencer de 1801 a 5400 dias     |
+| v190     | Créditos a Vencer acima de 5400 dias      |
+| v199     | Créditos a Vencer com Prazo Indeterminado |
+
+- **Créditos Vencidos**
+
+| **vCOD** | \*\*Descrição \*\*                  |
+| :------: | :---------------------------------- |
+| v205     | Créditos Vencidos de 1 a 14 dias    |
+| v210     | Créditos Vencidos de 15 a 30 dias   |
+| v220     | Créditos Vencidos de 31 a 60 dias   |
+| v230     | Créditos Vencidos de 61 a 90 dias   |
+| v240     | Créditos Vencidos de 91 a 120 dias  |
+| v245     | Créditos Vencidos de 121 a 150 dias |
+| v250     | Créditos Vencidos de 151 a 180 dias |
+| v255     | Créditos Vencidos de 181 a 240 dias |
+| v260     | Créditos Vencidos de 241 a 300 dias |
+| v270     | Créditos Vencidos de 301 a 360 dias |
+| v280     | Créditos Vencidos de 361 a 540 dias |
+| v290     | Créditos Vencidos acima de 540 dias |
+
+- **Créditos Baixados como Prejuízo**
+
+| vCOD | Descrição                                                    |
+| :--: | :----------------------------------------------------------- |
+| v310 | Créditos Baixados como Prejuízo até 12 meses                 |
+| v320 | Créditos Baixados como Prejuízo há mais de 12 e até 48 meses |
+| v330 | Créditos Baixados como Prejuízo há mais de 48 meses          |
