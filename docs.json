@@ -61,8 +61,8 @@
             "group": "SCR Bacen",
             "pages": [
               "api-reference/scr/consult",
-              "api-reference/scr/vcod",
-              "api-reference/scr/mod"
+              "api-reference/scr/mod",
+              "api-reference/scr/vcod"
             ]
           }
         ]
