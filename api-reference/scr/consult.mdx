@@ -94,1468 +94,1608 @@ $scr_data = json_decode($result, true);
 
 <ResponseExample>
 
-```json Success (200)
+```json Success (200) expandable
 {
-  "data": "29/07/2025 10:26:00",
-  "consulta": {
-    "resumoDoCliente": {
-      "cnpjDaIfSolicitante": null,
-      "coobrigacaoAssumida": 0,
-      "coobrigacaoRecebida": 0,
-      "dataBaseConsultada": "2025-03",
-      "dataInicioRelacionamento": "2018-08-13",
-      "listaDeMensagensDeValidacao": null,
-      "percentualDocumentosProcessados": "98.31",
-      "percentualVolumeProcessado": "99.90",
-      "quantidadeDeInstituicoes": 3,
-      "quantidadeDeOperacoes": 6,
-      "quantidadeOperacoesDiscordancia": 0,
-      "quantidadeOperacoesSubJudice": 0,
-      "responsabilidadeTotalDiscordancia": 0,
-      "responsabilidadeTotalSubJudice": 0,
-      "riscoIndiretoVendor": 0,
-      "tipoDoCliente": "1",
-      "documentoDoCliente": "12345678900"
+    "data": "30/07/2025 01:04:54",
+    "consulta": {
+        "resumoDoCliente": {
+            "cnpjDaIfSolicitante": null,
+            "coobrigacaoAssumida": 0,
+            "coobrigacaoRecebida": 0,
+            "dataBaseConsultada": "2025-05",
+            "dataInicioRelacionamento": "2011-09-01",
+            "listaDeMensagensDeValidacao": null,
+            "percentualDocumentosProcessados": "97.19",
+            "percentualVolumeProcessado": "99.80",
+            "quantidadeDeInstituicoes": 8,
+            "quantidadeDeOperacoes": 13,
+            "quantidadeOperacoesDiscordancia": 0,
+            "quantidadeOperacoesSubJudice": 0,
+            "responsabilidadeTotalDiscordancia": 0,
+            "responsabilidadeTotalSubJudice": 0,
+            "riscoIndiretoVendor": 0,
+            "tipoDoCliente": "1",
+            "documentoDoCliente": "12345678900"
+        },
+        "resumoDaCarteira": {
+            "dtInicioRelacionamento": "2011-09-01",
+            "carteiraVencer": 185405.49,
+            "carteiraVencerAte30diasVencidosAte14dias": 10299.45,
+            "carteiraVencer31a60dias": 10805.86,
+            "carteiraVencer61a90dias": 10501.6,
+            "carteiraVencer91a180dias": 24012.45,
+            "carteiraVencer181a360dias": 24362.63,
+            "carteiraVencerAcima360dias": 105423.5,
+            "carteiraVencerPrazoIndeterminado": 0,
+            "moedaEstrangeiraValor": 0,
+            "moedaEstrangeiraValor15a30dias": 0,
+            "moedaEstrangeiraValor31a60dias": 0,
+            "moedaEstrangeiraValor61a90dias": 0,
+            "moedaEstrangeiraValor91a180dias": 0,
+            "moedaEstrangeiraValor181a360dias": 0,
+            "moedaEstrangeiraValorAcima360dias": 0,
+            "carteiraVencido": 111950.68,
+            "carteiraVencido15a30dias": 4388.1,
+            "carteiraVencido31a60dias": 3259.16,
+            "carteiraVencido61a90dias": 4981.44,
+            "carteiraVencido91a180dias": 17410.71,
+            "carteiraVencido181a360dias": 81911.27,
+            "carteiraVencidoAcima360dias": 0,
+            "prejuizo": 0,
+            "prejuizoAte12meses": 0,
+            "prejuizoAcima12meses": 0,
+            "carteiradeCredito": 297356.17,
+            "repasses": 0,
+            "coobrigacoes": 0,
+            "responsabilidadeTotal": 297356.17,
+            "creditosaLiberar": 0.02,
+            "limitesdeCredito": 0.02,
+            "limitesdeCreditoAte360dias": 0.02,
+            "limitesdeCreditoAcima360dias": 0,
+            "riscoIndiretoVendor": 0,
+            "riscoTotal": 297356.19
+        },
+        "resumoDasModalidades": [
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0101",
+                "dominio": "Adiantamentos a depositantes",
+                "subdominio": "Adiantamentos a depositantes",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0201",
+                "dominio": "Empréstimos",
+                "subdominio": "Cheque especial e conta garantida",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0202",
+                "dominio": "Empréstimos",
+                "subdominio": "Crédito pessoal - com consignação em folha de pagam.",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0203",
+                "dominio": "Empréstimos",
+                "subdominio": "Crédito pessoal - sem consignação em folha de pagam.",
+                "valorVencimento": 148137.2
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0204",
+                "dominio": "Empréstimos",
+                "subdominio": "Crédito rotativo vinculado a cartão de crédito",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0205",
+                "dominio": "Empréstimos",
+                "subdominio": "Capital de giro com prazo de vencimento inferior a 30 d",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0206",
+                "dominio": "Empréstimos",
+                "subdominio": "Capital de giro com prazo vencim. igual ou superior 30 d",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0207",
+                "dominio": "Empréstimos",
+                "subdominio": "Vendor",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0208",
+                "dominio": "Empréstimos",
+                "subdominio": "Compror",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0209",
+                "dominio": "Empréstimos",
+                "subdominio": "ARO - adiantamento de receitas orçamentárias",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0210",
+                "dominio": "Empréstimos",
+                "subdominio": "Cartão de crédito – compra, fatura parcelada ou saque financiado pela instituição emitente do cartão ",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0211",
+                "dominio": "Empréstimos",
+                "subdominio": "Home equity",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0212",
+                "dominio": "Empréstimos",
+                "subdominio": "Microcrédito",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0213",
+                "dominio": "Empréstimos",
+                "subdominio": "Cheque especial",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0214",
+                "dominio": "Empréstimos",
+                "subdominio": "Conta garantida",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0215",
+                "dominio": "Empréstimos",
+                "subdominio": "Capital de giro com prazo de vencimento até 365 d",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0216",
+                "dominio": "Empréstimos",
+                "subdominio": "Capital de giro com prazo vencimento superior 365 d",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0217",
+                "dominio": "Empréstimos",
+                "subdominio": "Capital de giro com teto rotativo",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0218",
+                "dominio": "Empréstimos",
+                "subdominio": "Cartão de crédito - não migrado",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0250",
+                "dominio": "Empréstimos",
+                "subdominio": "Recebíveis adquiridos",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0290",
+                "dominio": "Empréstimos",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0299",
+                "dominio": "Empréstimos",
+                "subdominio": "Outros empréstimos",
+                "valorVencimento": 331.37
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0301",
+                "dominio": "Direitos creditórios descontados",
+                "subdominio": "Desconto de duplicatas",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0302",
+                "dominio": "Direitos creditórios descontados",
+                "subdominio": "Desconto de cheques",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0303",
+                "dominio": "Direitos creditórios descontados",
+                "subdominio": "Antecipação de fatura de cartão de crédito",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0398",
+                "dominio": "Direitos creditórios descontados",
+                "subdominio": "Outros direitos creditórios descontados",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0399",
+                "dominio": "Direitos creditórios descontados",
+                "subdominio": "Outros títulos descontados",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0401",
+                "dominio": "Financiamentos",
+                "subdominio": "Aquisição de bens – veículos automotores",
+                "valorVencimento": 30331.5
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0402",
+                "dominio": "Financiamentos",
+                "subdominio": "Aquisição de bens – outros bens",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0403",
+                "dominio": "Financiamentos",
+                "subdominio": "Microcrédito",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0404",
+                "dominio": "Financiamentos",
+                "subdominio": "Vendor",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0405",
+                "dominio": "Financiamentos",
+                "subdominio": "Compror",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0406",
+                "dominio": "Financiamentos",
+                "subdominio": "Cartão de crédito – compra ou fatura parcelada pela instituição financeira emitente do cartão",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0407",
+                "dominio": "Financiamentos",
+                "subdominio": "Aquisição de bens – veículos automotores acima de 2 toneladas",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0440",
+                "dominio": "Financiamentos",
+                "subdominio": "Financiamentos agroindustriais",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0450",
+                "dominio": "Financiamentos",
+                "subdominio": "Recebíveis adquiridos",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0490",
+                "dominio": "Financiamentos",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0499",
+                "dominio": "Financiamentos",
+                "subdominio": "Moeda Estrangeira",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0501",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Financiamento à exportação",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0502",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Adiantamento sobre contratos de câmbio",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0503",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Adiantamento sobre cambiais entregues",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0504",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Créd decorrentes de contratos de exportação-export note",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0590",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0599",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Outros financiamentos à exportação",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0601",
+                "dominio": "Financiamentos à importação",
+                "subdominio": "Financiamento à importação",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0690",
+                "dominio": "Financiamentos à importação",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0701",
+                "dominio": "Financiamentos com interveniência",
+                "subdominio": "Aquisição de bens com interveniência – veículos autom.",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0702",
+                "dominio": "Financiamentos com interveniência",
+                "subdominio": "Aquisição de bens com interveniência – outros bens",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0790",
+                "dominio": "Financiamentos com interveniência",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0799",
+                "dominio": "Financiamentos com interveniência",
+                "subdominio": "Outros financiamentos com interveniência",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0801",
+                "dominio": "Financiamentos rurais ",
+                "subdominio": "Custeio e pré-custeio",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0802",
+                "dominio": "Financiamentos rurais ",
+                "subdominio": "Investimento e capital de giro de financiam. agroindustr.",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0803",
+                "dominio": "Financiamentos rurais ",
+                "subdominio": "Comercialização e pré-comercialização",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0804",
+                "dominio": "Financiamentos rurais ",
+                "subdominio": "Industrialização",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0890",
+                "dominio": "Financiamentos rurais ",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0901",
+                "dominio": "Financiamentos imobiliários",
+                "subdominio": "Financiamento habitacional – SFH",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0902",
+                "dominio": "Financiamentos imobiliários",
+                "subdominio": "Financiamento habitacional – exceto SFH",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0903",
+                "dominio": "Financiamentos imobiliários",
+                "subdominio": "Financiamento imobiliário – empreendim, exceto habitac.",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "0990",
+                "dominio": "Financiamentos imobiliários",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1001",
+                "dominio": "Financiamentos de títulos e valores mobiliários",
+                "subdominio": "Financiamento de TVM",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1101",
+                "dominio": "Financiamentos de infraestrutura e desenvolvimento",
+                "subdominio": "Financiamento de infraestrutura e desenvolvimento",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1190",
+                "dominio": "Financiamentos de infraestrutura e desenvolvimento",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1201",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Arrendamento financeiro exceto veículos automotores e imóveis",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1202",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Arrendamento financeiro imobiliário",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1203",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Subarrendamento",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1204",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "1204",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1205",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Arrendamento operacional",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1206",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Arrendamento financeiro de veículos automotores",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1207",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Arrendamento financeiro de veículos automotores acima de 2 toneladas",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1290",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1301",
+                "dominio": "Outros créditos",
+                "subdominio": "Avais e fianças honrados",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1302",
+                "dominio": "Outros créditos",
+                "subdominio": "Devedores por compra de valores e bens",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1303",
+                "dominio": "Outros créditos",
+                "subdominio": "Títulos e créditos a receber",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1304",
+                "dominio": "Outros créditos",
+                "subdominio": "Cartão de crédito - compra à vista e parcelado lojista",
+                "valorVencimento": 6605.42
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1350",
+                "dominio": "Outros créditos",
+                "subdominio": "Recebíveis adquiridos",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1390",
+                "dominio": "Outros créditos",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1399",
+                "dominio": "Outros créditos",
+                "subdominio": "Outros com característica de crédito",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1401",
+                "dominio": "Relações Interfinanceiras",
+                "subdominio": "Repasses interfinanceiros",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1402",
+                "dominio": "Relações Interfinanceiras",
+                "subdominio": "Recebíveis de arranjo de pagamento",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1501",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de garantias prestadas para operações com PJ financeira",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1502",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de garantias prestadas para operações com outras pessoas",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1503",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de garantias prestadas para fundos constitucionais",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1504",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de garantias prestadas para participação em processo licitatório",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1505",
+                "dominio": "Coobrigações",
+                "subdominio": "Carta de crédito de importação",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1511",
+                "dominio": "Coobrigações",
+                "subdominio": "Coobrigação assumida em cessão com coobrigação para pessoa integrante do SFN",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1512",
+                "dominio": "Coobrigações",
+                "subdominio": "Coobrigação assumida em cessão com coobrigação para pessoa não integrante do SFN, inclusive securitizadora e fundos de investimento",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1513",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de outras coobrigações",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1590",
+                "dominio": "Coobrigações",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1599",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de outras garantias prestadas",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1801",
+                "dominio": "Títulos de crédito (fora da carteira classificada)",
+                "subdominio": "CPR - Cédula de Produto Rural",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1802",
+                "dominio": "Títulos de crédito (fora da carteira classificada)",
+                "subdominio": "EN - Nota de Exportação",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1803",
+                "dominio": "Títulos de crédito (fora da carteira classificada)",
+                "subdominio": "Debêntures",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1899",
+                "dominio": "Títulos de crédito (fora da carteira classificada)",
+                "subdominio": "Outros",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "1901",
+                "dominio": "Limite",
+                "subdominio": "Limite contratado e não utilizado",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "2001",
+                "dominio": "Retenção de risco",
+                "subdominio": "Retenção de risco assumida por aquisição de cotas de fundos",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "A VENCER",
+                "modalidade": "2002",
+                "dominio": "Retenção de risco",
+                "subdominio": "Retenção de risco assumida por aquisição de instrumentos com lastros em operações de crédito",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0101",
+                "dominio": "Adiantamentos a depositantes",
+                "subdominio": "Adiantamentos a depositantes",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0201",
+                "dominio": "Empréstimos",
+                "subdominio": "Cheque especial e conta garantida",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0202",
+                "dominio": "Empréstimos",
+                "subdominio": "Crédito pessoal - com consignação em folha de pagam.",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0203",
+                "dominio": "Empréstimos",
+                "subdominio": "Crédito pessoal - sem consignação em folha de pagam.",
+                "valorVencimento": 30415.02
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0204",
+                "dominio": "Empréstimos",
+                "subdominio": "Crédito rotativo vinculado a cartão de crédito",
+                "valorVencimento": 1166.21
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0205",
+                "dominio": "Empréstimos",
+                "subdominio": "Capital de giro com prazo de vencimento inferior a 30 d",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0206",
+                "dominio": "Empréstimos",
+                "subdominio": "Capital de giro com prazo vencim. igual ou superior 30 d",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0207",
+                "dominio": "Empréstimos",
+                "subdominio": "Vendor",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0208",
+                "dominio": "Empréstimos",
+                "subdominio": "Compror",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0209",
+                "dominio": "Empréstimos",
+                "subdominio": "ARO - adiantamento de receitas orçamentárias",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0210",
+                "dominio": "Empréstimos",
+                "subdominio": "Cartão de crédito – compra, fatura parcelada ou saque financiado pela instituição emitente do cartão ",
+                "valorVencimento": 78622.9
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0211",
+                "dominio": "Empréstimos",
+                "subdominio": "Home equity",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0212",
+                "dominio": "Empréstimos",
+                "subdominio": "Microcrédito",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0213",
+                "dominio": "Empréstimos",
+                "subdominio": "Cheque especial",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0214",
+                "dominio": "Empréstimos",
+                "subdominio": "Conta garantida",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0215",
+                "dominio": "Empréstimos",
+                "subdominio": "Capital de giro com prazo de vencimento até 365 d",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0216",
+                "dominio": "Empréstimos",
+                "subdominio": "Capital de giro com prazo vencimento superior 365 d",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0217",
+                "dominio": "Empréstimos",
+                "subdominio": "Capital de giro com teto rotativo",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0218",
+                "dominio": "Empréstimos",
+                "subdominio": "Cartão de crédito - não migrado",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0250",
+                "dominio": "Empréstimos",
+                "subdominio": "Recebíveis adquiridos",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0290",
+                "dominio": "Empréstimos",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0299",
+                "dominio": "Empréstimos",
+                "subdominio": "Outros empréstimos",
+                "valorVencimento": 1746.55
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0301",
+                "dominio": "Direitos creditórios descontados",
+                "subdominio": "Desconto de duplicatas",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0302",
+                "dominio": "Direitos creditórios descontados",
+                "subdominio": "Desconto de cheques",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0303",
+                "dominio": "Direitos creditórios descontados",
+                "subdominio": "Antecipação de fatura de cartão de crédito",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0398",
+                "dominio": "Direitos creditórios descontados",
+                "subdominio": "Outros direitos creditórios descontados",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0399",
+                "dominio": "Direitos creditórios descontados",
+                "subdominio": "Outros títulos descontados",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0401",
+                "dominio": "Financiamentos",
+                "subdominio": "Aquisição de bens – veículos automotores",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0402",
+                "dominio": "Financiamentos",
+                "subdominio": "Aquisição de bens – outros bens",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0403",
+                "dominio": "Financiamentos",
+                "subdominio": "Microcrédito",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0404",
+                "dominio": "Financiamentos",
+                "subdominio": "Vendor",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0405",
+                "dominio": "Financiamentos",
+                "subdominio": "Compror",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0406",
+                "dominio": "Financiamentos",
+                "subdominio": "Cartão de crédito – compra ou fatura parcelada pela instituição financeira emitente do cartão",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0407",
+                "dominio": "Financiamentos",
+                "subdominio": "Aquisição de bens – veículos automotores acima de 2 toneladas",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0440",
+                "dominio": "Financiamentos",
+                "subdominio": "Financiamentos agroindustriais",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0450",
+                "dominio": "Financiamentos",
+                "subdominio": "Recebíveis adquiridos",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0490",
+                "dominio": "Financiamentos",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0499",
+                "dominio": "Financiamentos",
+                "subdominio": "Moeda Estrangeira",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0501",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Financiamento à exportação",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0502",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Adiantamento sobre contratos de câmbio",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0503",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Adiantamento sobre cambiais entregues",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0504",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Créd decorrentes de contratos de exportação-export note",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0590",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0599",
+                "dominio": "Financiamentos à exportação",
+                "subdominio": "Outros financiamentos à exportação",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0601",
+                "dominio": "Financiamentos à importação",
+                "subdominio": "Financiamento à importação",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0690",
+                "dominio": "Financiamentos à importação",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0701",
+                "dominio": "Financiamentos com interveniência",
+                "subdominio": "Aquisição de bens com interveniência – veículos autom.",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0702",
+                "dominio": "Financiamentos com interveniência",
+                "subdominio": "Aquisição de bens com interveniência – outros bens",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0790",
+                "dominio": "Financiamentos com interveniência",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0799",
+                "dominio": "Financiamentos com interveniência",
+                "subdominio": "Outros financiamentos com interveniência",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0801",
+                "dominio": "Financiamentos rurais ",
+                "subdominio": "Custeio e pré-custeio",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0802",
+                "dominio": "Financiamentos rurais ",
+                "subdominio": "Investimento e capital de giro de financiam. agroindustr.",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0803",
+                "dominio": "Financiamentos rurais ",
+                "subdominio": "Comercialização e pré-comercialização",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0804",
+                "dominio": "Financiamentos rurais ",
+                "subdominio": "Industrialização",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0890",
+                "dominio": "Financiamentos rurais ",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0901",
+                "dominio": "Financiamentos imobiliários",
+                "subdominio": "Financiamento habitacional – SFH",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0902",
+                "dominio": "Financiamentos imobiliários",
+                "subdominio": "Financiamento habitacional – exceto SFH",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0903",
+                "dominio": "Financiamentos imobiliários",
+                "subdominio": "Financiamento imobiliário – empreendim, exceto habitac.",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "0990",
+                "dominio": "Financiamentos imobiliários",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1001",
+                "dominio": "Financiamentos de títulos e valores mobiliários",
+                "subdominio": "Financiamento de TVM",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1101",
+                "dominio": "Financiamentos de infraestrutura e desenvolvimento",
+                "subdominio": "Financiamento de infraestrutura e desenvolvimento",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1190",
+                "dominio": "Financiamentos de infraestrutura e desenvolvimento",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1201",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Arrendamento financeiro exceto veículos automotores e imóveis",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1202",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Arrendamento financeiro imobiliário",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1203",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Subarrendamento",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1204",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "1204",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1205",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Arrendamento operacional",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1206",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Arrendamento financeiro de veículos automotores",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1207",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Arrendamento financeiro de veículos automotores acima de 2 toneladas",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1290",
+                "dominio": "Operações de arrendamento",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1301",
+                "dominio": "Outros créditos",
+                "subdominio": "Avais e fianças honrados",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1302",
+                "dominio": "Outros créditos",
+                "subdominio": "Devedores por compra de valores e bens",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1303",
+                "dominio": "Outros créditos",
+                "subdominio": "Títulos e créditos a receber",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1304",
+                "dominio": "Outros créditos",
+                "subdominio": "Cartão de crédito - compra à vista e parcelado lojista",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1350",
+                "dominio": "Outros créditos",
+                "subdominio": "Recebíveis adquiridos",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1390",
+                "dominio": "Outros créditos",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1399",
+                "dominio": "Outros créditos",
+                "subdominio": "Outros com característica de crédito",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1401",
+                "dominio": "Relações Interfinanceiras",
+                "subdominio": "Repasses interfinanceiros",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1402",
+                "dominio": "Relações Interfinanceiras",
+                "subdominio": "Recebíveis de arranjo de pagamento",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1501",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de garantias prestadas para operações com PJ financeira",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1502",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de garantias prestadas para operações com outras pessoas",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1503",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de garantias prestadas para fundos constitucionais",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1504",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de garantias prestadas para participação em processo licitatório",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1505",
+                "dominio": "Coobrigações",
+                "subdominio": "Carta de crédito de importação",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1511",
+                "dominio": "Coobrigações",
+                "subdominio": "Coobrigação assumida em cessão com coobrigação para pessoa integrante do SFN",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1512",
+                "dominio": "Coobrigações",
+                "subdominio": "Coobrigação assumida em cessão com coobrigação para pessoa não integrante do SFN, inclusive securitizadora e fundos de investimento",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1513",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de outras coobrigações",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1590",
+                "dominio": "Coobrigações",
+                "subdominio": "Financiamento de projeto",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1599",
+                "dominio": "Coobrigações",
+                "subdominio": "Beneficiários de outras garantias prestadas",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1801",
+                "dominio": "Títulos de crédito (fora da carteira classificada)",
+                "subdominio": "CPR - Cédula de Produto Rural",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1802",
+                "dominio": "Títulos de crédito (fora da carteira classificada)",
+                "subdominio": "EN - Nota de Exportação",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1803",
+                "dominio": "Títulos de crédito (fora da carteira classificada)",
+                "subdominio": "Debêntures",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1899",
+                "dominio": "Títulos de crédito (fora da carteira classificada)",
+                "subdominio": "Outros",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "1901",
+                "dominio": "Limite",
+                "subdominio": "Limite contratado e não utilizado",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "2001",
+                "dominio": "Retenção de risco",
+                "subdominio": "Retenção de risco assumida por aquisição de cotas de fundos",
+                "valorVencimento": 0
+            },
+            {
+                "tipo": "VENCIDO",
+                "modalidade": "2002",
+                "dominio": "Retenção de risco",
+                "subdominio": "Retenção de risco assumida por aquisição de instrumentos com lastros em operações de crédito",
+                "valorVencimento": 0
+            }
+        ],
+        "resumoDasOperacoes": [
+            {
+                "listaDeVencimentos": [
+                    {
+                        "codigoVencimento": "v110",
+                        "valorVencimento": 3358.25
+                    },
+                    {
+                        "codigoVencimento": "v120",
+                        "valorVencimento": 3330.71
+                    },
+                    {
+                        "codigoVencimento": "v130",
+                        "valorVencimento": 3225.58
+                    },
+                    {
+                        "codigoVencimento": "v140",
+                        "valorVencimento": 10428
+                    },
+                    {
+                        "codigoVencimento": "v150",
+                        "valorVencimento": 22515.46
+                    },
+                    {
+                        "codigoVencimento": "v160",
+                        "valorVencimento": 52534.62
+                    },
+                    {
+                        "codigoVencimento": "v165",
+                        "valorVencimento": 52744.58
+                    },
+                    {
+                        "codigoVencimento": "v210",
+                        "valorVencimento": 3048.9
+                    },
+                    {
+                        "codigoVencimento": "v220",
+                        "valorVencimento": 3081.23
+                    },
+                    {
+                        "codigoVencimento": "v230",
+                        "valorVencimento": 4798.26
+                    },
+                    {
+                        "codigoVencimento": "v240",
+                        "valorVencimento": 5198.89
+                    },
+                    {
+                        "codigoVencimento": "v245",
+                        "valorVencimento": 5791.95
+                    },
+                    {
+                        "codigoVencimento": "v250",
+                        "valorVencimento": 5838.84
+                    },
+                    {
+                        "codigoVencimento": "v255",
+                        "valorVencimento": 2656.95
+                    }
+                ],
+                "modalidade": "0203",
+                "variacaoCambial": "N"
+            },
+            {
+                "listaDeVencimentos": [
+                    {
+                        "codigoVencimento": "v210",
+                        "valorVencimento": 1166.21
+                    }
+                ],
+                "modalidade": "0204",
+                "variacaoCambial": "N"
+            },
+            {
+                "listaDeVencimentos": [
+                    {
+                        "codigoVencimento": "v270",
+                        "valorVencimento": 78622.9
+                    }
+                ],
+                "modalidade": "0210",
+                "variacaoCambial": "N"
+            },
+            {
+                "listaDeVencimentos": [
+                    {
+                        "codigoVencimento": "v110",
+                        "valorVencimento": 168.02
+                    },
+                    {
+                        "codigoVencimento": "v120",
+                        "valorVencimento": 163.35
+                    },
+                    {
+                        "codigoVencimento": "v210",
+                        "valorVencimento": 172.99
+                    },
+                    {
+                        "codigoVencimento": "v220",
+                        "valorVencimento": 177.93
+                    },
+                    {
+                        "codigoVencimento": "v230",
+                        "valorVencimento": 183.18
+                    },
+                    {
+                        "codigoVencimento": "v240",
+                        "valorVencimento": 188.07
+                    },
+                    {
+                        "codigoVencimento": "v245",
+                        "valorVencimento": 193.62
+                    },
+                    {
+                        "codigoVencimento": "v250",
+                        "valorVencimento": 199.34
+                    },
+                    {
+                        "codigoVencimento": "v255",
+                        "valorVencimento": 410.23
+                    },
+                    {
+                        "codigoVencimento": "v260",
+                        "valorVencimento": 221.19
+                    }
+                ],
+                "modalidade": "0299",
+                "variacaoCambial": "N"
+            },
+            {
+                "listaDeVencimentos": [
+                    {
+                        "codigoVencimento": "v110",
+                        "valorVencimento": 6300.4
+                    },
+                    {
+                        "codigoVencimento": "v120",
+                        "valorVencimento": 6181.12
+                    },
+                    {
+                        "codigoVencimento": "v130",
+                        "valorVencimento": 6060.23
+                    },
+                    {
+                        "codigoVencimento": "v140",
+                        "valorVencimento": 11789.75
+                    }
+                ],
+                "modalidade": "0401",
+                "variacaoCambial": "N"
+            },
+            {
+                "listaDeVencimentos": [
+                    {
+                        "codigoVencimento": "v110",
+                        "valorVencimento": 472.78
+                    },
+                    {
+                        "codigoVencimento": "v120",
+                        "valorVencimento": 1130.68
+                    },
+                    {
+                        "codigoVencimento": "v130",
+                        "valorVencimento": 1215.79
+                    },
+                    {
+                        "codigoVencimento": "v140",
+                        "valorVencimento": 1794.7
+                    },
+                    {
+                        "codigoVencimento": "v150",
+                        "valorVencimento": 1847.17
+                    },
+                    {
+                        "codigoVencimento": "v160",
+                        "valorVencimento": 144.3
+                    }
+                ],
+                "modalidade": "1304",
+                "variacaoCambial": "N"
+            },
+            {
+                "listaDeVencimentos": [
+                    {
+                        "codigoVencimento": "v20",
+                        "valorVencimento": 0.02
+                    }
+                ],
+                "modalidade": "1904",
+                "variacaoCambial": "N"
+            }
+        ]
     },
-    "resumoDaCarteira": {
-      "dtInicioRelacionamento": "2018-08-13",
-      "carteiraVencer": 16035.44,
-      "carteiraVencerAte30diasVencidosAte14dias": 9513.17,
-      "carteiraVencer31a60dias": 1966.89,
-      "carteiraVencer61a90dias": 1449.91,
-      "carteiraVencer91a180dias": 1955.67,
-      "carteiraVencer181a360dias": 1149.8,
-      "carteiraVencerAcima360dias": 0,
-      "carteiraVencerPrazoIndeterminado": 0,
-      "moedaEstrangeiraValor": 0,
-      "moedaEstrangeiraValor15a30dias": 0,
-      "moedaEstrangeiraValor31a60dias": 0,
-      "moedaEstrangeiraValor61a90dias": 0,
-      "moedaEstrangeiraValor91a180dias": 0,
-      "moedaEstrangeiraValor181a360dias": 0,
-      "moedaEstrangeiraValorAcima360dias": 0,
-      "carteiraVencido": 0,
-      "carteiraVencido15a30dias": 0,
-      "carteiraVencido31a60dias": 0,
-      "carteiraVencido61a90dias": 0,
-      "carteiraVencido91a180dias": 0,
-      "carteiraVencido181a360dias": 0,
-      "carteiraVencidoAcima360dias": 0,
-      "prejuizo": 0,
-      "prejuizoAte12meses": 0,
-      "prejuizoAcima12meses": 0,
-      "carteiradeCredito": 16035.44,
-      "repasses": 0,
-      "coobrigacoes": 0,
-      "responsabilidadeTotal": 16035.44,
-      "creditosaLiberar": 30516.52,
-      "limitesdeCredito": 30516.52,
-      "limitesdeCreditoAte360dias": 8484.7,
-      "limitesdeCreditoAcima360dias": 22031.82,
-      "riscoIndiretoVendor": 0,
-      "riscoTotal": 46551.96
-    },
-    "resumoDasModalidades": [
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0101",
-        "dominio": "Adiantamentos a depositantes",
-        "subdominio": "Adiantamentos a depositantes",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0101",
-        "dominio": "Adiantamentos a depositantes",
-        "subdominio": "Adiantamentos a depositantes",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0201",
-        "dominio": "Empréstimos",
-        "subdominio": "Cheque especial e conta garantida",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0201",
-        "dominio": "Empréstimos",
-        "subdominio": "Cheque especial e conta garantida",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0202",
-        "dominio": "Empréstimos",
-        "subdominio": "Crédito pessoal - com consignação em folha de pagam.",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0202",
-        "dominio": "Empréstimos",
-        "subdominio": "Crédito pessoal - com consignação em folha de pagam.",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0203",
-        "dominio": "Empréstimos",
-        "subdominio": "Crédito pessoal - sem consignação em folha de pagam.",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0203",
-        "dominio": "Empréstimos",
-        "subdominio": "Crédito pessoal - sem consignação em folha de pagam.",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0204",
-        "dominio": "Empréstimos",
-        "subdominio": "Crédito rotativo vinculado a cartão de crédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0204",
-        "dominio": "Empréstimos",
-        "subdominio": "Crédito rotativo vinculado a cartão de crédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0205",
-        "dominio": "Empréstimos",
-        "subdominio": "Capital de giro com prazo de vencimento inferior a 30 d",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0205",
-        "dominio": "Empréstimos",
-        "subdominio": "Capital de giro com prazo de vencimento inferior a 30 d",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0206",
-        "dominio": "Empréstimos",
-        "subdominio": "Capital de giro com prazo vencim. igual ou superior 30 d",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0206",
-        "dominio": "Empréstimos",
-        "subdominio": "Capital de giro com prazo vencim. igual ou superior 30 d",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0207",
-        "dominio": "Empréstimos",
-        "subdominio": "Vendor",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0207",
-        "dominio": "Empréstimos",
-        "subdominio": "Vendor",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0208",
-        "dominio": "Empréstimos",
-        "subdominio": "Compror",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0208",
-        "dominio": "Empréstimos",
-        "subdominio": "Compror",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0209",
-        "dominio": "Empréstimos",
-        "subdominio": "ARO - adiantamento de receitas orçamentárias",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0209",
-        "dominio": "Empréstimos",
-        "subdominio": "ARO - adiantamento de receitas orçamentárias",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0210",
-        "dominio": "Empréstimos",
-        "subdominio": "Cartão de crédito – compra, fatura parcelada ou saque financiado pela instituição emitente do cartão ",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0210",
-        "dominio": "Empréstimos",
-        "subdominio": "Cartão de crédito – compra, fatura parcelada ou saque financiado pela instituição emitente do cartão ",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0211",
-        "dominio": "Empréstimos",
-        "subdominio": "Home equity",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0211",
-        "dominio": "Empréstimos",
-        "subdominio": "Home equity",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0212",
-        "dominio": "Empréstimos",
-        "subdominio": "Microcrédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0212",
-        "dominio": "Empréstimos",
-        "subdominio": "Microcrédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0213",
-        "dominio": "Empréstimos",
-        "subdominio": "Cheque especial",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0213",
-        "dominio": "Empréstimos",
-        "subdominio": "Cheque especial",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0214",
-        "dominio": "Empréstimos",
-        "subdominio": "Conta garantida",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0214",
-        "dominio": "Empréstimos",
-        "subdominio": "Conta garantida",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0215",
-        "dominio": "Empréstimos",
-        "subdominio": "Capital de giro com prazo de vencimento até 365 d",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0215",
-        "dominio": "Empréstimos",
-        "subdominio": "Capital de giro com prazo de vencimento até 365 d",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0216",
-        "dominio": "Empréstimos",
-        "subdominio": "Capital de giro com prazo vencimento superior 365 d",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0216",
-        "dominio": "Empréstimos",
-        "subdominio": "Capital de giro com prazo vencimento superior 365 d",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0217",
-        "dominio": "Empréstimos",
-        "subdominio": "Capital de giro com teto rotativo",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0217",
-        "dominio": "Empréstimos",
-        "subdominio": "Capital de giro com teto rotativo",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0218",
-        "dominio": "Empréstimos",
-        "subdominio": "Cartão de crédito - não migrado",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0218",
-        "dominio": "Empréstimos",
-        "subdominio": "Cartão de crédito - não migrado",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0250",
-        "dominio": "Empréstimos",
-        "subdominio": "Recebíveis adquiridos",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0250",
-        "dominio": "Empréstimos",
-        "subdominio": "Recebíveis adquiridos",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0290",
-        "dominio": "Empréstimos",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0290",
-        "dominio": "Empréstimos",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0299",
-        "dominio": "Empréstimos",
-        "subdominio": "Outros empréstimos",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0299",
-        "dominio": "Empréstimos",
-        "subdominio": "Outros empréstimos",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0301",
-        "dominio": "Direitos creditórios descontados",
-        "subdominio": "Desconto de duplicatas",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0301",
-        "dominio": "Direitos creditórios descontados",
-        "subdominio": "Desconto de duplicatas",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0302",
-        "dominio": "Direitos creditórios descontados",
-        "subdominio": "Desconto de cheques",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0302",
-        "dominio": "Direitos creditórios descontados",
-        "subdominio": "Desconto de cheques",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0303",
-        "dominio": "Direitos creditórios descontados",
-        "subdominio": "Antecipação de fatura de cartão de crédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0303",
-        "dominio": "Direitos creditórios descontados",
-        "subdominio": "Antecipação de fatura de cartão de crédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0398",
-        "dominio": "Direitos creditórios descontados",
-        "subdominio": "Outros direitos creditórios descontados",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0398",
-        "dominio": "Direitos creditórios descontados",
-        "subdominio": "Outros direitos creditórios descontados",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0399",
-        "dominio": "Direitos creditórios descontados",
-        "subdominio": "Outros títulos descontados",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0399",
-        "dominio": "Direitos creditórios descontados",
-        "subdominio": "Outros títulos descontados",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0401",
-        "dominio": "Financiamentos",
-        "subdominio": "Aquisição de bens – veículos automotores",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0401",
-        "dominio": "Financiamentos",
-        "subdominio": "Aquisição de bens – veículos automotores",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0402",
-        "dominio": "Financiamentos",
-        "subdominio": "Aquisição de bens – outros bens",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0402",
-        "dominio": "Financiamentos",
-        "subdominio": "Aquisição de bens – outros bens",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0403",
-        "dominio": "Financiamentos",
-        "subdominio": "Microcrédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0403",
-        "dominio": "Financiamentos",
-        "subdominio": "Microcrédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0404",
-        "dominio": "Financiamentos",
-        "subdominio": "Vendor",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0404",
-        "dominio": "Financiamentos",
-        "subdominio": "Vendor",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0405",
-        "dominio": "Financiamentos",
-        "subdominio": "Compror",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0405",
-        "dominio": "Financiamentos",
-        "subdominio": "Compror",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0406",
-        "dominio": "Financiamentos",
-        "subdominio": "Cartão de crédito – compra ou fatura parcelada pela instituição financeira emitente do cartão",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0406",
-        "dominio": "Financiamentos",
-        "subdominio": "Cartão de crédito – compra ou fatura parcelada pela instituição financeira emitente do cartão",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0407",
-        "dominio": "Financiamentos",
-        "subdominio": "Aquisição de bens – veículos automotores acima de 2 toneladas",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0407",
-        "dominio": "Financiamentos",
-        "subdominio": "Aquisição de bens – veículos automotores acima de 2 toneladas",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0440",
-        "dominio": "Financiamentos",
-        "subdominio": "Financiamentos agroindustriais",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0440",
-        "dominio": "Financiamentos",
-        "subdominio": "Financiamentos agroindustriais",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0450",
-        "dominio": "Financiamentos",
-        "subdominio": "Recebíveis adquiridos",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0450",
-        "dominio": "Financiamentos",
-        "subdominio": "Recebíveis adquiridos",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0490",
-        "dominio": "Financiamentos",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0490",
-        "dominio": "Financiamentos",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0499",
-        "dominio": "Financiamentos",
-        "subdominio": "Moeda Estrangeira",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0499",
-        "dominio": "Financiamentos",
-        "subdominio": "Moeda Estrangeira",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0501",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Financiamento à exportação",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0501",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Financiamento à exportação",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0502",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Adiantamento sobre contratos de câmbio",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0502",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Adiantamento sobre contratos de câmbio",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0503",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Adiantamento sobre cambiais entregues",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0503",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Adiantamento sobre cambiais entregues",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0504",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Créd decorrentes de contratos de exportação-export note",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0504",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Créd decorrentes de contratos de exportação-export note",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0590",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0590",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0599",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Outros financiamentos à exportação",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0599",
-        "dominio": "Financiamentos à exportação",
-        "subdominio": "Outros financiamentos à exportação",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0601",
-        "dominio": "Financiamentos à importação",
-        "subdominio": "Financiamento à importação",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0601",
-        "dominio": "Financiamentos à importação",
-        "subdominio": "Financiamento à importação",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0690",
-        "dominio": "Financiamentos à importação",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0690",
-        "dominio": "Financiamentos à importação",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0701",
-        "dominio": "Financiamentos com interveniência",
-        "subdominio": "Aquisição de bens com interveniência – veículos autom.",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0701",
-        "dominio": "Financiamentos com interveniência",
-        "subdominio": "Aquisição de bens com interveniência – veículos autom.",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0702",
-        "dominio": "Financiamentos com interveniência",
-        "subdominio": "Aquisição de bens com interveniência – outros bens",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0702",
-        "dominio": "Financiamentos com interveniência",
-        "subdominio": "Aquisição de bens com interveniência – outros bens",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0790",
-        "dominio": "Financiamentos com interveniência",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0790",
-        "dominio": "Financiamentos com interveniência",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0799",
-        "dominio": "Financiamentos com interveniência",
-        "subdominio": "Outros financiamentos com interveniência",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0799",
-        "dominio": "Financiamentos com interveniência",
-        "subdominio": "Outros financiamentos com interveniência",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0801",
-        "dominio": "Financiamentos rurais ",
-        "subdominio": "Custeio e pré-custeio",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0801",
-        "dominio": "Financiamentos rurais ",
-        "subdominio": "Custeio e pré-custeio",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0802",
-        "dominio": "Financiamentos rurais ",
-        "subdominio": "Investimento e capital de giro de financiam. agroindustr.",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0802",
-        "dominio": "Financiamentos rurais ",
-        "subdominio": "Investimento e capital de giro de financiam. agroindustr.",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0803",
-        "dominio": "Financiamentos rurais ",
-        "subdominio": "Comercialização e pré-comercialização",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0803",
-        "dominio": "Financiamentos rurais ",
-        "subdominio": "Comercialização e pré-comercialização",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0804",
-        "dominio": "Financiamentos rurais ",
-        "subdominio": "Industrialização",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0804",
-        "dominio": "Financiamentos rurais ",
-        "subdominio": "Industrialização",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0890",
-        "dominio": "Financiamentos rurais ",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0890",
-        "dominio": "Financiamentos rurais ",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0901",
-        "dominio": "Financiamentos imobiliários",
-        "subdominio": "Financiamento habitacional – SFH",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0901",
-        "dominio": "Financiamentos imobiliários",
-        "subdominio": "Financiamento habitacional – SFH",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0902",
-        "dominio": "Financiamentos imobiliários",
-        "subdominio": "Financiamento habitacional – exceto SFH",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0902",
-        "dominio": "Financiamentos imobiliários",
-        "subdominio": "Financiamento habitacional – exceto SFH",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0903",
-        "dominio": "Financiamentos imobiliários",
-        "subdominio": "Financiamento imobiliário – empreendim, exceto habitac.",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0903",
-        "dominio": "Financiamentos imobiliários",
-        "subdominio": "Financiamento imobiliário – empreendim, exceto habitac.",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "0990",
-        "dominio": "Financiamentos imobiliários",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "0990",
-        "dominio": "Financiamentos imobiliários",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1001",
-        "dominio": "Financiamentos de títulos e valores mobiliários",
-        "subdominio": "Financiamento de TVM",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1001",
-        "dominio": "Financiamentos de títulos e valores mobiliários",
-        "subdominio": "Financiamento de TVM",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1101",
-        "dominio": "Financiamentos de infraestrutura e desenvolvimento",
-        "subdominio": "Financiamento de infraestrutura e desenvolvimento",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1101",
-        "dominio": "Financiamentos de infraestrutura e desenvolvimento",
-        "subdominio": "Financiamento de infraestrutura e desenvolvimento",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1190",
-        "dominio": "Financiamentos de infraestrutura e desenvolvimento",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1190",
-        "dominio": "Financiamentos de infraestrutura e desenvolvimento",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1201",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Arrendamento financeiro exceto veículos automotores e imóveis",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1201",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Arrendamento financeiro exceto veículos automotores e imóveis",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1202",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Arrendamento financeiro imobiliário",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1202",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Arrendamento financeiro imobiliário",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1203",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Subarrendamento",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1203",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Subarrendamento",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1204",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "1204",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1204",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "1204",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1205",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Arrendamento operacional",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1205",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Arrendamento operacional",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1206",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Arrendamento financeiro de veículos automotores",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1206",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Arrendamento financeiro de veículos automotores",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1207",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Arrendamento financeiro de veículos automotores acima de 2 toneladas",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1207",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Arrendamento financeiro de veículos automotores acima de 2 toneladas",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1290",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1290",
-        "dominio": "Operações de arrendamento",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1301",
-        "dominio": "Outros créditos",
-        "subdominio": "Avais e fianças honrados",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1301",
-        "dominio": "Outros créditos",
-        "subdominio": "Avais e fianças honrados",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1302",
-        "dominio": "Outros créditos",
-        "subdominio": "Devedores por compra de valores e bens",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1302",
-        "dominio": "Outros créditos",
-        "subdominio": "Devedores por compra de valores e bens",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1303",
-        "dominio": "Outros créditos",
-        "subdominio": "Títulos e créditos a receber",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1303",
-        "dominio": "Outros créditos",
-        "subdominio": "Títulos e créditos a receber",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1304",
-        "dominio": "Outros créditos",
-        "subdominio": "Cartão de crédito - compra à vista e parcelado lojista",
-        "valorVencimento": 16035.44
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1304",
-        "dominio": "Outros créditos",
-        "subdominio": "Cartão de crédito - compra à vista e parcelado lojista",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1350",
-        "dominio": "Outros créditos",
-        "subdominio": "Recebíveis adquiridos",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1350",
-        "dominio": "Outros créditos",
-        "subdominio": "Recebíveis adquiridos",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1390",
-        "dominio": "Outros créditos",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1390",
-        "dominio": "Outros créditos",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1399",
-        "dominio": "Outros créditos",
-        "subdominio": "Outros com característica de crédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1399",
-        "dominio": "Outros créditos",
-        "subdominio": "Outros com característica de crédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1401",
-        "dominio": "Relações Interfinanceiras",
-        "subdominio": "Repasses interfinanceiros",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1401",
-        "dominio": "Relações Interfinanceiras",
-        "subdominio": "Repasses interfinanceiros",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1402",
-        "dominio": "Relações Interfinanceiras",
-        "subdominio": "Recebíveis de arranjo de pagamento",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1402",
-        "dominio": "Relações Interfinanceiras",
-        "subdominio": "Recebíveis de arranjo de pagamento",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1501",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de garantias prestadas para operações com PJ financeira",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1501",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de garantias prestadas para operações com PJ financeira",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1502",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de garantias prestadas para operações com outras pessoas",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1502",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de garantias prestadas para operações com outras pessoas",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1503",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de garantias prestadas para fundos constitucionais",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1503",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de garantias prestadas para fundos constitucionais",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1504",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de garantias prestadas para participação em processo licitatório",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1504",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de garantias prestadas para participação em processo licitatório",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1505",
-        "dominio": "Coobrigações",
-        "subdominio": "Carta de crédito de importação",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1505",
-        "dominio": "Coobrigações",
-        "subdominio": "Carta de crédito de importação",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1511",
-        "dominio": "Coobrigações",
-        "subdominio": "Coobrigação assumida em cessão com coobrigação para pessoa integrante do SFN",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1511",
-        "dominio": "Coobrigações",
-        "subdominio": "Coobrigação assumida em cessão com coobrigação para pessoa integrante do SFN",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1512",
-        "dominio": "Coobrigações",
-        "subdominio": "Coobrigação assumida em cessão com coobrigação para pessoa não integrante do SFN, inclusive securitizadora e fundos de investimento",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1512",
-        "dominio": "Coobrigações",
-        "subdominio": "Coobrigação assumida em cessão com coobrigação para pessoa não integrante do SFN, inclusive securitizadora e fundos de investimento",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1513",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de outras coobrigações",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1513",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de outras coobrigações",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1590",
-        "dominio": "Coobrigações",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1590",
-        "dominio": "Coobrigações",
-        "subdominio": "Financiamento de projeto",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1599",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de outras garantias prestadas",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1599",
-        "dominio": "Coobrigações",
-        "subdominio": "Beneficiários de outras garantias prestadas",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1801",
-        "dominio": "Títulos de crédito (fora da carteira classificada)",
-        "subdominio": "CPR - Cédula de Produto Rural",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1801",
-        "dominio": "Títulos de crédito (fora da carteira classificada)",
-        "subdominio": "CPR - Cédula de Produto Rural",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1802",
-        "dominio": "Títulos de crédito (fora da carteira classificada)",
-        "subdominio": "EN - Nota de Exportação",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1802",
-        "dominio": "Títulos de crédito (fora da carteira classificada)",
-        "subdominio": "EN - Nota de Exportação",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1803",
-        "dominio": "Títulos de crédito (fora da carteira classificada)",
-        "subdominio": "Debêntures",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1803",
-        "dominio": "Títulos de crédito (fora da carteira classificada)",
-        "subdominio": "Debêntures",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1899",
-        "dominio": "Títulos de crédito (fora da carteira classificada)",
-        "subdominio": "Outros",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1899",
-        "dominio": "Títulos de crédito (fora da carteira classificada)",
-        "subdominio": "Outros",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "1901",
-        "dominio": "Limite",
-        "subdominio": "Limite contratado e não utilizado",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "1901",
-        "dominio": "Limite",
-        "subdominio": "Limite contratado e não utilizado",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "2001",
-        "dominio": "Retenção de risco",
-        "subdominio": "Retenção de risco assumida por aquisição de cotas de fundos",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "2001",
-        "dominio": "Retenção de risco",
-        "subdominio": "Retenção de risco assumida por aquisição de cotas de fundos",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "A VENCER",
-        "modalidade": "2002",
-        "dominio": "Retenção de risco",
-        "subdominio": "Retenção de risco assumida por aquisição de instrumentos com lastros em operações de crédito",
-        "valorVencimento": 0
-      },
-      {
-        "tipo": "VENCIDO",
-        "modalidade": "2002",
-        "dominio": "Retenção de risco",
-        "subdominio": "Retenção de risco assumida por aquisição de instrumentos com lastros em operações de crédito",
-        "valorVencimento": 0
-      }
-    ],
-    "resumoDasOperacoes": [
-      {
-        "listaDeVencimentos": [
-          {
-            "codigoVencimento": "v20",
-            "valorVencimento": 750
-          }
-        ],
-        "modalidade": "1902",
-        "variacaoCambial": "N"
-      },
-      {
-        "listaDeVencimentos": [
-          {
-            "codigoVencimento": "v20",
-            "valorVencimento": 7734.7
-          },
-          {
-            "codigoVencimento": "v40",
-            "valorVencimento": 22031.82
-          }
-        ],
-        "modalidade": "1904",
-        "variacaoCambial": "N"
-      },
-      {
-        "listaDeVencimentos": [
-          {
-            "codigoVencimento": "v110",
-            "valorVencimento": 9513.17
-          },
-          {
-            "codigoVencimento": "v120",
-            "valorVencimento": 1966.89
-          },
-          {
-            "codigoVencimento": "v130",
-            "valorVencimento": 1449.91
-          },
-          {
-            "codigoVencimento": "v140",
-            "valorVencimento": 1955.67
-          },
-          {
-            "codigoVencimento": "v150",
-            "valorVencimento": 1149.8
-          }
-        ],
-        "modalidade": "1304",
-        "variacaoCambial": "N"
-      }
-    ]
-  },
-  "status": "sucesso",
-  "versao": "1.0"
+    "status": "sucesso",
+    "versao": "1.0"
 }
 ```
 
