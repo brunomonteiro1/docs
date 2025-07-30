@@ -1,4 +1,50 @@
 ---
-title: 'Delete Plant'
-openapi: 'DELETE /plants/{id}'
+title: "Delete Plant"
 ---
+
+<div class="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard">
+  <div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-red-400/20 dark:bg-red-400/20 text-red-700 dark:text-red-400">
+    DELETE
+  </div>
+  /v1/scr/consultantion
+</div>
+
+## Token Lifecycle
+
+<Card title="Token Expiry" icon="clock">
+  JWT tokens have a **1-hour expiration time**. After expiry, you'll receive a
+  `401 Unauthorized` response and need to obtain a new token.
+</Card>
+
+> Display code blocks in the right sidebar on desktop devices
+
+## Document Validation
+
+The API validates document formats according to Brazilian standards:
+
+<CardGroup cols={2}>
+  <Card title="CPF Format" icon="user">
+    - 11 digits only (numbers) - Valid check digits - Not a known invalid
+    sequence
+  </Card>
+  <Card title="CNPJ Format" icon="building">
+    - 14 digits only (numbers) - Valid check digits - Active company
+    registration
+  </Card>
+</CardGroup>
+
+## Rate Limits
+
+<Info>
+  **Standard Plan**: 100 requests per minute, 5,000 requests per day **Premium
+  Plan**: 500 requests per minute, 50,000 requests per day
+</Info>
+
+## Data Privacy
+
+All SCR consultations are logged for compliance purposes. The queried document holder will be notified of the consultation according to Brazilian data protection regulations (LGPD).
+
+<Warning>
+  Only query documents for which you have explicit consent or legitimate
+  business interest.
+</Warning>

@@ -10,7 +10,8 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
+            "type": "string",
+            "description": "t4ste"
           },
           "email": {
             "type": "string",
@@ -18,7 +19,10 @@
             "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*?)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
           }
         },
-        "required": ["name", "email"]
+        "required": [
+          "name",
+          "email"
+        ]
       },
       "SubscriptionResponse": {
         "type": "object",
@@ -30,17 +34,21 @@
             "type": "string"
           }
         },
-        "required": ["name", "email"],
+        "required": [
+          "name",
+          "email"
+        ],
         "additionalProperties": false
       }
     }
   },
   "paths": {
-    "/subscriptions": {
+    "/v1/scr/consultation": {
       "post": {
         "summary": "Subscribes someone to the event",
-        "tags": ["subscription"],
-        "description": "sasasasas",
+        "tags": [
+          "subscription"
+        ],
         "requestBody": {
           "required": true,
           "content": {
@@ -68,7 +76,9 @@
     "/invites/{subscriberId}": {
       "get": {
         "summary": "Access invite link and redirects user",
-        "tags": ["referral"],
+        "tags": [
+          "referral"
+        ],
         "description": "sasasasas",
         "parameters": [
           {

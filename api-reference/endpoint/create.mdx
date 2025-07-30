@@ -1,4 +1,324 @@
 ---
-title: 'Create Plant'
-openapi: 'POST /plants'
+title: "Consultar documento"
 ---
+
+<div class="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard">
+  <div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-blue-400/20 dark:bg-blue-400/20 text-blue-700 dark:text-blue-400">
+    GET
+  </div>
+  /v1/scr/consultantion
+</div>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST https://api.company.com/v1/scr/consultation \
+  -H "Authorization: Bearer your_jwt_token" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "document": "12345678901",
+    "document_type": "cpf",
+    "include_score": true,
+    "include_history": false
+  }'
+```
+
+```javascript JavaScript
+const response = await fetch("https://api.company.com/v1/scr/consultation", {
+  method: "POST",
+  headers: {
+    Authorization: "Bearer your_jwt_token",
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    document: "12345678901",
+    document_type: "cpf",
+    include_score: true,
+    include_history: false,
+  }),
+});
+
+const scrData = await response.json();
+console.log(scrData);
+```
+
+```python Python
+import requests
+
+url = "https://api.company.com/v1/scr/consultation"
+headers = {
+    "Authorization": "Bearer your_jwt_token",
+    "Content-Type": "application/json"
+}
+payload = {
+    "document": "12345678901",
+    "document_type": "cpf",
+    "include_score": True,
+    "include_history": False
+}
+
+response = requests.post(url, json=payload, headers=headers)
+scr_data = response.json()
+```
+
+```php PHP
+<?php
+$url = 'https://api.company.com/v1/scr/consultation';
+$data = [
+    'document' => '12345678901',
+    'document_type' => 'cpf',
+    'include_score' => true,
+    'include_history' => false
+];
+
+$options = [
+    'http' => [
+        'header' => [
+            "Authorization: Bearer your_jwt_token",
+            "Content-type: application/json"
+        ],
+        'method' => 'POST',
+        'content' => json_encode($data)
+    ]
+];
+
+$context = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+$scr_data = json_decode($result, true);
+?>
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Success Response (200)
+{
+  "request_id": "req_123456789",
+  "timestamp": "2024-01-15T10:30:00Z",
+  "document": "12345678901",
+  "document_type": "cpf",
+  "person": {
+    "name": "João Silva Santos",
+    "birth_date": "1985-03-15",
+    "mother_name": "Maria Silva Santos"
+  },
+  "credit_score": {
+    "score": 725,
+    "classification": "GOOD",
+    "last_updated": "2024-01-10T14:20:00Z"
+  },
+  "financial_summary": {
+    "total_debt": 15750.5,
+    "overdue_debt": 0.0,
+    "number_of_creditors": 3,
+    "oldest_debt_date": "2023-06-15",
+    "last_consultation_date": "2024-01-05T09:15:00Z"
+  },
+  "debts": [
+    {
+      "creditor": "Banco XYZ S.A.",
+      "debt_type": "FINANCING",
+      "amount": 12500.0,
+      "status": "ACTIVE",
+      "registration_date": "2023-06-15",
+      "due_date": "2026-06-15"
+    },
+    {
+      "creditor": "Cartão ABC Ltda",
+      "debt_type": "CREDIT_CARD",
+      "amount": 3250.5,
+      "status": "ACTIVE",
+      "registration_date": "2023-08-20",
+      "due_date": null
+    }
+  ],
+  "alerts": [
+    {
+      "type": "INFO",
+      "message": "Customer has good payment history",
+      "date": "2024-01-15T10:30:00Z"
+    }
+  ]
+}
+```
+
+```json Error Response (400)
+{
+  "error": "invalid_request",
+  "error_description": "Invalid document format",
+  "details": {
+    "field": "document",
+    "message": "CPF must contain exactly 11 digits"
+  },
+  "timestamp": "2024-01-15T10:30:00Z",
+  "request_id": "req_123456789"
+}
+```
+
+```json Error Response (401)
+{
+  "error": "unauthorized",
+  "error_description": "Invalid or expired token",
+  "timestamp": "2024-01-15T10:30:00Z",
+  "request_id": "req_123456789"
+}
+```
+
+```json Error Response (404)
+{
+  "error": "not_found",
+  "error_description": "No records found for the provided document",
+  "timestamp": "2024-01-15T10:30:00Z",
+  "request_id": "req_123456789"
+}
+```
+
+</ResponseExample>
+
+## Request Parameters
+
+<ParamField body="document" type="string" required>
+  The document number to query (CPF or CNPJ)
+</ParamField>
+
+<ParamField body="document_type" type="string" required>
+  Type of document being queried
+  <Expandable title="Available options">
+    - `cpf` - Individual taxpayer registry (11 digits) - `cnpj` - Company
+    taxpayer registry (14 digits)
+  </Expandable>
+</ParamField>
+
+<ParamField body="include_score" type="boolean" default="true">
+  Whether to include credit score information in the response
+</ParamField>
+
+<ParamField body="include_history" type="boolean" default="false">
+  Whether to include historical debt information (additional charges may apply)
+</ParamField>
+
+<ParamField body="callback_url" type="string">
+  Optional webhook URL to receive the result asynchronously
+</ParamField>
+
+## Response Fields
+
+<ResponseField name="request_id" type="string">
+  Unique identifier for this consultation request
+</ResponseField>
+
+<ResponseField name="timestamp" type="string">
+  ISO 8601 timestamp when the consultation was processed
+</ResponseField>
+
+<ResponseField name="document" type="string">
+  The queried document number (may be masked for privacy)
+</ResponseField>
+
+<ResponseField name="document_type" type="string">
+  Type of document that was queried
+</ResponseField>
+
+<ResponseField name="person" type="object">
+  Personal information of the document holder
+  <Expandable title="person properties">
+    <ResponseField name="person.name" type="string">
+      Full name of the person
+    </ResponseField>
+    <ResponseField name="person.birth_date" type="string">
+      Birth date in YYYY-MM-DD format
+    </ResponseField>
+    <ResponseField name="person.mother_name" type="string">
+      Mother's full name
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="credit_score" type="object">
+  Credit score information (if include_score is true)
+  <Expandable title="credit_score properties">
+    <ResponseField name="credit_score.score" type="integer">
+      Numeric credit score (0-1000 scale)
+    </ResponseField>
+    <ResponseField name="credit_score.classification" type="string">
+      Score classification: EXCELLENT, GOOD, FAIR, POOR, BAD
+    </ResponseField>
+    <ResponseField name="credit_score.last_updated" type="string">
+      When the score was last calculated
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="financial_summary" type="object">
+  Summary of financial obligations
+  <Expandable title="financial_summary properties">
+    <ResponseField name="financial_summary.total_debt" type="number">
+      Total amount of registered debts
+    </ResponseField>
+    <ResponseField name="financial_summary.overdue_debt" type="number">
+      Amount of overdue debts
+    </ResponseField>
+    <ResponseField name="financial_summary.number_of_creditors" type="integer">
+      Number of different creditors
+    </ResponseField>
+    <ResponseField name="financial_summary.oldest_debt_date" type="string">
+      Date of the oldest registered debt
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="debts" type="array">
+  Array of debt records
+  <Expandable title="debt object properties">
+    <ResponseField name="debts[].creditor" type="string">
+      Name of the creditor institution
+    </ResponseField>
+    <ResponseField name="debts[].debt_type" type="string">
+      Type of debt (FINANCING, CREDIT_CARD, LOAN, etc.)
+    </ResponseField>
+    <ResponseField name="debts[].amount" type="number">
+      Debt amount in Brazilian Real (BRL)
+    </ResponseField>
+    <ResponseField name="debts[].status" type="string">
+      Current status: ACTIVE, PAID, OVERDUE, CANCELLED
+    </ResponseField>
+    <ResponseField name="debts[].registration_date" type="string">
+      When the debt was registered in SCR
+    </ResponseField>
+    <ResponseField name="debts[].due_date" type="string">
+      Due date (null for revolving credit)
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+## Document Validation
+
+The API validates document formats according to Brazilian standards:
+
+<CardGroup cols={2}>
+  <Card title="CPF Format" icon="user">
+    - 11 digits only (numbers) - Valid check digits - Not a known invalid
+    sequence
+  </Card>
+  <Card title="CNPJ Format" icon="building">
+    - 14 digits only (numbers) - Valid check digits - Active company
+    registration
+  </Card>
+</CardGroup>
+
+## Rate Limits
+
+<Info>
+  **Standard Plan**: 100 requests per minute, 5,000 requests per day **Premium
+  Plan**: 500 requests per minute, 50,000 requests per day
+</Info>
+
+## Data Privacy
+
+All SCR consultations are logged for compliance purposes. The queried document holder will be notified of the consultation according to Brazilian data protection regulations (LGPD).
+
+<Warning>
+  Only query documents for which you have explicit consent or legitimate
+  business interest.
+</Warning>

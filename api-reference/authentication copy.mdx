@@ -1,0 +1,70 @@
+---
+title: "Autenticação"
+mode: "wide"
+---
+
+<div class="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard">
+  <div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-blue-400/20 dark:bg-blue-400/20 text-blue-700 dark:text-blue-400">
+    POST
+  </div>
+  /v1/scr/consultantion
+</div>
+
+<Note>
+  Antes de começar, você precisa obter sua chave de API, contate o suporte.
+</Note>
+
+<Tabs>
+  <Tab title="Requisição">
+    ## Parâmetros
+
+    <ParamField body="client_id" type="string" required>
+      Your unique client identifier provided during API registration. This
+      identifies your application to the authentication server.
+    </ParamField>
+
+    <ParamField body="client_secret" type="string" required>
+      Your client secret key. Keep this secure and never expose it publicly or in
+      client-side code. This acts as your application's password.
+    </ParamField>
+
+    ## Exemplo
+
+    <CodeGroup>
+
+      ```bash cURL
+        curl -X POST https://api.company.com/v1/auth/token \
+          -H "Content-Type: application/json" \
+          -d '{
+            "client_id": "your_client_id",
+            "client_secret": "your_client_secret"
+          }'
+      ```
+    </CodeGroup>
+
+  </Tab>
+
+  <Tab title="Resposta">
+  ## Resposta
+<ResponseField name="access_token" type="string">
+  The JWT token to be used for authenticating subsequent API requests. Include
+  this in the Authorization header as `Bearer {access_token}`.
+</ResponseField>
+  ## Exemplo
+    ```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbGllbnRfaWQiLCJpYXQiOjE2MzYzNzI4MDAsImV4cCI6MTYzNjM3NjQwMCwic2NvcGUiOiJzY3I6cmVhZCJ9.signature",
+  "token_type": "Bearer",
+  "expires_in": 3600,
+  "scope": "scr:read",
+  "issued_at": 1636372800
+}
+```
+  </Tab>
+</Tabs>
+
+<Note>
+  Este endpoint permite que você obtenha um token JWT para autenticar
+  solicitações de API. O token deve ser incluído no cabeçalho de autorização de
+  todas as solicitações subsequentes.
+</Note>

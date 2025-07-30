@@ -1,0 +1,65 @@
+---
+title: "Erros"
+---
+
+A nossa API valida cada um dos campos enviados na requisição antes de prosseguir com as requisições.
+
+Nossa API classifica os erros em:
+
+- `Requisição inválida` - Erros relacionados a validação de dados informados
+- `Autorização` - Erros relacionados a autenticação e autorização
+- `Not Found` - Ocorre quando o recurso solicitado não existe
+- `Too Many Requests` - Quantidade de requisições realizadas pelo IP maior que o permitido
+- `Servidor ` - Erro interno no servidor
+
+<ResponseExample>
+
+```json Bad Request (400)
+{
+  "data": "29/07/2025 11:08:56",
+  "campo": {
+    "campoX": "InputX é inválido"
+  },
+  "messagem": "Erro de validação",
+  "status": "erro",
+  "versao": "1.0"
+}
+```
+
+```json Unauthorized (401)
+{
+  "data": "29/07/2025 11:08:56",
+  "messagem": "Token Inválido",
+  "status": "erro",
+  "versao": "1.0"
+}
+```
+
+```json Not Found (404)
+{
+  "data": "29/07/2025 11:08:56",
+  "messagem": "Recurso não encontrado",
+  "status": "erro",
+  "versao": "1.0"
+}
+```
+
+```json Too Many Requests (429)
+{
+  "data": "29/07/2025 11:08:56",
+  "messagem": "Você atingiu o limite máximo de requisições, por favor aguarde alguns minutos e tente novamente",
+  "status": "erro",
+  "versao": "1.0"
+}
+```
+
+```json Too Many Requests (500)
+{
+  "data": "29/07/2025 11:08:56",
+  "messagem": "Erro interno no servidor",
+  "status": "erro",
+  "versao": "1.0"
+}
+```
+
+</ResponseExample>

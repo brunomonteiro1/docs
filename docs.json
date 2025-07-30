@@ -1,20 +1,25 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Databox Docs",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
+  "api": {
+    "playground": {
+      "display": "simple"
+    }
+  },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Guias",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Conceitos",
             "pages": [
               "index",
               "quickstart",
@@ -35,21 +40,27 @@
         ]
       },
       {
-        "tab": "API Reference",
+        "tab": "Documentação da API",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "Databox360 API",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/introduction",
+              "api-reference/get-started",
+              "api-reference/errors",
+              "api-reference/status-code"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Autenticação",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/authentication"
+            ]
+          },
+          {
+            "group": "SCR",
+            "pages": [
+              "api-reference/scr/consult"
             ]
           }
         ]
@@ -58,19 +69,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Site",
+          "href": "https://databox360.com.br",
+          "icon": "globe-pointer"
         }
       ]
     }
@@ -82,21 +83,14 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Suporte",
+        "href": "https://api.whatsapp.com/send/?phone=5531973049705&text&type=phone_number&app_absent=0"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "instagram": "https://www.instagram.com/databox360.ia/"
     }
   }
 }
