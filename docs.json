@@ -58,9 +58,10 @@
             ]
           },
           {
-            "group": "SCR",
+            "group": "SCR Bacen",
             "pages": [
               "api-reference/scr/consult"
+              "api-reference/scr/vcod"
             ]
           }
         ]
