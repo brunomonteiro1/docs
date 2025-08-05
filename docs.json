@@ -39,33 +39,7 @@
           }
         ]
       },
-      {
-  "tab": "Guia Geral",
-  "groups": [
-    {
-      "group": "Visão Geral",
-      "pages": [
-        "guia-geral/boas-vindas",
-        "guia-geral/nossas-apis",
-        "guia-geral/modelos-de-comunicacao",
-        "guia-geral/utilizando-as-apis",
-        "guia-geral/credenciais-de-acesso"
-      ]
-    },
-    {
-      "group": "Nossas APIs",
-      "pages": [
-        "guia-geral/api-cadastro"
-      ]
-    },
-    {
-      "group": "Suporte",
-      "pages": [
-        "guia-geral/fale-conosco"
-      ]
-    }
-  ]
-},
+      
       {
         "tab": "Documentação da API",
         "groups": [
@@ -123,3 +97,4 @@
     }
   }
 }
+
