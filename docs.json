@@ -12,18 +12,19 @@
       "display": "simple"
     }
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/images/favicon.svg",
   "navigation": {
     "tabs": [
       {
         "tab": "Guias",
         "groups": [
           {
-            "group": "Visão Geral",
+            "group": "VISÃO GERAL",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "our-apis",
+              "integration",
+              "readme"
             ]
           },
           {
