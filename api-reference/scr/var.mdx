@@ -6,11 +6,14 @@ Essa estrutura facilita a leitura e análise do portfólio de crédito, ajudando
 
 Os códigos `vCOD` são aplicáveis às seguintes categorias de valores:
 
-- **Limites de Crédito** (`v20`, `v40`)
-- **Créditos a Liberar** (`v60`, `v80`)
-- **Créditos a Vencer** (`v110` a `v199`)
-- **Créditos Vencidos** (`v205` a `v290`)
-- **Créditos Baixados** (`v310` a `v330`)
+| Campo            | Descrição                                 | Exemplo                                               |
+|------------------|--------------------------------------------|--------------------------------------------------------|
+| `tipo`           | Situação da operação na linha do tempo     | `A VENCER`                                             |
+| `modalidade`     | Código da modalidade da operação           | `0203`                                                 |
+| `dominio`        | Categoria principal da operação            | `Empréstimos`                                          |
+| `subdominio`     | Subcategoria da operação                   | `Crédito pessoal - sem consignação em folha de pagam.` |
+| `valorVencimento`| Valor total vinculado à modalidade         | `148137.2`                                             |
+
 
 A seguir, estão listadas todas as faixas disponíveis e seus respectivos significados, que deverão ser refletidos na estrutura da consulta e nas regras de negócio.
 
