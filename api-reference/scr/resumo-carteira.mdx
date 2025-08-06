@@ -1,0 +1,61 @@
+---
+title: "Resumo da Carteira"
+description: "Este bloco consolida os principais valores relacionados à carteira de crédito do cliente, segmentados por situação (vencido, a vencer, limite, etc.). Esses valores servem como base para o cálculo da responsabilidade total do cliente no SCR Bacen."
+---
+
+O objeto `resumoDaCarteira` apresenta os totais consolidados da exposição do cliente, agrupados por tipo de operação e situação no tempo. Esses dados oferecem uma visão rápida da saúde financeira do cliente e do seu nível de endividamento.
+
+| Campo                   | Descrição                                                  |
+|-------------------------|--------------------------------------------------------------|
+| `carteiraVencer`        | Total de operações a vencer (ativos)                         |
+| `carteiraVencido`       | Total de operações vencidas                                  |
+| `carteiraBaixada`       | Total de operações baixadas como prejuízo                    |
+| `limiteCredito`         | Total de limites de crédito concedidos                       |
+| `creditoALiberar`       | Valor total de crédito contratado ainda não liberado         |
+| `responsabilidadeTotal` | Soma de todos os valores de responsabilidade                 |
+| `responsabilidadeVencer`| Subtotal da responsabilidade com base em valores a vencer    |
+| `responsabilidadeVencido`| Subtotal da responsabilidade com base em valores vencidos   |
+| `responsabilidadeBaixada`| Subtotal de operações baixadas                              |
+| `valorMaximoAtraso`     | Maior valor individual vencido encontrado na carteira        |
+| `percentualComprometimentoRenda` | Percentual aproximado de comprometimento da renda  |
+
+**Tipos e exemplos:**
+
+- `carteiraVencer`: `number`  
+  Exemplo: `185405.49`
+
+- `carteiraVencido`: `number`  
+  Exemplo: `111950.68`
+
+- `carteiraBaixada`: `number`  
+  Exemplo: `100`
+
+- `limiteCredito`: `number`  
+  Exemplo: `50000`
+
+- `creditoALiberar`: `number`  
+  Exemplo: `0`
+
+- `responsabilidadeTotal`: `number`  
+  Exemplo: `297356.17`
+
+- `responsabilidadeVencer`: `number`  
+  Exemplo: `185405.49`
+
+- `responsabilidadeVencido`: `number`  
+  Exemplo: `111950.68`
+
+- `responsabilidadeBaixada`: `number`  
+  Exemplo: `100`
+
+- `valorMaximoAtraso`: `number`  
+  Exemplo: `111950.68`
+
+- `percentualComprometimentoRenda`: `number`  
+  Exemplo: `37.5`
+
+---
+
+> 📌 **Importante:** A responsabilidade total representa a soma das obrigações atuais do cliente. Este valor pode ser utilizado para cálculo de limite de crédito, avaliação de risco e recomendação de produtos.
+
+

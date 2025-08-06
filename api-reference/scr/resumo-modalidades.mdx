@@ -1,0 +1,40 @@
+---
+title: "Resumo das Modalidades"
+description: "Este bloco apresenta o detalhamento dos valores por modalidade de crédito, permitindo identificar o tipo de operação contratada, seu domínio, subdomínio e a situação (vencido, a vencer, etc.). É uma visão fundamental para segmentar a carteira e analisar riscos específicos por tipo de crédito."
+---
+
+O objeto `resumoDasModalidades` contém uma lista de modalidades de crédito identificadas por código (`modalidade`) e agrupadas por domínio e subdomínio. Cada item também apresenta o valor vinculado e o tipo de classificação no tempo (ex: A VENCER, VENCIDO).
+
+| Campo             | Descrição                                                         |
+|-------------------|--------------------------------------------------------------------|
+| `tipo`            | Classificação da operação na linha do tempo (ex: A VENCER)         |
+| `modalidade`      | Código da modalidade conforme o SCR Bacen                          |
+| `dominio`         | Categoria principal da operação de crédito                         |
+| `subdominio`      | Subcategoria específica dentro do domínio                          |
+| `valorVencimento` | Valor total vinculado à modalidade e à situação (vencido ou não)   |
+
+**Tipos e exemplos:**
+
+- `tipo`: `string`  
+  Exemplo: `"A VENCER"`
+
+- `modalidade`: `string`  
+  Exemplo: `"0203"`
+
+- `dominio`: `string`  
+  Exemplo: `"Empréstimos"`
+
+- `subdominio`: `string`  
+  Exemplo: `"Crédito pessoal - sem consignação em folha de pagam."`
+
+- `valorVencimento`: `number`  
+  Exemplo: `148137.2`
+
+---
+
+> 💡 **Dica prática:** Ao agrupar os valores por modalidade e tipo, é possível identificar concentrações de risco em produtos específicos (ex: crédito pessoal, financiamento imobiliário) e antecipar estratégias de renegociação ou ajuste de limite.
+
+> 🔍 **Importante:** Nem todas as modalidades devem ser somadas na carteira ativa. Modalidades como “Retenção de Risco” e “Títulos Fora da Carteira Classificada” são demonstrativas, conforme orientações do Bacen.
+
+
+

@@ -65,7 +65,13 @@
               "api-reference/scr/consult",
               "api-reference/scr/mod",
               "api-reference/scr/vcod",
-              "api-reference/scr/var"
+              "api-reference/scr/data-base",
+              "api-reference/scr/resumo-cliente",
+              "api-reference/scr/resumo-carteira",
+              "api-reference/scr/resumo-modalidades",
+              "api-reference/scr/resumo-operacoes"
+              
+              
             ]
           }
         ]

@@ -1,0 +1,37 @@
+---
+title: "Cálculo da Data-Base"
+description: "A data-base determina o mês de referência dos dados retornados pelo SCR Bacen. A DataBox360 aplica uma lógica inteligente para alinhar a consulta com o ciclo de atualização do Bacen, garantindo consistência e validade dos dados."
+---
+
+A consulta ao SCR Bacen depende de uma **data-base válida**, que determina o mês de referência dos dados exibidos. O Bacen atualiza os dados mensalmente, geralmente no início de cada mês, com base na posição do mês anterior.
+
+### 🧠 Lógica aplicada pela DataBox360
+
+A DataBox360 implementa a seguinte regra de cálculo:
+
+| Dia da requisição | Data-base considerada |
+|-------------------|------------------------|
+| Dia **1 a 25**    | Mês **retrasado** (M-2) |
+| Dia **26 a 31**   | Mês **anterior** (M-1)  |
+
+Essa lógica considera o tempo necessário para que os dados do mês anterior estejam disponíveis com segurança no SCR.
+
+### 💡 Exemplo prático
+
+| Data da Requisição | Data-base usada |
+|--------------------|------------------|
+| 05/08/2025         | 06/2025 (M-2)     |
+| 26/08/2025         | 07/2025 (M-1)     |
+
+---
+
+### 🧱 Formato aceito na API
+
+A data-base deve ser enviada no seguinte formato:
+
+
+Exemplo:
+
+```json
+"dataBase": "06-2025"
+

@@ -1,0 +1,47 @@
+---
+title: "Resumo das Operações"
+description: "Este bloco lista as operações individuais registradas no SCR Bacen para o cliente consultado. Cada item representa uma operação ativa, vencida, baixada ou contratada, contendo os principais identificadores, modalidade, valor e status atual."
+---
+
+O objeto `resumoDasOperacoes` contém uma lista detalhada das operações de crédito do cliente. Essa granularidade permite mapear cada contrato, sua situação temporal e sua vinculação a instituições financeiras específicas.
+
+| Campo                   | Descrição                                                              |
+|-------------------------|------------------------------------------------------------------------|
+| `cnpjIf`                | CNPJ da instituição financeira responsável pela operação               |
+| `modalidade`            | Código da modalidade da operação conforme o SCR Bacen                  |
+| `tipo`                  | Classificação da operação (ex: A VENCER, VENCIDO, BAIXADA, A LIBERAR)  |
+| `valorVencimento`       | Valor vinculado à operação conforme sua situação temporal              |
+| `dataVencimento`        | Data final do contrato (quando aplicável)                              |
+| `possuiPrejuizo`        | Indica se a operação gerou prejuízo (`true` ou `false`)                |
+| `ehModalidadeDemonstrativa` | Indica se a modalidade é apenas demonstrativa (não somada)         |
+
+**Tipos e exemplos:**
+
+- `cnpjIf`: `string`  
+  Exemplo: `"12345678000199"`
+
+- `modalidade`: `string`  
+  Exemplo: `"0203"`
+
+- `tipo`: `string`  
+  Exemplo: `"VENCIDO"`
+
+- `valorVencimento`: `number`  
+  Exemplo: `111950.68`
+
+- `dataVencimento`: `string` (formato `AAAA-MM-DD`)  
+  Exemplo: `"2023-09-12"`
+
+- `possuiPrejuizo`: `boolean`  
+  Exemplo: `false`
+
+- `ehModalidadeDemonstrativa`: `boolean`  
+  Exemplo: `false`
+
+---
+
+> 🔍 **Importante:** Este bloco é ideal para análises operacionais detalhadas. Em soluções de crédito, é possível identificar rapidamente operações em atraso, prever renegociações e monitorar reincidência de inadimplência por CNPJ de instituição.
+
+> 📌 **Nota:** Modalidades demonstrativas aparecem nesta lista, mas não devem ser consideradas no somatório da carteira ativa.
+
+

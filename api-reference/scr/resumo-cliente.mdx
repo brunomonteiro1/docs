@@ -1,0 +1,34 @@
+---
+title: "Resumo do Cliente"
+description: "Este bloco contém informações cadastrais do cliente consultado no SCR Bacen. Ele representa o cabeçalho da resposta e é utilizado para validação da identidade e do perfil geral do consultado."
+---
+
+O objeto `resumoDoCliente` retorna dados essenciais de identificação da pessoa física ou jurídica, servindo como referência para interpretar os demais blocos da resposta.
+
+| Campo                     | Descrição                                                            |
+|---------------------------|----------------------------------------------------------------------|
+| `documentoDoCliente`      | CPF ou CNPJ do cliente consultado                                    |
+| `tipoDoCliente`           | Tipo de pessoa (1 = Pessoa Física, 2 = Pessoa Jurídica)              |
+| `dataInicioRelacionamento`| Data de início da relação do cliente com instituições financeiras    |
+| `quantidadeDeInstituicoes`| Número total de instituições com operações registradas no SCR        |
+
+**Tipos e exemplos:**
+
+- `documentoDoCliente`: `string`  
+  Exemplo: `"12345678900"`
+
+- `tipoDoCliente`: `int`  
+  Exemplo: `1`
+
+- `dataInicioRelacionamento`: `string` (formato `AAAA-MM-DD`)  
+  Exemplo: `"2003-08-01"`
+
+- `quantidadeDeInstituicoes`: `int`  
+  Exemplo: `6`
+
+---
+
+> 🔎 **Dica:** Este bloco é útil para confirmar se os dados consultados correspondem ao cliente correto. Em implementações práticas, recomenda-se exibir essas informações no topo da interface como identificação primária do relatório.
+
+
+
