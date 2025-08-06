@@ -28,7 +28,7 @@
             ]
           },
           {
-            "group": "Essentials",
+           "group": "Essentials",
             "pages": [
               "essentials/markdown",
               "essentials/code",
@@ -39,7 +39,7 @@
             ]
           }
         ]
-      },
+      }, 
       
       {
         "tab": "Documentação da API",
