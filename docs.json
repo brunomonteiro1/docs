@@ -65,7 +65,8 @@
               "api-reference/scr/consult",
               "api-reference/scr/mod",
               "api-reference/scr/vcod",
-               "api-reference/scr/var"
+              "api-reference/scr/var",
+               "api-reference/scr/var2"
             ]
           }
         ]
@@ -82,8 +83,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/logo-light.svg",
+    "dark": "/images/logo-dark.svg"
   },
   "navbar": {
     "links": [

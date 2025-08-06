@@ -1,16 +1,17 @@
 ---
-# Referência de Variáveis
-
-Esta seção descreve as principais variáveis utilizadas nas respostas da API, explicando seus significados e funções.  
-Cada campo representa um elemento relevante para a análise de crédito, como:
-
-- Identificação do cliente
-- Composição da carteira
-- Faixas de vencimento (vCOD)
-- Limites contratados
-- Modalidades de crédito
-- Responsabilidades e riscos
-
-O objetivo é fornecer uma visão clara e estruturada dos dados retornados, auxiliando analistas, integradores e sistemas na correta interpretação e uso dessas informações para tomada de decisão.
+title: "Referência de Variáveis"
+description: "As faixas de vencimento, identificadas pelos códigos vCOD, classificam as operações de crédito de acordo com sua linha do tempo: quanto falta para o vencimento, quando os recursos serão liberados, há quanto tempo estão vencidas ou se já foram baixadas da carteira.   
+Essa estrutura facilita a leitura e análise do portfólio de crédito, ajudando instituições a entender melhor seus riscos e a tomar decisões mais rápidas e informadas."
 ---
 
+Os códigos `vCOD` são aplicáveis às seguintes categorias de valores:
+
+- **Limites de Crédito** (`v20`, `v40`)
+- **Créditos a Liberar** (`v60`, `v80`)
+- **Créditos a Vencer** (`v110` a `v199`)
+- **Créditos Vencidos** (`v205` a `v290`)
+- **Créditos Baixados** (`v310` a `v330`)
+
+A seguir, estão listadas todas as faixas disponíveis e seus respectivos significados, que deverão ser refletidos na estrutura da consulta e nas regras de negócio.
+
+- **Limite de Crédito**
