@@ -1,0 +1,109 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Databox Docs",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
+  },
+  "api": {
+    "playground": {
+      "display": "simple"
+    }
+  },
+  "favicon": "/images/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guias",
+        "groups": [
+          {
+            "group": "VISÃO GERAL",
+            "pages": [
+              "index",
+              "about",
+              "our-apis",
+              "integration",
+              "support"
+            ]
+          },
+          {
+           "group": "Essentials",
+            "pages": [
+              "essentials/markdown",
+              "essentials/code",
+              "essentials/images",
+              "essentials/settings",
+              "essentials/navigation",
+              "essentials/reusable-snippets"
+            ]
+          }
+        ]
+      }, 
+      
+      {
+        "tab": "Documentação da API",
+        "groups": [
+          {
+            "group": "Databox360 API",
+            "pages": [
+              "api-reference/introduction",
+              "api-reference/get-started",
+              "api-reference/errors",
+              "api-reference/status-code"
+            ]
+          },
+          {
+            "group": "Autenticação",
+            "pages": [
+              "api-reference/authentication"
+            ]
+          },
+          {
+            "group": "SCR Bacen",
+            "pages": [
+              "api-reference/scr/consult",
+              "api-reference/scr/mod",
+              "api-reference/scr/vcod",
+              "api-reference/scr/data-base",
+              "api-reference/scr/resumo-cliente",
+              "api-reference/scr/resumo-carteira",
+              "api-reference/scr/resumo-modalidades",
+              "api-reference/scr/resumo-operacoes"
+              
+              
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Site",
+          "href": "https://databox360.com.br",
+          "icon": "globe-pointer"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/images/logo-light.svg",
+    "dark": "/images/logo-dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Suporte",
+        "href": "https://api.whatsapp.com/send/?phone=5531973049705&text&type=phone_number&app_absent=0"
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "instagram": "https://www.instagram.com/databox360.ia/"
+    }
+  }
+}
+
