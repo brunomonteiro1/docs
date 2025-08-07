@@ -31,7 +31,7 @@
           {
            "group": "Produtos",
             "pages": [
-              "essentials/scr",
+              "essentials/markdown",
               "essentials/code",
               "essentials/images",
               "essentials/settings",
