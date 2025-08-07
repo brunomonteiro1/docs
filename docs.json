@@ -29,9 +29,9 @@
             ]
           },
           {
-           "group": "Essentials",
+           "group": "Produtos",
             "pages": [
-              "essentials/markdown",
+              "essentials/scr",
               "essentials/code",
               "essentials/images",
               "essentials/settings",
