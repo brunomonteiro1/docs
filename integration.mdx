@@ -1,40 +1,41 @@
 ---
 title: "Modelos de Comunicação"
-description: "Entenda como funcionam os dois modelos de comunicação utilizados nas APIs da DataBox360: REST e WebSocket."
+description: "Visão geral dos modelos de comunicação utilizados nas APIs da DataBox360: REST e WebSocket."
 ---
 
 ## Entenda como funcionam
 
-Com as APIs da **DataBox360**, você pode criar projetos integrados com diversas camadas de origem, incorporando dados em seu site, aplicativo ou sistemas internos.
-
-As APIs são desenvolvidas com base em dois modelos de comunicação:
+As APIs da **DataBox360** permitem integrar dados de crédito, risco, cadastro e compliance em diferentes aplicações e sistemas.  
+Nossos serviços são baseados em dois modelos de comunicação que atendem a cenários distintos:
 
 ### 🌐 REST (Representational State Transfer)
 
-A arquitetura REST utiliza o protocolo HTTP e é amplamente usada para construir aplicações Web. Esse modelo permite que interfaces se comuniquem por meio de requisições simples, geralmente retornando dados nos formatos:
-
-- `JSON`
-- `XML`
-- `Texto puro`
-
-Esse é o modelo mais comum e recomendado para a maioria das integrações com os serviços da DataBox360.
+- Utiliza o protocolo **HTTP**.  
+- Requisições simples com métodos como `GET`, `POST`, `PUT` e `DELETE`.  
+- Respostas geralmente em `JSON` (formato preferencial), podendo também retornar `XML` ou texto puro.  
+- Modelo mais indicado para integrações síncronas, operações idempotentes e consultas de dados.  
 
 ### 🔄 WebSocket
 
-WebSocket é uma tecnologia avançada que permite abrir uma **sessão de comunicação interativa contínua** entre o navegador do usuário (ou aplicação cliente) e o servidor.
+- Cria uma **sessão de comunicação bidirecional contínua** entre cliente e servidor.  
+- Permite **atualizações em tempo real** e menor latência.  
+- Ideal para notificações de eventos, streams de dados e monitoramentos contínuos.  
 
-Esse modelo é ideal para aplicações que exigem:
+## 🔒 Autenticação e Ambientes
 
-- Atualizações em tempo real
-- Menor latência
-- Comunicação bidirecional contínua
+Para acessar qualquer recurso, é necessária **autenticação prévia**.  
+- **Sandbox**: ambiente para testes, sem cobranças reais.  
+  👉 [https://sandbox-api.databox360.com.br](https://sandbox-api.databox360.com.br)  
+- **Produção**: ambiente oficial, com dados reais e regras de cobrança.  
 
-## 🔒 Autenticação obrigatória
-
-Para acessar os recursos oferecidos pelas APIs da DataBox360, é necessário realizar **autenticação prévia**. Cada módulo possui um fluxo de autenticação específico, garantindo segurança e rastreabilidade.
+Cada módulo possui um fluxo de autenticação específico, garantindo segurança e rastreabilidade.  
 
 ## 🧭 Arquitetura das APIs
 
 A seguir, uma ilustração conceitual do modelo REST utilizado:
 
-![Modelo REST](/rest.png)
+![Modelo REST](/images/rest.png)
+
+<Tip title="Saiba mais">
+Para entender termos técnicos como *endpoints, schemas e tipos de parâmetros*, consulte a página **Conceitos Importantes**.
+</Tip>

@@ -1,0 +1,93 @@
+---
+title: "Conceitos Importantes"
+description: "Entenda de forma simples os conceitos fundamentais de endpoints, schemas e parâmetros em requisições REST."
+---
+
+### Endpoint
+
+Um endpoint é a URL onde seu serviço pode ser acessado por uma aplicação cliente.
+
+Por exemplo, para operações de cadastro e consulta na DataBox360:
+
+```http
+https://sandbox-api.databox360.com.br/cadastro/clientes/12345678900
+```
+
+ou então
+
+```http
+https://sandbox-api.databox360.com.br/cadastro/empresas
+```
+
+E cada endpoint terá o método HTTP apropriado.\
+No primeiro caso, um **GET** para obter dados; no segundo, um **POST** para criar um novo recurso.
+
+### Schema
+
+Schema é um vocabulário de dados estruturados que define entidades, ações e relacionamentos.\
+De forma resumida, um **esquema** é um conjunto de regras que representa e valida a estrutura e o formato dos dados.\
+Além de descrever a estrutura, schemas aplicam restrições e expectativas para que os dados sejam validados de forma consistente entre sistemas.
+
+## Tipos de Parâmetros nas requisições REST
+
+> **REST (Representational State Transfer)** é um conjunto de boas práticas de arquitetura para APIs.\
+> Ele define requisitos e padrões para que as integrações sejam consistentes.
+
+Os métodos mais comuns são **GET, POST, PUT, PATCH e DELETE** — alguns podem receber parâmetros na URL ou no corpo.
+
+- **GET:** retorna a representação de um recurso.
+- **POST:** cria um novo recurso (geralmente com dados no corpo).
+- **PUT:** atualiza/substitui um recurso existente.
+- **PATCH:** atualiza **parte** de um recurso.
+- **DELETE:** exclui um recurso.
+
+Para exemplificar, usaremos **GET** e **POST**.
+
+### Tipos
+
+Existem três tipos de parâmetros:
+
+- **Query Params (GET)**
+- **Route Params (GET)**
+- **Body Params (POST e PUT)**
+
+### ✅ Query Params
+
+Recebem dados como parâmetros na **URL**, filtrando a consulta. Exemplos:
+
+```http
+https://sandbox-api.databox360.com.br/credito/clientes?cpf=12345678900
+```
+
+No exemplo acima, acessamos o recurso `clientes` filtrando por **CPF**.
+
+Outro exemplo com múltiplos filtros:
+
+```http
+https://sandbox-api.databox360.com.br/riscos/empresas?cnpj=12345678000199&amp;situacao=ativa
+```
+
+Nesse caso, a API retorna informações de risco para a empresa ativa com o CNPJ informado.
+
+### ✅ Route Params
+
+Recebem dados na **rota**. Úteis para buscar/atualizar algo específico via identificador único:
+
+```http
+https://sandbox-api.databox360.com.br/cadastro/clientes/12345678900
+```
+
+No exemplo, buscamos os dados cadastrais do cliente cujo **CPF** é `12345678900`.
+
+### ✅ Body Params
+
+Recebem dados no **corpo** (_body_), geralmente em **JSON** — comum em **POST** e **PUT**:
+
+```json
+```
+No exemplo acima, a requisição cria o cadastro de uma nova **empresa** no sistema DataBox360.
+
+<Tip>
+  Para **atualizar** uma empresa existente, utilize **PUT** com o identificador na rota (_Route Params_) e os campos a alterar no corpo (_Body Params_).\
+  Ex.: `PUT https://sandbox-api.databox360.com.br/cadastro/empresas/12345678000199`
+</Tip>
