@@ -1,156 +1,226 @@
 ---
-title: "Consulta"
-description: "Solicita consulta ao SCR do Bacen usando CPF/CNPJ e período (mês e ano), retornando resumos como carteira de crédito, riscos e modalidades."
+title: "Modalidades"
+mode: "custom"
+description: "As modalidades de operação representam a classificação detalhada das operações de crédito registradas no SCR Bacen. Cada operação é identificada por um código único (modalidade) e está vinculada a um grupo de modalidades mais amplo, conforme estrutura definida pelo Banco Central."
 ---
-
-<div class="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard">
-<div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-blue-400/20 dark:bg-blue-400/20 text-blue-700 dark:text-blue-400">
-POST
-
-</div>
-
-/scr
-
-</div>
 
 <RequestExample>
 
-```bash cURL
-curl -X POST https://sandbox.databox.com.br/api/scr \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "document": "12345678901",
-    "mes": "03",
-    "ano": "2025"
-  }'
-```
-
-
-```javascript JavaScript
-const response = await fetch("https://sandbox.databox.com.br/api/scr", {
-  method: "POST",
-  headers: {
-    Authorization: "Bearer YOUR_JWT_TOKEN",
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    document: "12345678901",
-    mes: "03",
-    ano: "2025",
-  }),
-});
-
-const scrData = await response.json();
-console.log(scrData);
-```
-
-
-```python Python
-import requests
-
-url = "https://sandbox.databox.com.br/api/scr"
-headers = {
-    "Authorization": "Bearer YOUR_JWT_TOKEN",
-    "Content-Type": "application/json"
-}
-payload = {
-    "document": "12345678901",
-    "mes": "03",
-    "ano": "2025"
-}
-
-response = requests.post(url, json=payload, headers=headers)
-scr_data = response.json()
-```
-
-
-```php PHP
-<?php
-$url = 'https://sandbox.databox.com.br/api/scr';
-$data = [
-    'document' => '12345678901',
-    'mes' => '03',
-    'ano' => '2025'
-];
-
-$options = [
-    'http' => [
-        'header' => [
-            "Authorization: Bearer YOUR_JWT_TOKEN",
-            "Content-type: application/json"
-        ],
-        'method' => 'POST',
-        'content' => json_encode($data)
-    ]
-];
-
-$context = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-$scr_data = json_decode($result, true);
-?>
+```bash JSON
+{
+  "tipo": "A VENCER",
+  "modalidade": "0101",
+  "dominio": "Adiantamentos a depositantes",
+  "subdominio": "Adiantamentos a depositantes",
+  "valorVencimento": 0
+},
 ```
 
 </RequestExample>
 
-## Requisição
+<RequestExample>
 
-<ParamField body="documento" type="string" required>
-  O documento pode ser: `CPF` ou `CNPJ`
-</ParamField>
+```bash JSON
+{
+    "tipo": "A VENCER",
+     "modalidade": "02XX",
+     "dominio": "Empréstimos",
+     "subdominio": "Cheque especial e conta garantida",
+     "valorVencimento": 0
+},
+```
 
-<ParamField body="mes" type="string" required>
-  Mês referência para busca com dois dígitos: Ex: `01` para janeiro, `02` para
-  fevereiro e assim por diante.
-</ParamField>
+</RequestExample>
 
-<ParamField body="ano" type="string" required>
-  Ano referência para busca com quatro dígitos: Ex: `2025`.
-</ParamField>
+<sub>A estrutura é composta por:</sub>
 
-## Resposta
+- **<sub>Categorias:</sub>**<sub> representam agrupamentos amplos de operações com características similares, como </sub>_<sub>Empréstimos</sub>_<sub>, </sub>_<sub>Financiamentos</sub>_<sub>, </sub>_<sub>Direitos Creditórios</sub>_<sub>, entre outras.</sub>
+- **<sub>Modalidades:</sub>**<sub> são operações específicas dentro de cada categoria, que definem com maior precisão o tipo de contrato informado ao SCR. Exemplos incluem: </sub>_<sub>Crédito Pessoal Consignado</sub>_<sub>, </sub>_<sub>Crédito Rotativo</sub>_<sub>, </sub>_<sub>Vendor</sub>_<sub>, </sub>_<sub>Financiamento de Veículos</sub>_<sub>, entre outros.</sub>
 
-<ResponseField name="request_id" type="string">
-  Unique identifier for this consultation request
-</ResponseField>
+<sub>Cada código </sub>`Modalidade`<sub>deve ser interpretado de forma consistente com sua descrição oficial e utilizado conforme a natureza da operação e o contexto do relatório, conforme detalhado a seguir:</sub>
 
-<ResponseField name="person" type="object">
-  Personal information of the document holder
+### <sub>Adiantamentos a Depositantes</sub>
 
-  <Expandable title="person properties">
-    <ResponseField name="person.name" type="string">
-      Full name of the person
-    </ResponseField>
-    <ResponseField name="person.birth_date" type="string">
-      Birth date in YYYY-MM-DD format
-    </ResponseField>
-    <ResponseField name="person.mother_name" type="string">
-      Mother's full name
-    </ResponseField>
-  </Expandable>
-</ResponseField>
+| <sub>Código</sub> | <sub>Modalidade</sub>                   |
+| ----------------- | --------------------------------------- |
+| <sub>0101</sub>   | <sub>Adiantamentos a Depositantes</sub> |
 
-<ResponseField name="debts" type="array">
-  Array of debt records
+### <sub>Empréstimos</sub>
 
-  <Expandable title="debt object properties">
-    <ResponseField name="debts[].creditor" type="string">
-      Name of the creditor institution
-    </ResponseField>
-    <ResponseField name="debts[].debt_type" type="string">
-      Type of debt (FINANCING, CREDIT_CARD, LOAN, etc.)
-    </ResponseField>
-    <ResponseField name="debts[].amount" type="number">
-      Debt amount in Brazilian Real (BRL)
-    </ResponseField>
-    <ResponseField name="debts[].status" type="string">
-      Current status: ACTIVE, PAID, OVERDUE, CANCELLED
-    </ResponseField>
-    <ResponseField name="debts[].registration_date" type="string">
-      When the debt was registered in SCR
-    </ResponseField>
-    <ResponseField name="debts[].due_date" type="string">
-      Due date (null for revolving credit)
-    </ResponseField>
-  </Expandable>
-</ResponseField>
+| <sub>Código</sub> | <sub>Modalidade</sub>                                                                                           |
+| ----------------- | --------------------------------------------------------------------------------------------------------------- |
+| <sub>0202</sub>   | <sub>Crédito Pessoal - com Consignação em Folha de Pagamento</sub>                                              |
+| <sub>0203</sub>   | <sub>Crédito Pessoal - sem Consignação em Folha de Pagamento</sub>                                              |
+| <sub>0204</sub>   | <sub>Crédito Rotativo Vinculado a Cartão de Crédito</sub>                                                       |
+| <sub>0207</sub>   | <sub>Vendor</sub>                                                                                               |
+| <sub>0208</sub>   | <sub>Compror</sub>                                                                                              |
+| <sub>0209</sub>   | <sub>ARO - Adiantamento de Receitas Orçamentárias</sub>                                                         |
+| <sub>0210</sub>   | <sub>Cartão de Crédito – Compra, Fatura Parcelada ou Saque Financiado pela Instituição Emitente do Cartão</sub> |
+| <sub>0211</sub>   | <sub>Home Equity</sub>                                                                                          |
+| <sub>0212</sub>   | <sub>Microcrédito</sub>                                                                                         |
+| <sub>0213</sub>   | <sub>Cheque Especial</sub>                                                                                      |
+| <sub>0214</sub>   | <sub>Conta Garantida</sub>                                                                                      |
+| <sub>0215</sub>   | <sub>Capital de Giro com Prazo de Vencimento Até 365 Dias</sub>                                                 |
+| <sub>0216</sub>   | <sub>Capital de Giro com Prazo Vencimento Superior 365 Dias</sub>                                               |
+| <sub>0217</sub>   | <sub>Capital de Giro com Teto Rotativo</sub>                                                                    |
+| <sub>0218</sub>   | <sub>Cartão de Crédito - Não Migrado</sub>                                                                      |
+| <sub>0250</sub>   | <sub>Recebíveis Adquiridos</sub>                                                                                |
+| <sub>0290</sub>   | <sub>Financiamento de Projeto</sub>                                                                             |
+| <sub>0299</sub>   | <sub>Outros Empréstimos</sub>                                                                                   |
+
+### <sub>Direitos Creditórios Descontados</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                 |
+| ----------------- | ----------------------------------------------------- |
+| <sub>0301</sub>   | <sub>Desconto de Duplicatas</sub>                     |
+| <sub>0302</sub>   | <sub>Desconto de Cheques</sub>                        |
+| <sub>0303</sub>   | <sub>Antecipação de Fatura de Cartão de Crédito</sub> |
+| <sub>0398</sub>   | <sub>Outros Direitos Creditórios Descontados</sub>    |
+| <sub>0399</sub>   | <sub>Outros Títulos Descontados</sub>                 |
+
+### <sub>Financiamentos</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                                                                    |
+| ----------------- | -------------------------------------------------------------------------------------------------------- |
+| <sub>0401</sub>   | <sub>Aquisição de Bens – Veículos Automotores</sub>                                                      |
+| <sub>0402</sub>   | <sub>Aquisição de Bens – Outros Bens</sub>                                                               |
+| <sub>0403</sub>   | <sub>Microcrédito</sub>                                                                                  |
+| <sub>0404</sub>   | <sub>Vendor</sub>                                                                                        |
+| <sub>0405</sub>   | <sub>Compror</sub>                                                                                       |
+| <sub>0406</sub>   | <sub>Cartão de Crédito – Compra ou Fatura Parcelada pela Instituição Financeira Emitente do Cartão</sub> |
+| <sub>0440</sub>   | <sub>Financiamentos Agroindustriais</sub>                                                                |
+| <sub>0450</sub>   | <sub>Recebíveis Adquiridos</sub>                                                                         |
+| <sub>0490</sub>   | <sub>Financiamento de Projeto</sub>                                                                      |
+| <sub>0499</sub>   | <sub>Outros Financiamentos</sub>                                                                         |
+
+### <sub>Financiamentos à Exportação</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                                  |
+| ----------------- | ---------------------------------------------------------------------- |
+| <sub>0501</sub>   | <sub>Financiamento à Exportação</sub>                                  |
+| <sub>0502</sub>   | <sub>Adiantamento sobre Contratos de Câmbio</sub>                      |
+| <sub>0503</sub>   | <sub>Adiantamento sobre Cambiais Entregues</sub>                       |
+| <sub>0504</sub>   | <sub>Créditos Decorrentes de Contratos de Exportação–Export Note</sub> |
+| <sub>0590</sub>   | <sub>Financiamento de Projeto</sub>                                    |
+| <sub>0599</sub>   | <sub>Outros Financiamentos à Exportação</sub>                          |
+
+### <sub>Financiamentos à Importação</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                 |
+| ----------------- | ------------------------------------- |
+| <sub>0601</sub>   | <sub>Financiamento à Importação</sub> |
+| <sub>0690</sub>   | <sub>Financiamento de Projeto</sub>   |
+
+### <sub>Financiamentos com Interveniência</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                                  |
+| ----------------- | ---------------------------------------------------------------------- |
+| <sub>0701</sub>   | <sub>Aquisição de Bens com Interveniência – Veículos Automotores</sub> |
+| <sub>0702</sub>   | <sub>Aquisição de Bens com Interveniência – Outros Bens</sub>          |
+| <sub>0790</sub>   | <sub>Financiamento de Projeto</sub>                                    |
+| <sub>0799</sub>   | <sub>Outros Financiamentos com Interveniência</sub>                    |
+
+### <sub>Financiamentos Rurais</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>       |
+| ----------------- | --------------------------- |
+| <sub>0801</sub>   | <sub>Custeio</sub>          |
+| <sub>0802</sub>   | <sub>Investimento</sub>     |
+| <sub>0803</sub>   | <sub>Comercialização</sub>  |
+| <sub>0804</sub>   | <sub>Industrialização</sub> |
+
+### <sub>Financiamentos Imobiliários</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                                       |
+| ----------------- | --------------------------------------------------------------------------- |
+| <sub>0901</sub>   | <sub>Financiamento Habitacional – SFH</sub>                                 |
+| <sub>0902</sub>   | <sub>Financiamento Habitacional – Exceto SFH</sub>                          |
+| <sub>0903</sub>   | <sub>Financiamento Imobiliário – Empreendimentos, Exceto Habitacional</sub> |
+| <sub>0990</sub>   | <sub>Financiamento de Projeto</sub>                                         |
+| <sub>1001</sub>   | <sub>Financiamento de TVM</sub>                                             |
+
+### <sub>Financiamentos de Infraestrutura e Desenvolvimento</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                        |
+| ----------------- | ------------------------------------------------------------ |
+| <sub>1101</sub>   | <sub>Financiamento de Infraestrutura e Desenvolvimento</sub> |
+| <sub>1190</sub>   | <sub>Financiamento de Projeto</sub>                          |
+
+### <sub>Operações de Arrendamento</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                                    |
+| ----------------- | ------------------------------------------------------------------------ |
+| <sub>1201</sub>   | <sub>Arrendamento Financeiro Exceto Veículos Automotores e Imóveis</sub> |
+| <sub>1202</sub>   | <sub>Arrendamento Financeiro Imobiliário</sub>                           |
+| <sub>1203</sub>   | <sub>Subarrendamento</sub>                                               |
+| <sub>1205</sub>   | <sub>Arrendamento Operacional</sub>                                      |
+| <sub>1206</sub>   | <sub>Arrendamento Financeiro de Veículos Automotores</sub>               |
+| <sub>1290</sub>   | <sub>Financiamento de Projeto</sub>                                      |
+
+### <sub>Outros Créditos</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                             |
+| ----------------- | ----------------------------------------------------------------- |
+| <sub>1301</sub>   | <sub>Avais e Fianças Honrados</sub>                               |
+| <sub>1302</sub>   | <sub>Devedores por Compra de Valores e Bens</sub>                 |
+| <sub>1303</sub>   | <sub>Títulos e Créditos a Receber</sub>                           |
+| <sub>1304</sub>   | <sub>Cartão de Crédito – Compra à Vista e Parcelado Lojista</sub> |
+| <sub>1350</sub>   | <sub>Recebíveis Adquiridos</sub>                                  |
+| <sub>1390</sub>   | <sub>Financiamento de Projeto</sub>                               |
+| <sub>1399</sub>   | <sub>Outros com Característica de Crédito</sub>                   |
+
+### <sub>Relações Interfinanceiras</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                                   |
+| ----------------- | ----------------------------------------------------------------------- |
+| <sub>1401</sub>   | <sub>Repasses Interfinanceiros</sub>                                    |
+| <sub>1402</sub>   | <sub>Recebíveis de Arranjo de Pagamento</sub>                           |
+| <sub>1403</sub>   | <sub>Outros Valores a Receber Relativos a Transações de Pagamento</sub> |
+
+### <sub>Coobrigações</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                                                                                                          |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| <sub>1501</sub>   | <sub>Beneficiários de Garantias Prestadas para Operações com PJ Financeira</sub>                                                               |
+| <sub>1502</sub>   | <sub>Beneficiários de Garantias Prestadas para Operações com Outras Pessoas</sub>                                                              |
+| <sub>1503</sub>   | <sub>Beneficiários de Garantias Prestadas para Fundos Constitucionais</sub>                                                                    |
+| <sub>1504</sub>   | <sub>Beneficiários de Garantias Prestadas para Participação em Processo Licitatório</sub>                                                      |
+| <sub>1505</sub>   | <sub>Carta de Crédito de Importação</sub>                                                                                                      |
+| <sub>1511</sub>   | <sub>Coobrigação Assumida em Cessão com Coobrigação para Pessoa Integrante do SFN</sub>                                                        |
+| <sub>1512</sub>   | <sub>Coobrigação Assumida Em Cessão com Coobrigação para Pessoa Não Integrante Do Sfn, Inclusive Securitizadora e Fundos de Investimento</sub> |
+| <sub>1513</sub>   | <sub>Beneficiários de Outras Coobrigações</sub>                                                                                                |
+| <sub>1590</sub>   | <sub>Financiamento de Projeto</sub>                                                                                                            |
+| <sub>1599</sub>   | <sub>Beneficiários de Outras Garantias Prestadas</sub>                                                                                         |
+
+### <sub>Títulos de Crédito Fora da Carteira Classificada</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                    |
+| ----------------- | ---------------------------------------- |
+| <sub>1801</sub>   | <sub>CPR - Cédula de Produto Rural</sub> |
+| <sub>1802</sub>   | <sub>EN - Nota de Exportação</sub>       |
+| <sub>1803</sub>   | <sub>Debêntures</sub>                    |
+| <sub>1804</sub>   | <sub>Notas Comerciais</sub>              |
+| <sub>1899</sub>   | <sub>Outros</sub>                        |
+
+### <sub>Limite</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>        |
+| ----------------- | ---------------------------- |
+| <sub>1901</sub>   | <sub>Limite Global</sub>     |
+| <sub>1902</sub>   | <sub>Cheque Especial</sub>   |
+| <sub>1903</sub>   | <sub>Conta Garantida</sub>   |
+| <sub>1904</sub>   | <sub>Cartão de Crédito</sub> |
+| <sub>1905</sub>   | <sub>Capital de Giro</sub>   |
+| <sub>1906</sub>   | <sub>Crédito Pessoal</sub>   |
+| <sub>1907</sub>   | <sub>Vendor</sub>            |
+| <sub>1908</sub>   | <sub>Compror</sub>           |
+| <sub>1909</sub>   | <sub>Descontos</sub>         |
+| <sub>1910</sub>   | <sub>Aquisição de Bens</sub> |
+| <sub>1999</sub>   | <sub>Outros</sub>            |
+
+### <sub>Retenção de Risco</sub>
+
+| <sub>Código</sub> | <sub>Modalidade</sub>                                                                                   |
+| ----------------- | ------------------------------------------------------------------------------------------------------- |
+| <sub>2001</sub>   | <sub>Retenção de Risco Assumida por Aquisição de Cotas de Fundos</sub>                                  |
+| <sub>2002</sub>   | <sub>Retenção de Risco Assumida por Aquisição de Instrumentos com Lastros Em Operações de Crédito</sub> |
