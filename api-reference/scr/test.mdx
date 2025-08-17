@@ -1,6 +1,5 @@
 ---
 title: "Modalidades"
-mode: "custom"
 description: "As modalidades de operação representam a classificação detalhada das operações de crédito registradas no SCR Bacen. Cada operação é identificada por um código único (modalidade) e está vinculada a um grupo de modalidades mais amplo, conforme estrutura definida pelo Banco Central."
 ---
 
@@ -32,195 +31,195 @@ description: "As modalidades de operação representam a classificação detalha
 
 </RequestExample>
 
-<sub>A estrutura é composta por:</sub>
+A estrutura é composta por:
 
-- **<sub>Categorias:</sub>**<sub> representam agrupamentos amplos de operações com características similares, como </sub>_<sub>Empréstimos</sub>_<sub>, </sub>_<sub>Financiamentos</sub>_<sub>, </sub>_<sub>Direitos Creditórios</sub>_<sub>, entre outras.</sub>
-- **<sub>Modalidades:</sub>**<sub> são operações específicas dentro de cada categoria, que definem com maior precisão o tipo de contrato informado ao SCR. Exemplos incluem: </sub>_<sub>Crédito Pessoal Consignado</sub>_<sub>, </sub>_<sub>Crédito Rotativo</sub>_<sub>, </sub>_<sub>Vendor</sub>_<sub>, </sub>_<sub>Financiamento de Veículos</sub>_<sub>, entre outros.</sub>
+- **Categorias:** representam agrupamentos amplos de operações com características similares, como _Empréstimos_, _Financiamentos_, _Direitos Creditórios_, entre outras.
+- **Modalidades:** são operações específicas dentro de cada categoria, que definem com maior precisão o tipo de contrato informado ao SCR. Exemplos incluem: _Crédito Pessoal Consignado_, _Crédito Rotativo_, _Vendor_, _Financiamento de Veículos_, entre outros.
 
-<sub>Cada código </sub>`Modalidade`<sub>deve ser interpretado de forma consistente com sua descrição oficial e utilizado conforme a natureza da operação e o contexto do relatório, conforme detalhado a seguir:</sub>
+Cada código `Modalidade`deve ser interpretado de forma consistente com sua descrição oficial e utilizado conforme a natureza da operação e o contexto do relatório, conforme detalhado a seguir:
 
-### <sub>Adiantamentos a Depositantes</sub>
+### Adiantamentos a Depositantes
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                   |
-| ----------------- | --------------------------------------- |
-| <sub>0101</sub>   | <sub>Adiantamentos a Depositantes</sub> |
+| Código | Modalidade                   |
+| ------ | ---------------------------- |
+| 0101   | Adiantamentos a Depositantes |
 
-### <sub>Empréstimos</sub>
+### Empréstimos
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                                                                           |
-| ----------------- | --------------------------------------------------------------------------------------------------------------- |
-| <sub>0202</sub>   | <sub>Crédito Pessoal - com Consignação em Folha de Pagamento</sub>                                              |
-| <sub>0203</sub>   | <sub>Crédito Pessoal - sem Consignação em Folha de Pagamento</sub>                                              |
-| <sub>0204</sub>   | <sub>Crédito Rotativo Vinculado a Cartão de Crédito</sub>                                                       |
-| <sub>0207</sub>   | <sub>Vendor</sub>                                                                                               |
-| <sub>0208</sub>   | <sub>Compror</sub>                                                                                              |
-| <sub>0209</sub>   | <sub>ARO - Adiantamento de Receitas Orçamentárias</sub>                                                         |
-| <sub>0210</sub>   | <sub>Cartão de Crédito – Compra, Fatura Parcelada ou Saque Financiado pela Instituição Emitente do Cartão</sub> |
-| <sub>0211</sub>   | <sub>Home Equity</sub>                                                                                          |
-| <sub>0212</sub>   | <sub>Microcrédito</sub>                                                                                         |
-| <sub>0213</sub>   | <sub>Cheque Especial</sub>                                                                                      |
-| <sub>0214</sub>   | <sub>Conta Garantida</sub>                                                                                      |
-| <sub>0215</sub>   | <sub>Capital de Giro com Prazo de Vencimento Até 365 Dias</sub>                                                 |
-| <sub>0216</sub>   | <sub>Capital de Giro com Prazo Vencimento Superior 365 Dias</sub>                                               |
-| <sub>0217</sub>   | <sub>Capital de Giro com Teto Rotativo</sub>                                                                    |
-| <sub>0218</sub>   | <sub>Cartão de Crédito - Não Migrado</sub>                                                                      |
-| <sub>0250</sub>   | <sub>Recebíveis Adquiridos</sub>                                                                                |
-| <sub>0290</sub>   | <sub>Financiamento de Projeto</sub>                                                                             |
-| <sub>0299</sub>   | <sub>Outros Empréstimos</sub>                                                                                   |
+| Código | Modalidade                                                                                           |
+| ------ | ---------------------------------------------------------------------------------------------------- |
+| 0202   | Crédito Pessoal - com Consignação em Folha de Pagamento                                              |
+| 0203   | Crédito Pessoal - sem Consignação em Folha de Pagamento                                              |
+| 0204   | Crédito Rotativo Vinculado a Cartão de Crédito                                                       |
+| 0207   | Vendor                                                                                               |
+| 0208   | Compror                                                                                              |
+| 0209   | ARO - Adiantamento de Receitas Orçamentárias                                                         |
+| 0210   | Cartão de Crédito – Compra, Fatura Parcelada ou Saque Financiado pela Instituição Emitente do Cartão |
+| 0211   | Home Equity                                                                                          |
+| 0212   | Microcrédito                                                                                         |
+| 0213   | Cheque Especial                                                                                      |
+| 0214   | Conta Garantida                                                                                      |
+| 0215   | Capital de Giro com Prazo de Vencimento Até 365 Dias                                                 |
+| 0216   | Capital de Giro com Prazo Vencimento Superior 365 Dias                                               |
+| 0217   | Capital de Giro com Teto Rotativo                                                                    |
+| 0218   | Cartão de Crédito - Não Migrado                                                                      |
+| 0250   | Recebíveis Adquiridos                                                                                |
+| 0290   | Financiamento de Projeto                                                                             |
+| 0299   | Outros Empréstimos                                                                                   |
 
-### <sub>Direitos Creditórios Descontados</sub>
+### Direitos Creditórios Descontados
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                 |
-| ----------------- | ----------------------------------------------------- |
-| <sub>0301</sub>   | <sub>Desconto de Duplicatas</sub>                     |
-| <sub>0302</sub>   | <sub>Desconto de Cheques</sub>                        |
-| <sub>0303</sub>   | <sub>Antecipação de Fatura de Cartão de Crédito</sub> |
-| <sub>0398</sub>   | <sub>Outros Direitos Creditórios Descontados</sub>    |
-| <sub>0399</sub>   | <sub>Outros Títulos Descontados</sub>                 |
+| Código | Modalidade                                 |
+| ------ | ------------------------------------------ |
+| 0301   | Desconto de Duplicatas                     |
+| 0302   | Desconto de Cheques                        |
+| 0303   | Antecipação de Fatura de Cartão de Crédito |
+| 0398   | Outros Direitos Creditórios Descontados    |
+| 0399   | Outros Títulos Descontados                 |
 
-### <sub>Financiamentos</sub>
+### Financiamentos
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                                                                    |
-| ----------------- | -------------------------------------------------------------------------------------------------------- |
-| <sub>0401</sub>   | <sub>Aquisição de Bens – Veículos Automotores</sub>                                                      |
-| <sub>0402</sub>   | <sub>Aquisição de Bens – Outros Bens</sub>                                                               |
-| <sub>0403</sub>   | <sub>Microcrédito</sub>                                                                                  |
-| <sub>0404</sub>   | <sub>Vendor</sub>                                                                                        |
-| <sub>0405</sub>   | <sub>Compror</sub>                                                                                       |
-| <sub>0406</sub>   | <sub>Cartão de Crédito – Compra ou Fatura Parcelada pela Instituição Financeira Emitente do Cartão</sub> |
-| <sub>0440</sub>   | <sub>Financiamentos Agroindustriais</sub>                                                                |
-| <sub>0450</sub>   | <sub>Recebíveis Adquiridos</sub>                                                                         |
-| <sub>0490</sub>   | <sub>Financiamento de Projeto</sub>                                                                      |
-| <sub>0499</sub>   | <sub>Outros Financiamentos</sub>                                                                         |
+| Código | Modalidade                                                                                    |
+| ------ | --------------------------------------------------------------------------------------------- |
+| 0401   | Aquisição de Bens – Veículos Automotores                                                      |
+| 0402   | Aquisição de Bens – Outros Bens                                                               |
+| 0403   | Microcrédito                                                                                  |
+| 0404   | Vendor                                                                                        |
+| 0405   | Compror                                                                                       |
+| 0406   | Cartão de Crédito – Compra ou Fatura Parcelada pela Instituição Financeira Emitente do Cartão |
+| 0440   | Financiamentos Agroindustriais                                                                |
+| 0450   | Recebíveis Adquiridos                                                                         |
+| 0490   | Financiamento de Projeto                                                                      |
+| 0499   | Outros Financiamentos                                                                         |
 
-### <sub>Financiamentos à Exportação</sub>
+### Financiamentos à Exportação
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                                  |
-| ----------------- | ---------------------------------------------------------------------- |
-| <sub>0501</sub>   | <sub>Financiamento à Exportação</sub>                                  |
-| <sub>0502</sub>   | <sub>Adiantamento sobre Contratos de Câmbio</sub>                      |
-| <sub>0503</sub>   | <sub>Adiantamento sobre Cambiais Entregues</sub>                       |
-| <sub>0504</sub>   | <sub>Créditos Decorrentes de Contratos de Exportação–Export Note</sub> |
-| <sub>0590</sub>   | <sub>Financiamento de Projeto</sub>                                    |
-| <sub>0599</sub>   | <sub>Outros Financiamentos à Exportação</sub>                          |
+| Código | Modalidade                                                  |
+| ------ | ----------------------------------------------------------- |
+| 0501   | Financiamento à Exportação                                  |
+| 0502   | Adiantamento sobre Contratos de Câmbio                      |
+| 0503   | Adiantamento sobre Cambiais Entregues                       |
+| 0504   | Créditos Decorrentes de Contratos de Exportação–Export Note |
+| 0590   | Financiamento de Projeto                                    |
+| 0599   | Outros Financiamentos à Exportação                          |
 
-### <sub>Financiamentos à Importação</sub>
+### Financiamentos à Importação
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                 |
-| ----------------- | ------------------------------------- |
-| <sub>0601</sub>   | <sub>Financiamento à Importação</sub> |
-| <sub>0690</sub>   | <sub>Financiamento de Projeto</sub>   |
+| Código | Modalidade                 |
+| ------ | -------------------------- |
+| 0601   | Financiamento à Importação |
+| 0690   | Financiamento de Projeto   |
 
-### <sub>Financiamentos com Interveniência</sub>
+### Financiamentos com Interveniência
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                                  |
-| ----------------- | ---------------------------------------------------------------------- |
-| <sub>0701</sub>   | <sub>Aquisição de Bens com Interveniência – Veículos Automotores</sub> |
-| <sub>0702</sub>   | <sub>Aquisição de Bens com Interveniência – Outros Bens</sub>          |
-| <sub>0790</sub>   | <sub>Financiamento de Projeto</sub>                                    |
-| <sub>0799</sub>   | <sub>Outros Financiamentos com Interveniência</sub>                    |
+| Código | Modalidade                                                  |
+| ------ | ----------------------------------------------------------- |
+| 0701   | Aquisição de Bens com Interveniência – Veículos Automotores |
+| 0702   | Aquisição de Bens com Interveniência – Outros Bens          |
+| 0790   | Financiamento de Projeto                                    |
+| 0799   | Outros Financiamentos com Interveniência                    |
 
-### <sub>Financiamentos Rurais</sub>
+### Financiamentos Rurais
 
-| <sub>Código</sub> | <sub>Modalidade</sub>       |
-| ----------------- | --------------------------- |
-| <sub>0801</sub>   | <sub>Custeio</sub>          |
-| <sub>0802</sub>   | <sub>Investimento</sub>     |
-| <sub>0803</sub>   | <sub>Comercialização</sub>  |
-| <sub>0804</sub>   | <sub>Industrialização</sub> |
+| Código | Modalidade       |
+| ------ | ---------------- |
+| 0801   | Custeio          |
+| 0802   | Investimento     |
+| 0803   | Comercialização  |
+| 0804   | Industrialização |
 
-### <sub>Financiamentos Imobiliários</sub>
+### Financiamentos Imobiliários
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                                       |
-| ----------------- | --------------------------------------------------------------------------- |
-| <sub>0901</sub>   | <sub>Financiamento Habitacional – SFH</sub>                                 |
-| <sub>0902</sub>   | <sub>Financiamento Habitacional – Exceto SFH</sub>                          |
-| <sub>0903</sub>   | <sub>Financiamento Imobiliário – Empreendimentos, Exceto Habitacional</sub> |
-| <sub>0990</sub>   | <sub>Financiamento de Projeto</sub>                                         |
-| <sub>1001</sub>   | <sub>Financiamento de TVM</sub>                                             |
+| Código | Modalidade                                                       |
+| ------ | ---------------------------------------------------------------- |
+| 0901   | Financiamento Habitacional – SFH                                 |
+| 0902   | Financiamento Habitacional – Exceto SFH                          |
+| 0903   | Financiamento Imobiliário – Empreendimentos, Exceto Habitacional |
+| 0990   | Financiamento de Projeto                                         |
+| 1001   | Financiamento de TVM                                             |
 
-### <sub>Financiamentos de Infraestrutura e Desenvolvimento</sub>
+### Financiamentos de Infraestrutura e Desenvolvimento
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                        |
-| ----------------- | ------------------------------------------------------------ |
-| <sub>1101</sub>   | <sub>Financiamento de Infraestrutura e Desenvolvimento</sub> |
-| <sub>1190</sub>   | <sub>Financiamento de Projeto</sub>                          |
+| Código | Modalidade                                        |
+| ------ | ------------------------------------------------- |
+| 1101   | Financiamento de Infraestrutura e Desenvolvimento |
+| 1190   | Financiamento de Projeto                          |
 
-### <sub>Operações de Arrendamento</sub>
+### Operações de Arrendamento
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                                    |
-| ----------------- | ------------------------------------------------------------------------ |
-| <sub>1201</sub>   | <sub>Arrendamento Financeiro Exceto Veículos Automotores e Imóveis</sub> |
-| <sub>1202</sub>   | <sub>Arrendamento Financeiro Imobiliário</sub>                           |
-| <sub>1203</sub>   | <sub>Subarrendamento</sub>                                               |
-| <sub>1205</sub>   | <sub>Arrendamento Operacional</sub>                                      |
-| <sub>1206</sub>   | <sub>Arrendamento Financeiro de Veículos Automotores</sub>               |
-| <sub>1290</sub>   | <sub>Financiamento de Projeto</sub>                                      |
+| Código | Modalidade                                                    |
+| ------ | ------------------------------------------------------------- |
+| 1201   | Arrendamento Financeiro Exceto Veículos Automotores e Imóveis |
+| 1202   | Arrendamento Financeiro Imobiliário                           |
+| 1203   | Subarrendamento                                               |
+| 1205   | Arrendamento Operacional                                      |
+| 1206   | Arrendamento Financeiro de Veículos Automotores               |
+| 1290   | Financiamento de Projeto                                      |
 
-### <sub>Outros Créditos</sub>
+### Outros Créditos
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                             |
-| ----------------- | ----------------------------------------------------------------- |
-| <sub>1301</sub>   | <sub>Avais e Fianças Honrados</sub>                               |
-| <sub>1302</sub>   | <sub>Devedores por Compra de Valores e Bens</sub>                 |
-| <sub>1303</sub>   | <sub>Títulos e Créditos a Receber</sub>                           |
-| <sub>1304</sub>   | <sub>Cartão de Crédito – Compra à Vista e Parcelado Lojista</sub> |
-| <sub>1350</sub>   | <sub>Recebíveis Adquiridos</sub>                                  |
-| <sub>1390</sub>   | <sub>Financiamento de Projeto</sub>                               |
-| <sub>1399</sub>   | <sub>Outros com Característica de Crédito</sub>                   |
+| Código | Modalidade                                             |
+| ------ | ------------------------------------------------------ |
+| 1301   | Avais e Fianças Honrados                               |
+| 1302   | Devedores por Compra de Valores e Bens                 |
+| 1303   | Títulos e Créditos a Receber                           |
+| 1304   | Cartão de Crédito – Compra à Vista e Parcelado Lojista |
+| 1350   | Recebíveis Adquiridos                                  |
+| 1390   | Financiamento de Projeto                               |
+| 1399   | Outros com Característica de Crédito                   |
 
-### <sub>Relações Interfinanceiras</sub>
+### Relações Interfinanceiras
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                                   |
-| ----------------- | ----------------------------------------------------------------------- |
-| <sub>1401</sub>   | <sub>Repasses Interfinanceiros</sub>                                    |
-| <sub>1402</sub>   | <sub>Recebíveis de Arranjo de Pagamento</sub>                           |
-| <sub>1403</sub>   | <sub>Outros Valores a Receber Relativos a Transações de Pagamento</sub> |
+| Código | Modalidade                                                   |
+| ------ | ------------------------------------------------------------ |
+| 1401   | Repasses Interfinanceiros                                    |
+| 1402   | Recebíveis de Arranjo de Pagamento                           |
+| 1403   | Outros Valores a Receber Relativos a Transações de Pagamento |
 
-### <sub>Coobrigações</sub>
+### Coobrigações
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                                                                                                          |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| <sub>1501</sub>   | <sub>Beneficiários de Garantias Prestadas para Operações com PJ Financeira</sub>                                                               |
-| <sub>1502</sub>   | <sub>Beneficiários de Garantias Prestadas para Operações com Outras Pessoas</sub>                                                              |
-| <sub>1503</sub>   | <sub>Beneficiários de Garantias Prestadas para Fundos Constitucionais</sub>                                                                    |
-| <sub>1504</sub>   | <sub>Beneficiários de Garantias Prestadas para Participação em Processo Licitatório</sub>                                                      |
-| <sub>1505</sub>   | <sub>Carta de Crédito de Importação</sub>                                                                                                      |
-| <sub>1511</sub>   | <sub>Coobrigação Assumida em Cessão com Coobrigação para Pessoa Integrante do SFN</sub>                                                        |
-| <sub>1512</sub>   | <sub>Coobrigação Assumida Em Cessão com Coobrigação para Pessoa Não Integrante Do Sfn, Inclusive Securitizadora e Fundos de Investimento</sub> |
-| <sub>1513</sub>   | <sub>Beneficiários de Outras Coobrigações</sub>                                                                                                |
-| <sub>1590</sub>   | <sub>Financiamento de Projeto</sub>                                                                                                            |
-| <sub>1599</sub>   | <sub>Beneficiários de Outras Garantias Prestadas</sub>                                                                                         |
+| Código | Modalidade                                                                                                                          |
+| ------ | ----------------------------------------------------------------------------------------------------------------------------------- |
+| 1501   | Beneficiários de Garantias Prestadas para Operações com PJ Financeira                                                               |
+| 1502   | Beneficiários de Garantias Prestadas para Operações com Outras Pessoas                                                              |
+| 1503   | Beneficiários de Garantias Prestadas para Fundos Constitucionais                                                                    |
+| 1504   | Beneficiários de Garantias Prestadas para Participação em Processo Licitatório                                                      |
+| 1505   | Carta de Crédito de Importação                                                                                                      |
+| 1511   | Coobrigação Assumida em Cessão com Coobrigação para Pessoa Integrante do SFN                                                        |
+| 1512   | Coobrigação Assumida Em Cessão com Coobrigação para Pessoa Não Integrante Do Sfn, Inclusive Securitizadora e Fundos de Investimento |
+| 1513   | Beneficiários de Outras Coobrigações                                                                                                |
+| 1590   | Financiamento de Projeto                                                                                                            |
+| 1599   | Beneficiários de Outras Garantias Prestadas                                                                                         |
 
-### <sub>Títulos de Crédito Fora da Carteira Classificada</sub>
+### Títulos de Crédito Fora da Carteira Classificada
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                    |
-| ----------------- | ---------------------------------------- |
-| <sub>1801</sub>   | <sub>CPR - Cédula de Produto Rural</sub> |
-| <sub>1802</sub>   | <sub>EN - Nota de Exportação</sub>       |
-| <sub>1803</sub>   | <sub>Debêntures</sub>                    |
-| <sub>1804</sub>   | <sub>Notas Comerciais</sub>              |
-| <sub>1899</sub>   | <sub>Outros</sub>                        |
+| Código | Modalidade                    |
+| ------ | ----------------------------- |
+| 1801   | CPR - Cédula de Produto Rural |
+| 1802   | EN - Nota de Exportação       |
+| 1803   | Debêntures                    |
+| 1804   | Notas Comerciais              |
+| 1899   | Outros                        |
 
-### <sub>Limite</sub>
+### Limite
 
-| <sub>Código</sub> | <sub>Modalidade</sub>        |
-| ----------------- | ---------------------------- |
-| <sub>1901</sub>   | <sub>Limite Global</sub>     |
-| <sub>1902</sub>   | <sub>Cheque Especial</sub>   |
-| <sub>1903</sub>   | <sub>Conta Garantida</sub>   |
-| <sub>1904</sub>   | <sub>Cartão de Crédito</sub> |
-| <sub>1905</sub>   | <sub>Capital de Giro</sub>   |
-| <sub>1906</sub>   | <sub>Crédito Pessoal</sub>   |
-| <sub>1907</sub>   | <sub>Vendor</sub>            |
-| <sub>1908</sub>   | <sub>Compror</sub>           |
-| <sub>1909</sub>   | <sub>Descontos</sub>         |
-| <sub>1910</sub>   | <sub>Aquisição de Bens</sub> |
-| <sub>1999</sub>   | <sub>Outros</sub>            |
+| Código | Modalidade        |
+| ------ | ----------------- |
+| 1901   | Limite Global     |
+| 1902   | Cheque Especial   |
+| 1903   | Conta Garantida   |
+| 1904   | Cartão de Crédito |
+| 1905   | Capital de Giro   |
+| 1906   | Crédito Pessoal   |
+| 1907   | Vendor            |
+| 1908   | Compror           |
+| 1909   | Descontos         |
+| 1910   | Aquisição de Bens |
+| 1999   | Outros            |
 
-### <sub>Retenção de Risco</sub>
+### Retenção de Risco
 
-| <sub>Código</sub> | <sub>Modalidade</sub>                                                                                   |
-| ----------------- | ------------------------------------------------------------------------------------------------------- |
-| <sub>2001</sub>   | <sub>Retenção de Risco Assumida por Aquisição de Cotas de Fundos</sub>                                  |
-| <sub>2002</sub>   | <sub>Retenção de Risco Assumida por Aquisição de Instrumentos com Lastros Em Operações de Crédito</sub> |
+| Código | Modalidade                                                                                   |
+| ------ | -------------------------------------------------------------------------------------------- |
+| 2001   | Retenção de Risco Assumida por Aquisição de Cotas de Fundos                                  |
+| 2002   | Retenção de Risco Assumida por Aquisição de Instrumentos com Lastros Em Operações de Crédito |
