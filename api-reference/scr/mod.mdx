@@ -5,16 +5,18 @@ description: "As modalidades de operação representam a classificação detalha
 
 <RequestExample>
 
-```bash cURL
-curl -X POST https://sandbox.databox.com.br/api/scr \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "document": "12345678901",
-    "mes": "03",
-    "ano": "2025"
-  }'
+```json Modalidade
+{
+  "data": "30/07/2025 12:02:18",
+  "campo": {
+    "documento": "CPF contém exatamente 11 dígitos"
+  },
+  "messagem": "API Key Inválida",
+  "status": "erro",
+  "versao": "1.0"
+}
 ```
+
 </RequestExample>
 
 A estrutura é composta por:
@@ -29,7 +31,6 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | Código | Modalidade                   |
 | ------ | ---------------------------- |
 | 0101   | Adiantamentos a Depositantes |
-
 
 ### Empréstimos
 
@@ -54,7 +55,6 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | 0290   | Financiamento de Projeto                                                                             |
 | 0299   | Outros Empréstimos                                                                                   |
 
-
 ### Direitos Creditórios Descontados
 
 | Código | Modalidade                                 |
@@ -64,8 +64,6 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | 0303   | Antecipação de Fatura de Cartão de Crédito |
 | 0398   | Outros Direitos Creditórios Descontados    |
 | 0399   | Outros Títulos Descontados                 |
-
-
 
 ### Financiamentos
 
@@ -81,7 +79,6 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | 0450   | Recebíveis Adquiridos                                                                         |
 | 0490   | Financiamento de Projeto                                                                      |
 | 0499   | Outros Financiamentos                                                                         |
-
 
 ### Financiamentos à Exportação
 
