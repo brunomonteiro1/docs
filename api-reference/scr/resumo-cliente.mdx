@@ -3,32 +3,51 @@ title: "Resumo do Cliente"
 description: "Este bloco contém informações cadastrais do cliente consultado no SCR Bacen. Ele representa o cabeçalho da resposta e é utilizado para validação da identidade e do perfil geral do consultado."
 ---
 
+<RequestExample>
+
+```json resumoDoCliente
+          "cnpjDaIfSolicitante": null,
+          "coobrigacaoAssumida": 0,
+          "coobrigacaoRecebida": 0,
+          "dataBaseConsultada": "2025-05",
+          "dataInicioRelacionamento": "2011-09-01",
+          "listaDeMensagensDeValidacao": null,
+          "percentualDocumentosProcessados": "97.19",
+          "percentualVolumeProcessado": "99.80",
+          "quantidadeDeInstituicoes": 8,
+          "quantidadeDeOperacoes": 13,
+          "quantidadeOperacoesDiscordancia": 0,
+          "quantidadeOperacoesSubJudice": 0,
+          "responsabilidadeTotalDiscordancia": 0,
+          "responsabilidadeTotalSubJudice": 0,
+          "riscoIndiretoVendor": 0,
+          "tipoDoCliente": "1",
+          "documentoDoCliente": "12345678900"
+}
+```
+
+</RequestExample>
+
 O objeto `resumoDoCliente` retorna dados essenciais de identificação da pessoa física ou jurídica, servindo como referência para interpretar os demais blocos da resposta.
 
-| Campo                     | Descrição                                                            |
-|---------------------------|----------------------------------------------------------------------|
-| `documentoDoCliente`      | CPF ou CNPJ do cliente consultado                                    |
-| `tipoDoCliente`           | Tipo de pessoa (1 = Pessoa Física, 2 = Pessoa Jurídica)              |
-| `dataInicioRelacionamento`| Data de início da relação do cliente com instituições financeiras    |
-| `quantidadeDeInstituicoes`| Número total de instituições com operações registradas no SCR        |
+| Campo                      | Descrição                                                         |
+| -------------------------- | ----------------------------------------------------------------- |
+| `documentoDoCliente`       | CPF ou CNPJ do cliente consultado                                 |
+| `tipoDoCliente`            | Tipo de pessoa (1 = Pessoa Física, 2 = Pessoa Jurídica)           |
+| `dataInicioRelacionamento` | Data de início da relação do cliente com instituições financeiras |
+| `quantidadeDeInstituicoes` | Número total de instituições com operações registradas no SCR     |
 
 **Tipos e exemplos:**
 
-- `documentoDoCliente`: `string`  
+- `documentoDoCliente`: `string`\
   Exemplo: `"12345678900"`
-
-- `tipoDoCliente`: `int`  
+- `tipoDoCliente`: `int`\
   Exemplo: `1`
-
-- `dataInicioRelacionamento`: `string` (formato `AAAA-MM-DD`)  
+- `dataInicioRelacionamento`: `string` (formato `AAAA-MM-DD`)\
   Exemplo: `"2003-08-01"`
-
-- `quantidadeDeInstituicoes`: `int`  
+- `quantidadeDeInstituicoes`: `int`\
   Exemplo: `6`
 
 ---
 
 > 🔎 **Dica:** Este bloco é útil para confirmar se os dados consultados correspondem ao cliente correto. Em implementações práticas, recomenda-se exibir essas informações no topo da interface como identificação primária do relatório.
-
-
-

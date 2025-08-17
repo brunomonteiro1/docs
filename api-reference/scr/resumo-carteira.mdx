@@ -3,59 +3,92 @@ title: "Resumo da Carteira"
 description: "Este bloco consolida os principais valores relacionados à carteira de crédito do cliente, segmentados por situação (vencido, a vencer, limite, etc.). Esses valores servem como base para o cálculo da responsabilidade total do cliente no SCR Bacen."
 ---
 
+<RequestExample>
+
+```json resumoDaCarteira
+{
+          "dtInicioRelacionamento": "2011-09-01",
+          "carteiraVencer": 185405.49,
+          "carteiraVencerAte30diasVencidosAte14dias": 10299.45,
+          "carteiraVencer31a60dias": 10805.86,
+          "carteiraVencer61a90dias": 10501.6,
+          "carteiraVencer91a180dias": 24012.45,
+          "carteiraVencer181a360dias": 24362.63,
+          "carteiraVencerAcima360dias": 105423.5,
+          "carteiraVencerPrazoIndeterminado": 0,
+          "moedaEstrangeiraValor": 0,
+          "moedaEstrangeiraValor15a30dias": 0,
+          "moedaEstrangeiraValor31a60dias": 0,
+          "moedaEstrangeiraValor61a90dias": 0,
+          "moedaEstrangeiraValor91a180dias": 0,
+          "moedaEstrangeiraValor181a360dias": 0,
+          "moedaEstrangeiraValorAcima360dias": 0,
+          "carteiraVencido": 111950.68,
+          "carteiraVencido15a30dias": 4388.1,
+          "carteiraVencido31a60dias": 3259.16,
+          "carteiraVencido61a90dias": 4981.44,
+          "carteiraVencido91a180dias": 17410.71,
+          "carteiraVencido181a360dias": 81911.27,
+          "carteiraVencidoAcima360dias": 0,
+          "prejuizo": 0,
+          "prejuizoAte12meses": 0,
+          "prejuizoAcima12meses": 0,
+          "carteiradeCredito": 297356.17,
+          "repasses": 0,
+          "coobrigacoes": 0,
+          "responsabilidadeTotal": 297356.17,
+          "creditosaLiberar": 0.02,
+          "limitesdeCredito": 0.02,
+          "limitesdeCreditoAte360dias": 0.02,
+          "limitesdeCreditoAcima360dias": 0,
+          "riscoIndiretoVendor": 0,
+          "riscoTotal": 297356.19
+}
+```
+
+</RequestExample>
+
 O objeto `resumoDaCarteira` apresenta os totais consolidados da exposição do cliente, agrupados por tipo de operação e situação no tempo. Esses dados oferecem uma visão rápida da saúde financeira do cliente e do seu nível de endividamento.
 
-| Campo                   | Descrição                                                  |
-|-------------------------|--------------------------------------------------------------|
-| `carteiraVencer`        | Total de operações a vencer (ativos)                         |
-| `carteiraVencido`       | Total de operações vencidas                                  |
-| `carteiraBaixada`       | Total de operações baixadas como prejuízo                    |
-| `limiteCredito`         | Total de limites de crédito concedidos                       |
-| `creditoALiberar`       | Valor total de crédito contratado ainda não liberado         |
-| `responsabilidadeTotal` | Soma de todos os valores de responsabilidade                 |
-| `responsabilidadeVencer`| Subtotal da responsabilidade com base em valores a vencer    |
-| `responsabilidadeVencido`| Subtotal da responsabilidade com base em valores vencidos   |
-| `responsabilidadeBaixada`| Subtotal de operações baixadas                              |
-| `valorMaximoAtraso`     | Maior valor individual vencido encontrado na carteira        |
-| `percentualComprometimentoRenda` | Percentual aproximado de comprometimento da renda  |
+| Campo                            | Descrição                                                 |
+| -------------------------------- | --------------------------------------------------------- |
+| `carteiraVencer`                 | Total de operações a vencer (ativos)                      |
+| `carteiraVencido`                | Total de operações vencidas                               |
+| `carteiraBaixada`                | Total de operações baixadas como prejuízo                 |
+| `limiteCredito`                  | Total de limites de crédito concedidos                    |
+| `creditoALiberar`                | Valor total de crédito contratado ainda não liberado      |
+| `responsabilidadeTotal`          | Soma de todos os valores de responsabilidade              |
+| `responsabilidadeVencer`         | Subtotal da responsabilidade com base em valores a vencer |
+| `responsabilidadeVencido`        | Subtotal da responsabilidade com base em valores vencidos |
+| `responsabilidadeBaixada`        | Subtotal de operações baixadas                            |
+| `valorMaximoAtraso`              | Maior valor individual vencido encontrado na carteira     |
+| `percentualComprometimentoRenda` | Percentual aproximado de comprometimento da renda         |
 
 **Tipos e exemplos:**
 
-- `carteiraVencer`: `number`  
+- `carteiraVencer`: `number`\
   Exemplo: `185405.49`
-
-- `carteiraVencido`: `number`  
+- `carteiraVencido`: `number`\
   Exemplo: `111950.68`
-
-- `carteiraBaixada`: `number`  
+- `carteiraBaixada`: `number`\
   Exemplo: `100`
-
-- `limiteCredito`: `number`  
+- `limiteCredito`: `number`\
   Exemplo: `50000`
-
-- `creditoALiberar`: `number`  
+- `creditoALiberar`: `number`\
   Exemplo: `0`
-
-- `responsabilidadeTotal`: `number`  
+- `responsabilidadeTotal`: `number`\
   Exemplo: `297356.17`
-
-- `responsabilidadeVencer`: `number`  
+- `responsabilidadeVencer`: `number`\
   Exemplo: `185405.49`
-
-- `responsabilidadeVencido`: `number`  
+- `responsabilidadeVencido`: `number`\
   Exemplo: `111950.68`
-
-- `responsabilidadeBaixada`: `number`  
+- `responsabilidadeBaixada`: `number`\
   Exemplo: `100`
-
-- `valorMaximoAtraso`: `number`  
+- `valorMaximoAtraso`: `number`\
   Exemplo: `111950.68`
-
-- `percentualComprometimentoRenda`: `number`  
+- `percentualComprometimentoRenda`: `number`\
   Exemplo: `37.5`
 
 ---
 
 > 📌 **Importante:** A responsabilidade total representa a soma das obrigações atuais do cliente. Este valor pode ser utilizado para cálculo de limite de crédito, avaliação de risco e recomendação de produtos.
-
-
