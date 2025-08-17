@@ -63,7 +63,6 @@
             "pages": [
               "api-reference/scr/consult",
               "api-reference/scr/mod",
-              "api-reference/scr/test",
               "api-reference/scr/vcod",
               "api-reference/scr/data-base",
               "api-reference/scr/resumo-cliente",

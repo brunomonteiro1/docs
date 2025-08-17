@@ -17,6 +17,20 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | ------ | ---------------------------- |
 | 0101   | Adiantamentos a Depositantes |
 
+<RequestExample>
+
+```bash JSON
+{
+  "tipo": "A VENCER",
+  "modalidade": "0101",
+  "dominio": "Adiantamentos a depositantes",
+  "subdominio": "Adiantamentos a depositantes",
+  "valorVencimento": 100
+},
+```
+
+</RequestExample>
+
 ### Empréstimos
 
 | Código | Modalidade                                                                                           |
@@ -40,6 +54,20 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | 0290   | Financiamento de Projeto                                                                             |
 | 0299   | Outros Empréstimos                                                                                   |
 
+<RequestExample>
+
+```bash JSON
+{
+  "tipo": "A VENCER",
+  "modalidade": "02XX",
+  "dominio": "Empréstimos",
+  "subdominio": "Descrição Modalidade",
+  "valorVencimento": 100
+},
+```
+
+</RequestExample>
+
 ### Direitos Creditórios Descontados
 
 | Código | Modalidade                                 |
@@ -49,6 +77,20 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | 0303   | Antecipação de Fatura de Cartão de Crédito |
 | 0398   | Outros Direitos Creditórios Descontados    |
 | 0399   | Outros Títulos Descontados                 |
+
+<RequestExample>
+
+```bash JSON
+{
+  "tipo": "A VENCER",
+  "modalidade": "03XX",
+  "dominio": "Direitos Creditórios Descontados",
+  "subdominio": "Descrição Modalidade",
+  "valorVencimento": 100
+},
+```
+
+</RequestExample>
 
 ### Financiamentos
 
@@ -64,6 +106,20 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | 0450   | Recebíveis Adquiridos                                                                         |
 | 0490   | Financiamento de Projeto                                                                      |
 | 0499   | Outros Financiamentos                                                                         |
+
+<RequestExample>
+
+```bash JSON
+{
+  "tipo": "A VENCER",
+  "modalidade": "04XX",
+  "dominio": "Financiamentos",
+  "subdominio": "Descrição Modalidade",
+  "valorVencimento": 100
+},
+```
+
+</RequestExample>
 
 ### Financiamentos à Exportação
 
