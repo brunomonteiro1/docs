@@ -1,0 +1,156 @@
+---
+title: "Consulta"
+description: "Solicita consulta ao SCR do Bacen usando CPF/CNPJ e período (mês e ano), retornando resumos como carteira de crédito, riscos e modalidades."
+---
+
+<div class="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard">
+<div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-blue-400/20 dark:bg-blue-400/20 text-blue-700 dark:text-blue-400">
+POST
+
+</div>
+
+/scr
+
+</div>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST https://sandbox.databox.com.br/api/scr \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "document": "12345678901",
+    "mes": "03",
+    "ano": "2025"
+  }'
+```
+
+
+```javascript JavaScript
+const response = await fetch("https://sandbox.databox.com.br/api/scr", {
+  method: "POST",
+  headers: {
+    Authorization: "Bearer YOUR_JWT_TOKEN",
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    document: "12345678901",
+    mes: "03",
+    ano: "2025",
+  }),
+});
+
+const scrData = await response.json();
+console.log(scrData);
+```
+
+
+```python Python
+import requests
+
+url = "https://sandbox.databox.com.br/api/scr"
+headers = {
+    "Authorization": "Bearer YOUR_JWT_TOKEN",
+    "Content-Type": "application/json"
+}
+payload = {
+    "document": "12345678901",
+    "mes": "03",
+    "ano": "2025"
+}
+
+response = requests.post(url, json=payload, headers=headers)
+scr_data = response.json()
+```
+
+
+```php PHP
+<?php
+$url = 'https://sandbox.databox.com.br/api/scr';
+$data = [
+    'document' => '12345678901',
+    'mes' => '03',
+    'ano' => '2025'
+];
+
+$options = [
+    'http' => [
+        'header' => [
+            "Authorization: Bearer YOUR_JWT_TOKEN",
+            "Content-type: application/json"
+        ],
+        'method' => 'POST',
+        'content' => json_encode($data)
+    ]
+];
+
+$context = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+$scr_data = json_decode($result, true);
+?>
+```
+
+</RequestExample>
+
+## Requisição
+
+<ParamField body="documento" type="string" required>
+  O documento pode ser: `CPF` ou `CNPJ`
+</ParamField>
+
+<ParamField body="mes" type="string" required>
+  Mês referência para busca com dois dígitos: Ex: `01` para janeiro, `02` para
+  fevereiro e assim por diante.
+</ParamField>
+
+<ParamField body="ano" type="string" required>
+  Ano referência para busca com quatro dígitos: Ex: `2025`.
+</ParamField>
+
+## Resposta
+
+<ResponseField name="request_id" type="string">
+  Unique identifier for this consultation request
+</ResponseField>
+
+<ResponseField name="person" type="object">
+  Personal information of the document holder
+
+  <Expandable title="person properties">
+    <ResponseField name="person.name" type="string">
+      Full name of the person
+    </ResponseField>
+    <ResponseField name="person.birth_date" type="string">
+      Birth date in YYYY-MM-DD format
+    </ResponseField>
+    <ResponseField name="person.mother_name" type="string">
+      Mother's full name
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="debts" type="array">
+  Array of debt records
+
+  <Expandable title="debt object properties">
+    <ResponseField name="debts[].creditor" type="string">
+      Name of the creditor institution
+    </ResponseField>
+    <ResponseField name="debts[].debt_type" type="string">
+      Type of debt (FINANCING, CREDIT_CARD, LOAN, etc.)
+    </ResponseField>
+    <ResponseField name="debts[].amount" type="number">
+      Debt amount in Brazilian Real (BRL)
+    </ResponseField>
+    <ResponseField name="debts[].status" type="string">
+      Current status: ACTIVE, PAID, OVERDUE, CANCELLED
+    </ResponseField>
+    <ResponseField name="debts[].registration_date" type="string">
+      When the debt was registered in SCR
+    </ResponseField>
+    <ResponseField name="debts[].due_date" type="string">
+      Due date (null for revolving credit)
+    </ResponseField>
+  </Expandable>
+</ResponseField>
