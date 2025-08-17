@@ -1,8 +1,21 @@
 ---
-title: "Modalidades "
-mode: "wide"
+title: "Modalidades"
 description: "As modalidades de operação representam a classificação detalhada das operações de crédito registradas no SCR Bacen. Cada operação é identificada por um código único (modalidade) e está vinculada a um grupo de modalidades mais amplo, conforme estrutura definida pelo Banco Central."
 ---
+
+<RequestExample>
+
+```bash cURL
+curl -X POST https://sandbox.databox.com.br/api/scr \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "document": "12345678901",
+    "mes": "03",
+    "ano": "2025"
+  }'
+```
+</RequestExample>
 
 A estrutura é composta por:
 
@@ -17,19 +30,6 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | ------ | ---------------------------- |
 | 0101   | Adiantamentos a Depositantes |
 
-<RequestExample>
-
-```bash JSON
-{
-  "tipo": "A VENCER",
-  "modalidade": "0101",
-  "dominio": "Adiantamentos a depositantes",
-  "subdominio": "Adiantamentos a depositantes",
-  "valorVencimento": 100
-},
-```
-
-</RequestExample>
 
 ### Empréstimos
 
@@ -54,19 +54,6 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | 0290   | Financiamento de Projeto                                                                             |
 | 0299   | Outros Empréstimos                                                                                   |
 
-<RequestExample>
-
-```bash JSON
-{
-  "tipo": "A VENCER",
-  "modalidade": "02XX",
-  "dominio": "Empréstimos",
-  "subdominio": "Descrição Modalidade",
-  "valorVencimento": 100
-},
-```
-
-</RequestExample>
 
 ### Direitos Creditórios Descontados
 
@@ -78,19 +65,7 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | 0398   | Outros Direitos Creditórios Descontados    |
 | 0399   | Outros Títulos Descontados                 |
 
-<RequestExample>
 
-```bash JSON
-{
-  "tipo": "A VENCER",
-  "modalidade": "03XX",
-  "dominio": "Direitos Creditórios Descontados",
-  "subdominio": "Descrição Modalidade",
-  "valorVencimento": 100
-},
-```
-
-</RequestExample>
 
 ### Financiamentos
 
@@ -107,19 +82,6 @@ Cada código `Modalidade` deve ser interpretado de forma consistente com sua des
 | 0490   | Financiamento de Projeto                                                                      |
 | 0499   | Outros Financiamentos                                                                         |
 
-<RequestExample>
-
-```bash JSON
-{
-  "tipo": "A VENCER",
-  "modalidade": "04XX",
-  "dominio": "Financiamentos",
-  "subdominio": "Descrição Modalidade",
-  "valorVencimento": 100
-},
-```
-
-</RequestExample>
 
 ### Financiamentos à Exportação
 
