@@ -16,7 +16,7 @@ POST
 <RequestExample>
 
 ```bash cURL
-curl -X POST https://sandbox.databox.com.br/api/scr \
+curl -X POST https://sandbox-api.databox360.com.br/api/scr \
   -H "Authorization: Bearer YOUR_JWT_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
@@ -28,7 +28,7 @@ curl -X POST https://sandbox.databox.com.br/api/scr \
 
 
 ```javascript JavaScript
-const response = await fetch("https://sandbox.databox.com.br/api/scr", {
+const response = await fetch("https://sandbox-api.databox360.com.br/api/scr", {
   method: "POST",
   headers: {
     Authorization: "Bearer YOUR_JWT_TOKEN",
@@ -49,7 +49,7 @@ console.log(scrData);
 ```python Python
 import requests
 
-url = "https://sandbox.databox.com.br/api/scr"
+url = "https://sandbox-api.databox360.com.br/api/scr"
 headers = {
     "Authorization": "Bearer YOUR_JWT_TOKEN",
     "Content-Type": "application/json"
@@ -67,7 +67,7 @@ scr_data = response.json()
 
 ```php PHP
 <?php
-$url = 'https://sandbox.databox.com.br/api/scr';
+$url = 'https://sandbox-api.databox360.com.br/api/scr';
 $data = [
     'document' => '12345678901',
     'mes' => '03',
