@@ -34,7 +34,7 @@ const response = await fetch("https://sandbox-api.databox360.com.br/api/scr", {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    document: "12345678901",
+    documento: "12345678901",
     mes: "03",
     ano: "2025",
   }),
@@ -54,7 +54,7 @@ headers = {
     "Content-Type": "application/json"
 }
 payload = {
-    "document": "12345678901",
+    "documento": "12345678901",
     "mes": "03",
     "ano": "2025"
 }
@@ -68,7 +68,7 @@ scr_data = response.json()
 <?php
 $url = 'https://sandbox-api.databox360.com.br/api/scr';
 $data = [
-    'document' => '12345678901',
+    'documento' => '12345678901',
     'mes' => '03',
     'ano' => '2025'
 ];
