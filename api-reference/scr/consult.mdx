@@ -26,11 +26,6 @@ curl -X POST https://sandbox-api.databox360.com.br/api/scr \
       }'
 ```
 
-
-```
-```
-
-
 ```javascript JavaScript
 const response = await fetch("https://sandbox-api.databox360.com.br/api/scr", {
   method: "POST",
@@ -39,7 +34,7 @@ const response = await fetch("https://sandbox-api.databox360.com.br/api/scr", {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    documento: "12345678901",
+    document: "12345678901",
     mes: "03",
     ano: "2025",
   }),
@@ -59,7 +54,7 @@ headers = {
     "Content-Type": "application/json"
 }
 payload = {
-    "documento": "12345678901",
+    "document": "12345678901",
     "mes": "03",
     "ano": "2025"
 }
@@ -73,7 +68,7 @@ scr_data = response.json()
 <?php
 $url = 'https://sandbox-api.databox360.com.br/api/scr';
 $data = [
-    'documento' => '12345678901',
+    'document' => '12345678901',
     'mes' => '03',
     'ano' => '2025'
 ];
