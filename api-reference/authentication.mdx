@@ -27,7 +27,7 @@ curl -X GET https://sandbox-api.databox360.com.br/api/sessions/token \
 
 ```javascript JavaScript
 const response = await fetch(
-  "https://sandbox.databox360.com.br/api/sessions/token",
+  "https://sandbox-api.databox360.com.br/api/sessions/token",
   {
     method: "GET",
     headers: {
@@ -45,7 +45,7 @@ console.log(scrData);
 ```python Python
 import requests
 
-url = "https://sandbox.databox360.com.br/api/sessions/token"
+url = "https://sandbox-api.databox360.com.br/api/sessions/token"
 headers = {
     "Content-Type": "application/json"
     "Authorization": "YOUR_API_KEY"
@@ -58,7 +58,7 @@ scr_data = response.json()
 
 ```php PHP
 <?php
-$url = 'https://sandbox.databox360.com.br/api/sessions/token';
+$url = 'https://sandbox-api.databox360.com.br/api/sessions/token';
 
 $options = [
     'http' => [
