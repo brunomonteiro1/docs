@@ -1731,47 +1731,308 @@ $scr_data = json_decode($result, true);
 
 ## Resposta
 
-<ResponseField name="request_id" type="string">
-  Unique identifier for this consultation request
+<ResponseField name="data" type="string" required>
+  Data e hora da requisição
 </ResponseField>
 
-<ResponseField name="person" type="object">
-  Personal information of the document holder
-
-  <Expandable title="person properties">
-    <ResponseField name="person.name" type="string">
-      Full name of the person
-    </ResponseField>
-    <ResponseField name="person.birth_date" type="string">
-      Birth date in YYYY-MM-DD format
-    </ResponseField>
-    <ResponseField name="person.mother_name" type="string">
-      Mother's full name
-    </ResponseField>
-  </Expandable>
+<ResponseField name="status" type="string" required>
+  Status da requisição. `sucesso` ou `erro`
 </ResponseField>
 
-<ResponseField name="debts" type="array">
-  Array of debt records
+<ResponseField name="versao" type="string" required>
+  Versão da API
+</ResponseField>
 
-  <Expandable title="debt object properties">
-    <ResponseField name="debts[].creditor" type="string">
-      Name of the creditor institution
+<ResponseField name="messagem" type="string">
+  Mensagem de erro. Este campo será recebido apenas quando o status for erro
+</ResponseField>
+
+<ResponseField name="campo" type="object">
+  Detalhes de validação de campos. Este campo será recebido apenas quando houver erro de validação
+</ResponseField>
+
+<ResponseField name="consulta" type="object">
+  Objeto contendo todos os dados da consulta SCR
+
+  <Expandable title="consulta properties">
+
+    <ResponseField name="consulta.resumoDoCliente" type="object">
+      Resumo geral do cliente consultado
+
+      <Expandable title="resumoDoCliente properties">
+        <ResponseField name="consulta.resumoDoCliente.documentoDoCliente" type="string">
+          CPF ou CNPJ do cliente consultado
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.tipoDoCliente" type="string">
+          Tipo do cliente: `1` para Pessoa Física, `2` para Pessoa Jurídica
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.dataBaseConsultada" type="string">
+          Data base da consulta no formato YYYY-MM
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.dataInicioRelacionamento" type="string">
+          Data do primeiro relacionamento de crédito no formato YYYY-MM-DD
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.quantidadeDeInstituicoes" type="number">
+          Quantidade de instituições financeiras com relacionamento
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.quantidadeDeOperacoes" type="number">
+          Quantidade total de operações de crédito
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.quantidadeOperacoesDiscordancia" type="number">
+          Quantidade de operações em discordância
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.quantidadeOperacoesSubJudice" type="number">
+          Quantidade de operações sub judice
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.responsabilidadeTotalDiscordancia" type="number">
+          Valor total de responsabilidade em discordância
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.responsabilidadeTotalSubJudice" type="number">
+          Valor total de responsabilidade sub judice
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.coobrigacaoAssumida" type="number">
+          Valor total de coobrigações assumidas
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.coobrigacaoRecebida" type="number">
+          Valor total de coobrigações recebidas
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.riscoIndiretoVendor" type="number">
+          Valor de risco indireto vendor
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.percentualDocumentosProcessados" type="string">
+          Percentual de documentos processados
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.percentualVolumeProcessado" type="string">
+          Percentual do volume processado
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.cnpjDaIfSolicitante" type="string">
+          CNPJ da instituição financeira solicitante (se aplicável)
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDoCliente.listaDeMensagensDeValidacao" type="array">
+          Lista de mensagens de validação (se houver)
+        </ResponseField>
+      </Expandable>
     </ResponseField>
-    <ResponseField name="debts[].debt_type" type="string">
-      Type of debt (FINANCING, CREDIT_CARD, LOAN, etc.)
+
+    <ResponseField name="consulta.resumoDaCarteira" type="object">
+      Resumo detalhado da carteira de crédito do cliente
+
+      <Expandable title="resumoDaCarteira properties">
+        <ResponseField name="consulta.resumoDaCarteira.dtInicioRelacionamento" type="string">
+          Data de início do relacionamento
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiradeCredito" type="number">
+          Valor total da carteira de crédito
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencer" type="number">
+          Valor total a vencer
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencerAte30diasVencidosAte14dias" type="number">
+          Valor a vencer até 30 dias ou vencidos até 14 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencer31a60dias" type="number">
+          Valor a vencer de 31 a 60 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencer61a90dias" type="number">
+          Valor a vencer de 61 a 90 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencer91a180dias" type="number">
+          Valor a vencer de 91 a 180 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencer181a360dias" type="number">
+          Valor a vencer de 181 a 360 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencerAcima360dias" type="number">
+          Valor a vencer acima de 360 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencerPrazoIndeterminado" type="number">
+          Valor a vencer com prazo indeterminado
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencido" type="number">
+          Valor total vencido
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencido15a30dias" type="number">
+          Valor vencido de 15 a 30 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencido31a60dias" type="number">
+          Valor vencido de 31 a 60 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencido61a90dias" type="number">
+          Valor vencido de 61 a 90 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencido91a180dias" type="number">
+          Valor vencido de 91 a 180 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencido181a360dias" type="number">
+          Valor vencido de 181 a 360 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.carteiraVencidoAcima360dias" type="number">
+          Valor vencido acima de 360 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.moedaEstrangeiraValor" type="number">
+          Valor total em moeda estrangeira
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.moedaEstrangeiraValor15a30dias" type="number">
+          Valor em moeda estrangeira de 15 a 30 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.moedaEstrangeiraValor31a60dias" type="number">
+          Valor em moeda estrangeira de 31 a 60 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.moedaEstrangeiraValor61a90dias" type="number">
+          Valor em moeda estrangeira de 61 a 90 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.moedaEstrangeiraValor91a180dias" type="number">
+          Valor em moeda estrangeira de 91 a 180 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.moedaEstrangeiraValor181a360dias" type="number">
+          Valor em moeda estrangeira de 181 a 360 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.moedaEstrangeiraValorAcima360dias" type="number">
+          Valor em moeda estrangeira acima de 360 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.prejuizo" type="number">
+          Valor total de prejuízo
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.prejuizoAte12meses" type="number">
+          Valor de prejuízo até 12 meses
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.prejuizoAcima12meses" type="number">
+          Valor de prejuízo acima de 12 meses
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.repasses" type="number">
+          Valor total de repasses
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.coobrigacoes" type="number">
+          Valor total de coobrigações
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.responsabilidadeTotal" type="number">
+          Valor de responsabilidade total
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.creditosaLiberar" type="number">
+          Valor de créditos a liberar
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.limitesdeCredito" type="number">
+          Valor total de limites de crédito
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.limitesdeCreditoAte360dias" type="number">
+          Limites de crédito até 360 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.limitesdeCreditoAcima360dias" type="number">
+          Limites de crédito acima de 360 dias
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.riscoIndiretoVendor" type="number">
+          Valor de risco indireto vendor
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDaCarteira.riscoTotal" type="number">
+          Valor de risco total
+        </ResponseField>
+      </Expandable>
     </ResponseField>
-    <ResponseField name="debts[].amount" type="number">
-      Debt amount in Brazilian Real (BRL)
+
+    <ResponseField name="consulta.resumoDasModalidades" type="array">
+      Array com resumo de todas as modalidades de crédito (a vencer e vencidas)
+
+      <Expandable title="modalidade object properties">
+        <ResponseField name="consulta.resumoDasModalidades[].tipo" type="string">
+          Tipo da modalidade: `A VENCER` ou `VENCIDO`
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDasModalidades[].modalidade" type="string">
+          Código da modalidade (ex: `0203`, `0401`, `1304`)
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDasModalidades[].dominio" type="string">
+          Domínio da modalidade (ex: `Empréstimos`, `Financiamentos`, `Outros créditos`)
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDasModalidades[].subdominio" type="string">
+          Descrição detalhada da modalidade
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDasModalidades[].valorVencimento" type="number">
+          Valor da modalidade
+        </ResponseField>
+      </Expandable>
     </ResponseField>
-    <ResponseField name="debts[].status" type="string">
-      Current status: ACTIVE, PAID, OVERDUE, CANCELLED
+
+    <ResponseField name="consulta.resumoDasOperacoes" type="array">
+      Array com resumo das operações por modalidade e vencimentos
+
+      <Expandable title="operacao object properties">
+        <ResponseField name="consulta.resumoDasOperacoes[].modalidade" type="string">
+          Código da modalidade
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDasOperacoes[].variacaoCambial" type="string">
+          Indica se há variação cambial: `S` ou `N`
+        </ResponseField>
+
+        <ResponseField name="consulta.resumoDasOperacoes[].listaDeVencimentos" type="array">
+          Lista de vencimentos da operação
+
+          <Expandable title="vencimento object properties">
+            <ResponseField name="consulta.resumoDasOperacoes[].listaDeVencimentos[].codigoVencimento" type="string">
+              Código do vencimento (ex: `v110`, `v210`, `v20`)
+            </ResponseField>
+
+            <ResponseField name="consulta.resumoDasOperacoes[].listaDeVencimentos[].valorVencimento" type="number">
+              Valor do vencimento
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
     </ResponseField>
-    <ResponseField name="debts[].registration_date" type="string">
-      When the debt was registered in SCR
-    </ResponseField>
-    <ResponseField name="debts[].due_date" type="string">
-      Due date (null for revolving credit)
-    </ResponseField>
+
   </Expandable>
 </ResponseField>
