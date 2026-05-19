@@ -76,7 +76,9 @@
           {
             "group": "Autorizador SCR",
             "pages": [
-              "sobre"
+              "sobre",
+              "requisicao",
+              "resposta"
             ]
           }
         ]

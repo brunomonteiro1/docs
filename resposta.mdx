@@ -1,0 +1,129 @@
+---
+title: "Resposta"
+description: "Retorno da requisição de registro de consentimento no Autorizador SCR, contendo os dados da autorização criada."
+---
+
+<ResponseExample>
+
+```json Sucesso (201)
+{
+    "status": "sucesso",
+    "data": "19/05/2026 13:47:38",
+    "dados": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "nome": "EMPRESA EXEMPLO LTDA",
+        "documento": "00000000000100",
+        "tipoDocumento": "cnpj",
+        "consentimento": true,
+        "metadata": {
+            "ip": "000.000.000.000",
+            "host": "api.databox360.com.br",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+            "timestamp": "2026-01-01T10:00:00Z",
+            "location": {
+                "accuracy": 1000.0,
+                "latitude": -23.5505,
+                "longitude": -46.6333
+            }
+        },
+        "dataExpiracao": "01/01/2031 10:00:00",
+        "dataCriacao": "01/01/2026 10:00:00",
+        "dataAtualizacao": "01/01/2026 10:00:00",
+        "url": "https://autorizador.databox360.com.br/autorizacao/00000000-0000-0000-0000-000000000000"
+    }
+}
+```
+
+</ResponseExample>
+
+## Resposta
+
+<ResponseField name="status" type="string" required>
+  Status da requisição. Valor esperado: `sucesso`.
+</ResponseField>
+
+<ResponseField name="data" type="string" required>
+  Data e hora do processamento da requisição no formato `DD/MM/YYYY HH:mm:ss`.
+</ResponseField>
+
+<ResponseField name="dados" type="object" required>
+  Objeto contendo os dados da autorização registrada.
+
+  <Expandable title="dados properties">
+    <ResponseField name="dados.id" type="string" required>
+      Identificador único da autorização gerado pela plataforma no formato UUID.
+    </ResponseField>
+
+    <ResponseField name="dados.nome" type="string" required>
+      Nome completo ou razão social do titular do consentimento.
+    </ResponseField>
+
+    <ResponseField name="dados.documento" type="string" required>
+      Número do documento do titular sem formatação (apenas dígitos).
+    </ResponseField>
+
+    <ResponseField name="dados.tipoDocumento" type="string" required>
+      Tipo do documento: `cpf` ou `cnpj`.
+    </ResponseField>
+
+    <ResponseField name="dados.consentimento" type="boolean" required>
+      Confirma o consentimento registrado. Valor esperado: `true`.
+    </ResponseField>
+
+    <ResponseField name="dados.dataExpiracao" type="string" required>
+      Data e hora de expiração da autorização no formato `DD/MM/YYYY HH:mm:ss`. A autorização é válida por 5 anos a partir da última consulta ao SCR.
+    </ResponseField>
+
+    <ResponseField name="dados.dataCriacao" type="string" required>
+      Data e hora de criação da autorização no formato `DD/MM/YYYY HH:mm:ss`.
+    </ResponseField>
+
+    <ResponseField name="dados.dataAtualizacao" type="string" required>
+      Data e hora da última atualização da autorização no formato `DD/MM/YYYY HH:mm:ss`.
+    </ResponseField>
+
+    <ResponseField name="dados.url" type="string" required>
+      URL pública da autorização gerada, acessível para consulta e auditoria.
+    </ResponseField>
+
+    <ResponseField name="dados.metadata" type="object" required>
+      Espelho dos metadados enviados na requisição, confirmando os dados de contexto da coleta.
+
+      <Expandable title="metadata properties">
+        <ResponseField name="dados.metadata.ip" type="string">
+          Endereço IP registrado no momento da coleta.
+        </ResponseField>
+
+        <ResponseField name="dados.metadata.host" type="string">
+          Host da aplicação que realizou a coleta.
+        </ResponseField>
+
+        <ResponseField name="dados.metadata.userAgent" type="string">
+          User agent registrado no momento da coleta.
+        </ResponseField>
+
+        <ResponseField name="dados.metadata.timestamp" type="string">
+          Timestamp da coleta no formato ISO 8601.
+        </ResponseField>
+
+        <ResponseField name="dados.metadata.location" type="object">
+          Dados de geolocalização registrados.
+
+          <Expandable title="location properties">
+            <ResponseField name="dados.metadata.location.accuracy" type="number">
+              Precisão da geolocalização em metros.
+            </ResponseField>
+
+            <ResponseField name="dados.metadata.location.latitude" type="number">
+              Latitude geográfica registrada.
+            </ResponseField>
+
+            <ResponseField name="dados.metadata.location.longitude" type="number">
+              Longitude geográfica registrada.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
