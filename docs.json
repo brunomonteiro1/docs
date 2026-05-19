@@ -72,11 +72,12 @@
               
               
             ]
+          },
+          {
+            "group": "Autorizador SCR",
+            "pages": []
           }
         ]
-      },
-      {
-        "tab": "Autorizador SCR"
       }
     ],
     "global": {
