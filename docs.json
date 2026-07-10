@@ -68,7 +68,8 @@
               "api-reference/scr/resumo-cliente",
               "api-reference/scr/resumo-carteira",
               "api-reference/scr/resumo-modalidades",
-              "api-reference/scr/resumo-operacoes"
+              "api-reference/scr/resumo-operacoes",
+              "api-reference/scr/mensagens"
               
               
             ]
