@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Databox Docs",
+  "name": "Databox360 -Inteligência em Dados",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -111,6 +111,7 @@
     "socials": {
       "instagram": "https://www.instagram.com/databox360.ia/"
     }
-  }
+  },
+  "description": "Documentação técnica oficial das APIs da DataBox360 para integração de soluções de crédito, SCR Bacen, cadastro, risco, compliance e validação de dados. Guias, autenticação, exemplos de código e referência completa para integração REST."
 }
 
