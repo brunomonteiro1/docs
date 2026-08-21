@@ -4,13 +4,11 @@ description: "Solicita consulta ao SCR do Bacen usando CPF/CNPJ e período (mês
 ---
 
 <div class="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard">
-<div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-blue-400/20 dark:bg-blue-400/20 text-blue-700 dark:text-blue-400">
-POST
+  <div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-blue-400/20 dark:bg-blue-400/20 text-blue-700 dark:text-blue-400">
+    POST
+  </div>
 
-</div>
-
-/scr
-
+  /scr
 </div>
 
 <RequestExample>
@@ -44,7 +42,6 @@ const scrData = await response.json();
 console.log(scrData);
 ```
 
-
 ```python Python
 import requests
 
@@ -62,7 +59,6 @@ payload = {
 response = requests.post(url, json=payload, headers=headers)
 scr_data = response.json()
 ```
-
 
 ```php PHP
 <?php
@@ -1699,7 +1695,6 @@ $scr_data = json_decode($result, true);
 }
 ```
 
-
 ```json Bad Request (400)
 {
   "data": "30/07/2025 12:02:18",
@@ -1721,8 +1716,7 @@ $scr_data = json_decode($result, true);
 </ParamField>
 
 <ParamField body="mes" type="string" required>
-  Mês referência para busca com dois dígitos: Ex: `01` para janeiro, `02` para
-  fevereiro e assim por diante.
+  Mês referência para busca com dois dígitos: Ex: `01` para janeiro, `02` para fevereiro e assim por diante.
 </ParamField>
 
 <ParamField body="ano" type="string" required>
@@ -1755,7 +1749,6 @@ $scr_data = json_decode($result, true);
   Objeto contendo todos os dados da consulta SCR
 
   <Expandable title="consulta properties">
-
     <ResponseField name="consulta.resumoDoCliente" type="object">
       Resumo geral do cliente consultado
 
@@ -2033,6 +2026,5 @@ $scr_data = json_decode($result, true);
         </ResponseField>
       </Expandable>
     </ResponseField>
-
   </Expandable>
 </ResponseField>
