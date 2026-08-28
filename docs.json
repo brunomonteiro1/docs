@@ -43,10 +43,11 @@
             ]
           },
           {
-            "group": "Autenticação",
+            "group": "Autenticação API",
             "pages": [
               "api-reference/authentication"
-            ]
+            ],
+            "icon": "rectangle-api"
           },
           {
             "group": "SCR Bacen",
