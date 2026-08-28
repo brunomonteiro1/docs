@@ -27,15 +27,6 @@
               "integration",
               "support"
             ]
-          },
-          {
-           "group": "Produtos",
-            "pages": [
-              "products/credit",
-              "products/risk",
-              "products/register",
-              "products/compliance"
-            ]
           }
         ]
       }, 
@@ -82,6 +73,15 @@
               "autorizador/resposta"
             ]
           }
+        ]
+      },
+      {
+        "tab": "Produtos",
+        "pages": [
+          "products/credit",
+          "products/risk",
+          "products/register",
+          "products/compliance"
         ]
       }
     ],
