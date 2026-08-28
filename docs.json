@@ -77,9 +77,9 @@
           {
             "group": "Autorizador SCR",
             "pages": [
-              "sobre",
-              "requisicao",
-              "resposta"
+              "autorizador/sobre",
+              "autorizador/requisicao",
+              "autorizador/resposta"
             ]
           }
         ]
