@@ -3,13 +3,11 @@ title: "Autenticação"
 ---
 
 <div class="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard">
-<div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-green-400/20 dark:bg-green-400/20 text-green-700 dark:text-green-400">
-GET
+  <div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-green-400/20 dark:bg-green-400/20 text-green-700 dark:text-green-400">
+    GET
+  </div>
 
-</div>
-
-/sessions/token
-
+  /sessions/token
 </div>
 
 <Note>
@@ -23,7 +21,6 @@ curl -X GET https://sandbox-api.databox360.com.br/api/sessions/token \
   -H "Content-Type: application/json" \
   -H "Authorization: YOUR_API_KEY" \
 ```
-
 
 ```javascript JavaScript
 const response = await fetch(
@@ -41,7 +38,6 @@ const scrData = await response.json();
 console.log(scrData);
 ```
 
-
 ```python Python
 import requests
 
@@ -54,7 +50,6 @@ headers = {
 response = requests.get(url, headers=headers)
 scr_data = response.json()
 ```
-
 
 ```php PHP
 <?php
@@ -89,7 +84,6 @@ $scr_data = json_decode($result, true);
   "versao": "1.0"
 }
 ```
-
 
 ```json Unauthorized (401)
 {
@@ -135,7 +129,5 @@ $scr_data = json_decode($result, true);
 </ResponseField>
 
 <Note>
-  Este endpoint permite que você obtenha um token JWT para autenticar
-  solicitações de API. O token deve ser incluído no cabeçalho de autorização de
-  todas as solicitações subsequentes.
+  Este endpoint permite que você obtenha um token JWT para autenticar solicitações de API. O token deve ser incluído no cabeçalho de autorização de todas as solicitações subsequentes.
 </Note>
