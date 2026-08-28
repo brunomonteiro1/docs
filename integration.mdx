@@ -5,30 +5,29 @@ description: "Visão geral dos modelos de comunicação utilizados nas APIs da D
 
 ## Entenda como funcionam
 
-As APIs da **DataBox360** permitem integrar dados de crédito, risco, cadastro e compliance em diferentes aplicações e sistemas.  
-Nossos serviços são baseados em dois modelos de comunicação que atendem a cenários distintos:
+As APIs da **DataBox360** permitem integrar dados de crédito, risco, cadastro e compliance em diferentes aplicações e sistemas.<br />Nossos serviços são baseados em dois modelos de comunicação que atendem a cenários distintos:
 
 ### 🌐 REST (Representational State Transfer)
 
-- Utiliza o protocolo **HTTP**.  
-- Requisições simples com métodos como `GET`, `POST`, `PUT` e `DELETE`.  
-- Respostas geralmente em `JSON` (formato preferencial), podendo também retornar `XML` ou texto puro.  
-- Modelo mais indicado para integrações síncronas, operações idempotentes e consultas de dados.  
+- Utiliza o protocolo **HTTP**.
+- Requisições simples com métodos como `GET`, `POST`, `PUT` e `DELETE`.
+- Respostas geralmente em `JSON` (formato preferencial), podendo também retornar `XML` ou texto puro.
+- Modelo mais indicado para integrações síncronas, operações idempotentes e consultas de dados.
 
 ### 🔄 WebSocket
 
-- Cria uma **sessão de comunicação bidirecional contínua** entre cliente e servidor.  
-- Permite **atualizações em tempo real** e menor latência.  
-- Ideal para notificações de eventos, streams de dados e monitoramentos contínuos.  
+- Cria uma **sessão de comunicação bidirecional contínua** entre cliente e servidor.
+- Permite **atualizações em tempo real** e menor latência.
+- Ideal para notificações de eventos, streams de dados e monitoramentos contínuos.
 
 ## 🔒 Autenticação e Ambientes
 
-Para acessar qualquer recurso, é necessária **autenticação prévia**.  
-- **Sandbox**: ambiente para testes, sem cobranças reais.  
-  👉 [https://sandbox-api.databox360.com.br](https://sandbox-api.databox360.com.br)  
-- **Produção**: ambiente oficial, com dados reais e regras de cobrança.  
+Para acessar qualquer recurso, é necessária **autenticação prévia**.
 
-Cada módulo possui um fluxo de autenticação específico, garantindo segurança e rastreabilidade.  
+- **Sandbox**: ambiente para testes, sem cobranças reais.<br />👉 [https://sandbox-api.databox360.com.br](https://sandbox-api.databox360.com.br)
+- **Produção**: ambiente oficial, com dados reais e regras de cobrança.
+
+Cada módulo possui um fluxo de autenticação específico, garantindo segurança e rastreabilidade.
 
 ## 🧭 Arquitetura das APIs
 
@@ -36,6 +35,6 @@ A seguir, uma ilustração conceitual do modelo REST utilizado:
 
 ![Modelo REST](/images/rest.png)
 
-<Tip title="Saiba mais">
-Para entender termos técnicos como *endpoints, schemas e tipos de parâmetros*, consulte a página **Conceitos Importantes**.
+<Tip>
+  Para entender termos técnicos como _endpoints, schemas e tipos de parâmetros_, consulte a página **Conceitos Importantes**.
 </Tip>
