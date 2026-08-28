@@ -24,8 +24,7 @@
               "index",
               "about",
               "concepts",
-              "integration",
-              "support"
+              "integration"
             ]
           }
         ]
@@ -82,6 +81,12 @@
           "products/risk",
           "products/register",
           "products/compliance"
+        ]
+      },
+      {
+        "tab": "Atendimento",
+        "pages": [
+          "support"
         ]
       }
     ],
