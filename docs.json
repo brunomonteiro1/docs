@@ -31,7 +31,7 @@
       }, 
       
       {
-        "tab": "Documentação da API",
+        "tab": "Documentação API",
         "groups": [
           {
             "group": "Databox360 API",
@@ -63,7 +63,8 @@
               "api-reference/scr/mensagens"
               
               
-            ]
+            ],
+            "icon": "money-check-alt"
           },
           {
             "group": "Autorizador SCR",
@@ -71,9 +72,11 @@
               "autorizador/sobre",
               "autorizador/requisicao",
               "autorizador/resposta"
-            ]
+            ],
+            "icon": "file-signature"
           }
-        ]
+        ],
+        "icon": "file-doc"
       },
       {
         "tab": "Produtos",
