@@ -74,6 +74,11 @@
               "autorizador/resposta"
             ],
             "icon": "file-signature"
+          },
+          {
+            "group": "Perfil Financeiro",
+            "icon": "money-bill-trend-up",
+            "pages": []
           }
         ],
         "icon": "file-doc"
