@@ -40,7 +40,8 @@
               "api-reference/get-started",
               "api-reference/errors",
               "api-reference/status-code"
-            ]
+            ],
+            "icon": "gear-complex-api"
           },
           {
             "group": "Autenticação API",
@@ -78,7 +79,9 @@
           {
             "group": "Perfil Financeiro",
             "icon": "money-bill-trend-up",
-            "pages": []
+            "pages": [
+              "untitled-page"
+            ]
           }
         ],
         "icon": "file-doc"
