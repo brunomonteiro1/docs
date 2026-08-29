@@ -81,7 +81,8 @@
             "icon": "money-bill-trend-up",
             "pages": [
               "untitled-page",
-              "untitled-page-2"
+              "consulta",
+              "integracao"
             ]
           }
         ],

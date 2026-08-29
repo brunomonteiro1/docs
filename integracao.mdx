@@ -1,0 +1,105 @@
+---
+title: "Integração"
+description: "Informações técnicas para integração com a API do Perfil Financeiro."
+---
+
+A integração com o **Perfil Financeiro** utiliza o mesmo padrão de autenticação das demais APIs da DataBox360.
+
+Caso sua aplicação já esteja integrada à consulta SCR, não será necessário implementar um novo fluxo de autenticação. A mesma chave de API pode ser utilizada para acessar o Perfil Financeiro.
+
+## Autenticação
+
+Após realizar a autenticação, envie o token no cabeçalho `Authorization` de cada requisição:
+
+```http
+Authorization: Bearer YOUR_JWT_TOKEN
+```
+
+<Note>
+  O token deve ser enviado no formato `Bearer`. Consulte a página **Autenticação API** para verificar o fluxo completo de geração do token.
+</Note>
+
+## Ambientes e Endpoints
+
+A API do Perfil Financeiro está disponível nos ambientes Sandbox e Produção.
+
+| Ambiente | Endpoint |
+| --- | --- |
+| Sandbox | `https://sandbox-api.databox360.com.br/api/perfil-financeiro` |
+| Produção | `https://api.databox360.com.br/api/perfil-financeiro` |
+
+<Warning>
+  Utilize o endpoint correspondente ao ambiente configurado para sua integração.
+</Warning>
+
+## Método HTTP
+
+A consulta é realizada por meio do método `POST`:
+
+```http
+POST /perfil-financeiro
+```
+
+## Cabeçalhos
+
+Envie os seguintes cabeçalhos na requisição:
+
+```http
+Authorization: Bearer YOUR_JWT_TOKEN
+Content-Type: application/json
+```
+
+## Corpo da Requisição
+
+A requisição utiliza os mesmos campos da consulta SCR:
+
+```json
+{
+  "documento": "00.000.000/0001-00",
+  "mes": "06",
+  "ano": "2026"
+}
+```
+
+<ParamField body="documento" type="string" required>
+  CPF ou CNPJ da pessoa consultada. Exemplo de CNPJ: `00.000.000/0001-00`.
+</ParamField>
+
+<ParamField body="mes" type="string" required>
+  Mês de referência da consulta, informado com dois dígitos. Exemplo: `06`.
+</ParamField>
+
+<ParamField body="ano" type="string" required>
+  Ano de referência da consulta, informado com quatro dígitos. Exemplo: `2026`.
+</ParamField>
+
+## Exemplo Simplificado
+
+```bash
+curl -X POST https://sandbox-api.databox360.com.br/api/perfil-financeiro \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "documento": "00.000.000/0001-00",
+    "mes": "06",
+    "ano": "2026"
+  }'
+```
+
+## Retorno da Consulta
+
+Quando a consulta for concluída com sucesso, a API retornará:
+
+- o identificador da consulta no campo `id`;
+- os indicadores estruturados no objeto `consulta`;
+- o status da operação;
+- uma `url` exclusiva para visualização do Perfil Financeiro;
+- a versão da API.
+
+<Info>
+  O campo `url` permanece na raiz da resposta e direciona para a visualização exclusiva da consulta realizada.
+</Info>
+
+<Card title="Consultar Referência da API" icon="arrow-right" href="/api-reference/perfil-financeiro/consulta">
+  Consulte os exemplos completos de requisição, resposta e documentação dos campos.
+</Card>
