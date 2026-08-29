@@ -1,9 +1,204 @@
 ---
-title: "Crédito"
-description: "Conceda crédito com dados, não com suposições."
-icon: "code"
+title: "SCR Bacen"
+description: "Visão consolidada de risco de crédito, endividamento e comportamento financeiro de PF e PJ — dados oficiais do Banco Central do Brasil, entregues via API ou dashboard."
+icon: "landmark-dome"
+sidebarTitle: "SCR Bacen"
 ---
 
-Analise o nível de endividamento de pessoas e empresas com dados do Sistema de Informações de Créditos do Banco Central - SCR Bacen: financiamentos, empréstimos, limites e mais de 100 modalidades de crédito. Complemente com histórico de protestos, cheques sem fundos e score de crédito. Automatize concessão, cobrança e recuperação com segurança.
+## O que é
 
-_🔎 Para quem concede crédito, financia ou antecipa recebíveis._
+O **SCR Bacen** é o produto da DataBox360 que entrega, de forma estruturada e pronta para uso, as informações registradas no **Sistema de Informações de Crédito (SCR)** do Banco Central do Brasil.
+
+O SCR é alimentado mensalmente por todas as instituições financeiras autorizadas pelo Bacen. Nele estão registradas, de forma individualizada, todas as operações de crédito com risco direto igual ou superior a **R\$ 200,00** — empréstimos, financiamentos, limites, coobrigações e repasses interfinanceiros de qualquer pessoa física ou jurídica no sistema financeiro nacional.
+
+A DataBox360 estrutura essa consulta e a entrega via **API REST** e **dashboard web**, com camada analítica, visualizações prontas e resumo por inteligência artificial — eliminando a complexidade técnica do Documento 3040 e acelerando a análise de crédito.
+
+---
+
+## Por que o SCR Bacen importa
+
+O SCR é a **fonte primária e oficial** de risco de crédito no Brasil. Não é um bureau privado, não é uma estimativa — é o dado que as próprias instituições financeiras declaram ao Banco Central todo mês.
+
+Isso significa:
+
+- **Abrangência total**: qualquer pessoa ou empresa com operação de crédito ativa no sistema financeiro aparece no SCR, independentemente do banco ou produto contratado.
+- **Sem viés de bureau**: diferente de scores privados, o SCR reflete o saldo real de cada operação, o prazo exato de vencimento e a modalidade do crédito.
+- **Dado regulatório**: é o mesmo conjunto de informações que o Bacen usa para supervisionar o sistema financeiro — a fonte mais confiável disponível para análise de crédito no país.
+- **Retroatividade de 15\+ anos**: o SCR mantém histórico de prazos que vai do curtíssimo prazo até operações com vencimento superior a 15 anos, permitindo projeção de risco longitudinal.
+
+<Info>
+  O SCR não está disponível livremente para empresas. A consulta exige credenciamento como instituição financeira ou contratação de um correspondente bancário autorizado. A DataBox360 entrega esse acesso de forma gerenciada, com conformidade regulatória embutida.
+</Info>
+
+---
+
+## O que a consulta entrega
+
+### Resumo do Cliente
+
+Visão consolidada dos principais indicadores de crédito — carteira ativa, inadimplência, risco total e relacionamento histórico com o sistema financeiro.
+
+| Indicador | O que representa |
+| --- | --- |
+| **Carteira Ativa** | Total de dívidas em aberto: a vencer \+ vencidas |
+| **Carteira de Crédito** | Total de operações registradas em nome do cliente |
+| **Risco Total** | Exposição financeira máxima: responsabilidade total \+ créditos a liberar \+ limites \+ risco indireto |
+| **Repasses Interfinanceiros** | Recursos originados de outras instituições |
+| **Coobrigações** | Responsabilidades assumidas em operações de terceiros |
+| **Créditos a Liberar** | Valores aprovados ainda não disponibilizados |
+| **Limites de Crédito** | Recursos pré-aprovados não utilizados (cartão, cheque especial etc.) |
+
+### Indicadores da Carteira
+
+Breakdown qualitativo da carteira, separando o que está regular do que já apresenta problema:
+
+<CardGroup cols={3}>
+  <Card title="Créditos a Vencer" icon="circle-check">
+    Parcelas dentro do prazo contratual. O cliente está adimplente.
+  </Card>
+
+  <Card title="Créditos Vencidos" icon="triangle-exclamation">
+    Parcelas que já ultrapassaram o vencimento sem pagamento. Indicador direto de inadimplência.
+  </Card>
+
+  <Card title="Baixados como Prejuízo" icon="circle-xmark">
+    Valores reconhecidos contabilmente como perda pela instituição. A dívida continua existindo para o cliente.
+  </Card>
+</CardGroup>
+
+### Vencimentos por Faixa de Prazo
+
+A consulta classifica todos os valores em **faixas de vencimento** — de créditos vencidos há 1 dia até operações com prazo superior a 15 anos. Cada faixa apresenta separadamente valores a vencer, vencidos, baixados como prejuízo, limites e créditos a liberar.
+
+Isso permite ao analista enxergar não apenas o tamanho da dívida, mas o **perfil temporal do risco** — concentração de vencimentos, pressão de caixa futura e maturidade das obrigações.
+
+### Modalidades de Crédito
+
+O SCR Bacen classifica as operações em **18 grandes grupos de modalidades**, desdobrados em mais de **99 tipos de operação** — do adiantamento simples ao financiamento imobiliário, passando por garantias prestadas, coobrigações e relações interfinanceiras.
+
+<Tabs>
+  <Tab title="Modalidades 1–10">
+    | # | Modalidade |
+    | --- | --- |
+    | 1 | Adiantamentos a Depositantes |
+    | 2 | Empréstimos |
+    | 3 | Direitos Creditórios Descontados |
+    | 4 | Financiamentos |
+    | 5 | Financiamentos à Exportação |
+    | 6 | Financiamentos à Importação |
+    | 7 | Financiamentos com Interveniência |
+    | 8 | Financiamentos Rurais e Agroindustriais |
+    | 9 | Financiamentos Imobiliários |
+    | 10 | Financiamentos de Títulos e Valores Mobiliários |
+  </Tab>
+  <Tab title="Modalidades 11–18">
+    | # | Modalidade |
+    | --- | --- |
+    | 11 | Financiamentos de Infraestrutura e Desenvolvimento |
+    | 12 | Operações de Arrendamento Mercantil |
+    | 13 | Outros Créditos |
+    | 14 | Coobrigações e Riscos em Garantias Prestadas |
+    | 15 | Fiança Bancária e Garantias Prestadas |
+    | 16 | Títulos de Crédito Fora da Carteira Classificada |
+    | 17 | Relações Interfinanceiras |
+    | 18 | Retenção de Risco |
+  </Tab>
+</Tabs>
+
+Para cada modalidade, a consulta exibe os saldos a vencer e vencidos — identificando **onde está o risco** dentro da composição de crédito do cliente.
+
+### Resumo por Inteligência Artificial
+
+No topo do dashboard, a DataBox360 entrega um **resumo interpretativo gerado por IA** — síntese em linguagem natural dos principais alertas, padrões de comportamento financeiro e indicadores críticos. Reduz o tempo de análise e facilita a comunicação para equipes não especializadas em crédito.
+
+---
+
+## Risco Total — o indicador central
+
+O **Risco Total** sintetiza a exposição financeira real do cliente no sistema financeiro. É o indicador mais utilizado em políticas de crédito, modelos de scoring e decisões de limite.
+
+```text
+Risco Total = Responsabilidade Total
+            + Créditos a Liberar
+            + Limites de Crédito
+            + Risco Indireto (coobrigações e garantias prestadas a terceiros)
+```
+
+<Warning>
+  O Risco Total **inclui** o risco indireto. Um cliente sem dívida própria pode apresentar exposição elevada por ser avalista ou garantidor de terceiros. Ignorar esse componente leva a subestimação de risco.
+</Warning>
+
+---
+
+## Indicadores de qualidade da informação
+
+Além dos dados financeiros, a consulta apresenta dois indicadores que medem a **confiabilidade da própria informação**:
+
+- **Documentos processados**: percentual de registros enviados pelas IFs incorporados à base do Bacen. Abaixo de 85% pode indicar instabilidade na data-base consultada.
+- **Volume processado**: percentual do valor financeiro total consolidado. Discrepâncias indicam que parte dos valores ainda não está refletida no relatório.
+
+---
+
+## Casos de uso
+
+<AccordionGroup>
+  <Accordion title="Concessão de crédito — PF e PJ">
+    Avalie o endividamento total, a qualidade da carteira e o histórico de inadimplência antes de definir limite, taxa e garantias. O SCR elimina a dependência de extratos bancários autodeclarados para dimensionar a exposição real.
+  </Accordion>
+
+  <Accordion title="Onboarding e KYC financeiro">
+    Identifique clientes de alto risco no momento do cadastro. Carteiras com alto percentual de crédito vencido ou operações baixadas como prejuízo são sinais de alerta imediato.
+  </Accordion>
+
+  <Accordion title="Renegociação e reestruturação de dívida">
+    Entenda o perfil completo de endividamento do cliente para construir propostas viáveis. O detalhamento por modalidade e faixa de prazo revela quais obrigações têm prioridade de pagamento.
+  </Accordion>
+
+  <Accordion title="Monitoramento contínuo de carteira">
+    Acompanhe a evolução do endividamento de clientes ao longo do tempo. Variações no Risco Total, novas modalidades contratadas ou crescimento de créditos vencidos sinalizam mudança de perfil de risco.
+  </Accordion>
+
+  <Accordion title="Due diligence e M&A">
+    Em processos de aquisição, fusão ou crédito estruturado, o SCR entrega a exposição financeira completa da empresa-alvo — sem depender de documentos autodeclarados.
+  </Accordion>
+
+  <Accordion title="Análise de garantidores e avalistas">
+    O Risco Indireto no SCR revela coobrigações assumidas pelo cliente. Um avalista com alto risco indireto pode comprometer a qualidade da garantia ofertada.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Formatos de entrega
+
+| Formato | Descrição |
+| --- | --- |
+| **API REST** | Endpoint JSON, integração direta ao seu sistema de crédito, CRM ou motor de decisão |
+| **Dashboard web** | Interface analítica com gráficos, filtros e exportação em PDF |
+| **PDF gerado** | Relatório estruturado para dossiê de crédito, arquivo e auditoria |
+| **Resumo IA** | Síntese interpretativa em linguagem natural, disponível na interface web |
+
+---
+
+## Conformidade e sigilo bancário
+
+A consulta ao SCR é protegida pela **Lei Complementar nº 105/2001** e regulamentada pela **Resolução CMN nº 5.037/2022**. Todo acesso exige **autorização expressa e específica do titular** — concedida por escrito ou meio eletrônico.
+
+A DataBox360 opera a gestão dessas autorizações por meio do [**Autorizador SCR**](/autorizador-scr) — plataforma dedicada à coleta, registro e armazenamento auditável de consentimentos.
+
+<Note>
+  A DataBox360 atua como **correspondente bancário** de instituições financeiras autorizadas pelo Banco Central, exclusivamente para fins de consulta ao SCR mediante autorização do titular.
+</Note>
+
+---
+
+## Base normativa
+
+| Norma | Relevância |
+| --- | --- |
+| **LC nº 105/2001** | Sigilo bancário — autoriza compartilhamento de informações financeiras para fins cadastrais |
+| **Resolução CMN nº 5.037/2022** | Norma-mãe do SCR — regula acesso, consultas e obrigações das instituições |
+| **Circular BCB nº 3.870/2017** | Dispõe sobre o Documento 3040 e o limite de R\$ 200,00 |
+| **IN BCB nº 659/2025** | Reestruturação das modalidades do domínio 15 — Garantias Prestadas (vigência mai/2026) |
+| **Res. Conjunta CMN/BCB nº 16/2025** | BaaS — veda repasse de dados do SCR da instituição Prestadora à Tomadora |
+| **ACT nº 41/2026-BCB/CVM** | Estende o acesso ao SCR a securitizadoras e FIDCs regulados pela CVM |

@@ -1,9 +1,180 @@
 ---
-title: "Risco"
-description: "Diagnóstico completo de risco jurídico e fiscal."
-icon: "code"
+title: "Perfil Financeiro"
+description: "Inteligência de crédito derivada do SCR Bacen — indicadores analíticos, classificação de risco e visualizações prontas para decisão, via API ou dashboard."
+icon: "chart-mixed"
+sidebarTitle: "Perfil Financeiro"
 ---
 
-Faça consultas automatizadas em todos os tribunais do Brasil e identifique com precisão execuções fiscais, processos cíveis, trabalhistas, tributários, ações ambientais, falências, recuperações judiciais e dívidas com o poder público. Mapeie riscos jurídicos, financeiros e reputacionais com profundidade. Tome decisões mais seguras ao fornecer, contratar, investir ou firmar parcerias.
+## O que é
 
-_🔎 Para quem quer prevenir riscos ocultos ao fornecer, investir ou se associar._
+O **Perfil Financeiro** é o produto analítico da DataBox360 construído sobre os dados do SCR Bacen. Enquanto a [consulta SCR Bacen](/scr-bacen) entrega os dados brutos do Banco Central estruturados, o Perfil Financeiro vai além: transforma esses dados em **indicadores de risco interpretados**, classificações automáticas e visualizações prontas para suportar decisões de crédito com mais velocidade e menos ambiguidade.
+
+É o produto para equipes que não querem apenas ver os números — querem entender o que eles significam.
+
+---
+
+## O problema que resolve
+
+O SCR Bacen entrega um volume expressivo de informações: dezenas de modalidades, centenas de operações, faixas de vencimento do curtíssimo ao longuíssimo prazo, valores a vencer, vencidos, baixados, limites, repasses e coobrigações. Interpretar tudo isso com consistência, velocidade e sem erros de lógica é o desafio que o Perfil Financeiro resolve.
+
+<CardGroup cols={2}>
+  <Card title="Sem Perfil Financeiro" icon="circle-xmark">
+    Dado bruto do SCR. Analista precisa consolidar manualmente modalidades, calcular indicadores, identificar concentrações e interpretar vencimentos. Processo lento, sujeito a erros e não escalável.
+  </Card>
+
+  <Card title="Com Perfil Financeiro" icon="circle-check">
+    Indicadores calculados, carteira classificada, risco interpretado e visualizações prontas. Analista foca na decisão — não no processamento de dados.
+  </Card>
+</CardGroup>
+
+---
+
+## O que o produto entrega
+
+### Indicadores Analíticos Calculados
+
+O Perfil Financeiro calcula automaticamente os principais indicadores derivados do SCR, aplicando as regras de negócio definidas pelo Banco Central e pela DataBox360:
+
+| Indicador | Cálculo |
+| --- | --- |
+| **Carteira Ativa** | Créditos a vencer \+ créditos vencidos (excluindo modalidades 14XX, 15XX, limites e créditos a liberar) |
+| **Índice de Inadimplência** | Créditos vencidos ÷ Carteira Ativa |
+| **Risco Total** | Responsabilidade total \+ créditos a liberar \+ limites de crédito \+ risco indireto |
+| **Comprometimento de Limite** | Carteira Ativa ÷ (Risco Total − Limites de Crédito) |
+| **Concentração por Modalidade** | Participação percentual de cada grupo de modalidade na carteira total |
+
+### Classificação por Grupo de Modalidade
+
+As operações são agrupadas e classificadas automaticamente por **perfil de uso do crédito**, usando os 2 primeiros dígitos do código de modalidade do Documento 3040:
+
+<Tabs>
+  <Tab title="Grupos de Modalidade">
+    | Grupo | Modalidades | Perfil |
+    | --- | --- | --- |
+    | **Adiantamentos** | 01XX | Crédito de curtíssimo prazo, alto risco de renovação |
+    | **Empréstimos** | 02XX | Capital de giro, pessoal, consignado |
+    | **Direitos Creditórios** | 03XX | Antecipação de recebíveis, desconto de duplicatas |
+    | **Financiamentos** | 04XX–10XX | Crédito produtivo, rural, imobiliário, exportação |
+    | **Infraestrutura** | 11XX | Longo prazo, projetos de capital |
+    | **Arrendamento** | 12XX | Leasing operacional e financeiro |
+    | **Outros Créditos** | 13XX | Operações residuais não classificadas nos demais grupos |
+    | **Coobrigações** | 14XX | Risco assumido em cessões — excluído da Carteira Ativa |
+    | **Garantias Prestadas** | 15XX | Fiança bancária, aval, garantias a terceiros — Risco Indireto |
+  </Tab>
+  <Tab title="Regras de Exclusão">
+    Os grupos 14XX e 15XX são **excluídos** do cálculo da Carteira Ativa por representarem risco assumido em operações de terceiros, não dívida própria do cliente. São contabilizados separadamente no Risco Indireto.
+
+    Limites de crédito e créditos a liberar também são excluídos da Carteira Ativa — representam capacidade contratada, não exposição real.
+  </Tab>
+</Tabs>
+
+### Vencimentos com Visualização Analítica
+
+O Perfil Financeiro apresenta a distribuição temporal da carteira em um **gráfico de barras** que separa, em cada faixa de prazo, os valores a vencer dos vencidos. A leitura imediata permite:
+
+- Identificar **concentração de inadimplência** em faixas específicas
+- Detectar **pressão de caixa** nos próximos vencimentos
+- Comparar o perfil de **adimplemento por modalidade**
+- Projetar **risco futuro** com base no perfil de maturidade da carteira
+
+As faixas cobertas vão de créditos vencidos há 1 dia até operações com prazo superior a 15 anos — o mesmo padrão de vértices do Documento 3040 do Bacen.
+
+### Análise por Modalidade com Saldos Detalhados
+
+Para cada grupo de modalidade presente na carteira do cliente, o Perfil Financeiro exibe:
+
+- **Saldo a vencer** — operações dentro do prazo
+- **Saldo vencido** — operações em atraso
+- **Saldo baixado** — prejuízos reconhecidos
+- **Limites e créditos a liberar** — quando aplicáveis
+
+Isso permite identificar rapidamente **quais modalidades concentram o risco** e qual é o grau de adimplemento por produto contratado.
+
+### Detalhes Granulares por Faixa e Modalidade
+
+A camada mais detalhada da consulta decompõe cada modalidade nas faixas de prazo individuais — permitindo ao analista saber exatamente quanto do risco de um financiamento rural, por exemplo, está concentrado em parcelas vencidas há mais de 360 dias versus parcelas que ainda vencerão nos próximos 30 dias.
+
+Inclui também:
+
+- Títulos de crédito fora da carteira classificada (CPR, Debêntures)
+- Créditos a liberar discriminados por modalidade
+- Limites de crédito por produto
+
+---
+
+## Resumo por Inteligência Artificial
+
+O Perfil Financeiro inclui um **resumo interpretativo gerado por IA** — síntese em linguagem natural que consolida os principais achados da análise: nível de endividamento, qualidade da carteira, alertas de inadimplência, concentração de risco por modalidade e indicadores de relacionamento com o sistema financeiro.
+
+Útil para:
+
+- Comunicação com comitês de crédito
+- Documentação de dossiês
+- Equipes de relacionamento que precisam de contexto rápido sem dominar a estrutura técnica do SCR
+
+---
+
+## Casos de uso
+
+<AccordionGroup>
+  <Accordion title="Motor de decisão de crédito">
+    Os indicadores calculados pelo Perfil Financeiro são consumidos diretamente por motores de decisão via API — eliminando a necessidade de processar os dados brutos do SCR internamente. O índice de inadimplência, o Risco Total e a composição de modalidades chegam prontos para alimentar regras e modelos.
+  </Accordion>
+
+  <Accordion title="Análise de crédito empresarial">
+    Para PMEs e grandes corporações, o Perfil Financeiro revela a estrutura real do endividamento — distinguindo financiamentos produtivos de crédito de giro oneroso, identificando garantias prestadas a terceiros e quantificando o risco indireto que não aparece em scores tradicionais.
+  </Accordion>
+
+  <Accordion title="Concessão de crédito agro">
+    A separação das modalidades de financiamento rural (08XX) e a visualização por faixas de prazo permitem avaliar a sazonalidade do endividamento agrícola e identificar operações com risco de inadimplência concentrado em períodos de entressafra.
+  </Accordion>
+
+  <Accordion title="Análise de avalistas e garantidores">
+    O grupo 15XX (Garantias Prestadas) é calculado separadamente como Risco Indireto. Isso permite avaliar com precisão o comprometimento real de um avalista — que pode ter Carteira Ativa zerada, mas Risco Total elevado por aval em operações de terceiros.
+  </Accordion>
+
+  <Accordion title="Portais de crédito e plataformas de onboarding">
+    O Perfil Financeiro via API entrega todos os indicadores e a estrutura de modalidades em JSON, pronto para renderização em qualquer interface. Sem processamento adicional do lado do cliente.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Formatos de entrega
+
+| Formato | Descrição |
+| --- | --- |
+| **API REST — JSON** | Todos os indicadores calculados, grupos de modalidade e faixas de vencimento em estrutura JSON documentada |
+| **Dashboard web** | Interface com gráficos interativos, resumo de carteira e filtros por modalidade |
+| **PDF gerado** | Relatório estruturado com visual padronizado, pronto para dossiê, arquivo e auditoria |
+| **Resumo IA** | Síntese interpretativa em linguagem natural, disponível na interface web e como campo na resposta da API |
+
+---
+
+## Relação com o SCR Bacen
+
+O Perfil Financeiro e o SCR Bacen são produtos complementares:
+
+| Dimensão | SCR Bacen | Perfil Financeiro |
+| --- | --- | --- |
+| **Dado entregue** | Dados brutos estruturados do Bacen | Indicadores calculados e classificados |
+| **Público-alvo** | Analistas e sistemas que processam SCR | Decisores, motores de crédito, plataformas |
+| **Camada analítica** | Estrutura do Documento 3040 | Indicadores derivados \+ visualizações prontas |
+| **Resumo IA** | Sim | Sim |
+| **Entrega** | API, dashboard, PDF | API, dashboard, PDF |
+
+<Note>
+  O Perfil Financeiro requer autorização do titular para consulta ao SCR, gerenciada pelo [**Autorizador SCR**](/autorizador-scr). Todas as consultas são realizadas em conformidade com a LC 105/2001 e a Resolução CMN 5.037/2022.
+</Note>
+
+---
+
+## Base normativa
+
+| Norma | Relevância para o produto |
+| --- | --- |
+| **LC nº 105/2001** | Sigilo bancário — base legal para consulta mediante autorização |
+| **Resolução CMN nº 5.037/2022** | Regras de acesso ao SCR e obrigatoriedade de autorização específica |
+| **Circular BCB nº 3.870/2017** | Documento 3040 — estrutura de modalidades, vértices e campos da consulta |
+| **IN BCB nº 659/2025** | Reestruturação do domínio 15 (Garantias Prestadas) — impacta classificação do Risco Indireto |
+| **Res. Conjunta CMN/BCB nº 16/2025** | BaaS — regras sobre repasse de dados SCR entre instituições |
