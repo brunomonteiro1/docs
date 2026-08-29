@@ -80,9 +80,9 @@
             "icon": "money-bill-trend-up",
             "pages": []
           },
-          "perfil-financeiro",
-          "consulta",
-          "integracao"
+          "perfil-financeiro/visao-geral",
+          "perfil-financeiro/consulta",
+          "perfil-financeiro/integracao"
         ]
       },
       {
