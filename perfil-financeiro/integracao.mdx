@@ -49,6 +49,38 @@ Authorization: Bearer YOUR_JWT_TOKEN
 Content-Type: application/json
 ```
 
+## Data-Base da Consulta
+
+A data-base determina o mês de referência das informações utilizadas na geração do Perfil Financeiro.
+
+Como as informações são atualizadas mensalmente, a DataBox360 aplica uma regra para definir a data-base mais recente disponível com segurança:
+
+| Dia da requisição | Data-base considerada |
+| --- | --- |
+| Dia **1 a 25** | Mês retrasado (**M-2**) |
+| Dia **26 a 31** | Mês anterior (**M-1**) |
+
+### Exemplo
+
+| Data da requisição | Data-base considerada |
+| --- | --- |
+| `05/08/2026` | `06/2026` (M-2) |
+| `26/08/2026` | `07/2026` (M-1) |
+
+<Note>
+  Os campos `mes` e `ano` devem respeitar a data-base disponível no momento da requisição.
+</Note>
+
+Na resposta, o período efetivamente consultado é informado no campo `consulta.databaseConsultada`, no formato `AAAA-MM`:
+
+```json
+{
+  "consulta": {
+    "databaseConsultada": "2026-07"
+  }
+}
+```
+
 ## Corpo da Requisição
 
 A requisição utiliza os mesmos campos da consulta SCR:
