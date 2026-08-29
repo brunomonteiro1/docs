@@ -32,26 +32,28 @@
       
       {
         "tab": "Documentação API",
-        "groups": [
+        "icon": "file-doc",
+        "pages": [
           {
             "group": "Databox360 API",
+            "icon": "gear-complex-api",
             "pages": [
               "api-reference/introduction",
               "api-reference/get-started",
               "api-reference/errors",
               "api-reference/status-code"
-            ],
-            "icon": "gear-complex-api"
+            ]
           },
           {
             "group": "Autenticação API",
+            "icon": "rectangle-api",
             "pages": [
               "api-reference/authentication"
-            ],
-            "icon": "rectangle-api"
+            ]
           },
           {
             "group": "SCR Bacen",
+            "icon": "money-check-alt",
             "pages": [
               "api-reference/scr/consult",
               "api-reference/scr/mod",
@@ -62,36 +64,26 @@
               "api-reference/scr/resumo-modalidades",
               "api-reference/scr/resumo-operacoes",
               "api-reference/scr/mensagens"
-              
-              
-            ],
-            "icon": "money-check-alt"
+            ]
           },
           {
             "group": "Autorizador SCR",
+            "icon": "file-signature",
             "pages": [
               "autorizador/sobre",
               "autorizador/requisicao",
               "autorizador/resposta"
-            ],
-            "icon": "file-signature"
+            ]
           },
           {
             "group": "Perfil Financeiro",
             "icon": "money-bill-trend-up",
-            "pages": [
-              {
-                "group": "Perfil Financeiro",
-                "pages": [
-                  "untitled-page",
-                  "consulta",
-                  "integracao"
-                ]
-              }
-            ]
-          }
-        ],
-        "icon": "file-doc"
+            "pages": []
+          },
+          "untitled-page",
+          "consulta",
+          "integracao"
+        ]
       },
       {
         "tab": "Produtos",
