@@ -4,3 +4,128 @@ sidebarTitle: "Autorizador SCR"
 description: "Plataforma SaaS de governança, gestão e rastreabilidade de autorizações para consulta ao SCR Bacen — conformidade com LC 105/2001 e Resolução CMN 5.037/2022."
 icon: "shield-check"
 ---
+
+## O que é
+
+O **Autorizador SCR** é uma plataforma tecnológica desenvolvida pela DataBox360 para controlar todo o ciclo de vida das autorizações exigidas por lei para a consulta ao **Sistema de Informações de Crédito (SCR)** do Banco Central do Brasil.
+
+Antes de qualquer consulta ao SCR, a legislação exige que o titular — pessoa física ou jurídica — conceda **autorização expressa, específica e documentada**. O Autorizador SCR resolve esse requisito de ponta a ponta: da coleta digital do consentimento ao armazenamento seguro e auditável, com governança, rastreabilidade e conformidade regulatória embutidas.
+
+<Info>
+  O Autorizador SCR está disponível em [autorizadorscr.com.br](https://www.autorizadorscr.com.br) e integra-se ao fluxo de onboarding e concessão de crédito da sua empresa sem necessidade de desenvolvimento interno.
+</Info>
+
+---
+
+## Por que a autorização é obrigatória
+
+A consulta ao SCR envolve dados protegidos pelo **sigilo bancário**. Duas normas determinam as condições de acesso:
+
+**Lei Complementar nº 105/2001 — art. 1º, § 3º** Estabelece que a troca de informações entre instituições financeiras para fins cadastrais não constitui violação do dever de sigilo, desde que observadas as normas do CMN e do Banco Central.
+
+**Resolução CMN nº 5.037/2022** Determina que instituições financeiras e empresas autorizadas só podem consultar as informações consolidadas do SCR mediante **autorização específica do cliente**, concedida por escrito ou meio eletrônico.
+
+<Warning>
+  Consultar o SCR sem autorização documentada do titular configura violação do sigilo bancário — sujeita à responsabilização civil e criminal prevista na LC 105/2001. O Autorizador SCR elimina esse risco operacional.
+</Warning>
+
+---
+
+## Como funciona
+
+O fluxo de autorização é simples, digital e auditável:
+
+<Steps>
+  <Step title="Geração do link de autorização">
+    A empresa gera uma solicitação de autorização pela plataforma. Um link único e seguro é criado para o titular.
+  </Step>
+  <Step title="Consentimento pelo titular">
+    O titular acessa o link — por e-mail, WhatsApp ou qualquer canal digital — lê o termo de autorização e concede o consentimento de forma eletrônica, livre e expressa.
+  </Step>
+  <Step title="Registro e validação">
+    A plataforma registra e valida o consentimento com metadados de identidade, data, hora e dispositivo — criando uma trilha de auditoria completa.
+  </Step>
+  <Step title="Armazenamento pelo prazo legal">
+    A autorização é armazenada pelo prazo exigido pela regulamentação, ficando disponível como evidência auditável a qualquer momento.
+  </Step>
+  <Step title="Consulta SCR liberada">
+    Com a autorização registrada, a consulta ao SCR pode ser realizada — seja via API, seja pelo dashboard da DataBox360.
+  </Step>
+</Steps>
+
+---
+
+## Pilares da plataforma
+
+<CardGroup cols={3}>
+  <Card title="Governança" icon="building-columns">
+    Controle estruturado de todo o processo de autorizações — quem solicitou, quando, para qual finalidade e com qual resultado.
+  </Card>
+
+  <Card title="Rastreabilidade" icon="magnifying-glass">
+    Histórico completo e auditável de cada autorização: data, canal, metadados do titular e situação atual do consentimento.
+  </Card>
+
+  <Card title="Conformidade" icon="scale-balanced">
+    Coleta e armazenamento em conformidade com a LC 105/2001 e a Resolução CMN 5.037/2022, com termo de autorização padronizado e validado juridicamente.
+  </Card>
+</CardGroup>
+
+---
+
+## Funcionalidades
+
+| Funcionalidade | Descrição |
+| --- | --- |
+| **Link de autorização digital** | Geração de link único por titular, enviável por qualquer canal |
+| **Termo de autorização padronizado** | Texto validado juridicamente conforme a Resolução CMN 5.037/2022 |
+| **Registro com timestamp** | Captura de data, hora, IP e dispositivo no momento do consentimento |
+| **Armazenamento seguro** | Custódia da autorização pelo prazo legal exigido |
+| **Trilha de auditoria** | Log imutável de cada evento do ciclo de autorização |
+| **Consulta de status** | Verificação em tempo real se determinado CPF/CNPJ possui autorização ativa |
+| **Revogação de consentimento** | Suporte ao direito de revogação do titular, conforme LGPD e LC 105/2001 |
+
+---
+
+## Perguntas frequentes
+
+<AccordionGroup>
+  <Accordion title="Quem precisa usar o Autorizador SCR?">
+    Qualquer empresa que consulte o SCR Bacen precisa coletar e guardar a autorização do titular antes da consulta. Isso inclui fintechs, correspondentes bancários, empresas de crédito, seguradoras, factorings e qualquer organização que use dados do SCR em seus processos de análise.
+  </Accordion>
+
+  <Accordion title="A autorização tem validade?">
+    Sim. A autorização é específica para a finalidade declarada no momento da coleta. A Resolução CMN 5.037/2022 exige que a autorização seja expressa e específica — autorizações genéricas ou implícitas não são aceitas pelo Banco Central.
+  </Accordion>
+
+  <Accordion title="O titular pode revogar a autorização?">
+    Sim. O titular pode revogar o consentimento a qualquer momento. A plataforma registra a revogação com o mesmo rigor do consentimento original, preservando a trilha de auditoria.
+  </Accordion>
+
+  <Accordion title="Como o Autorizador SCR se integra ao meu sistema?">
+    A plataforma oferece interface web para uso direto e integração via API para automação do fluxo de autorização dentro de sistemas de onboarding, CRM ou concessão de crédito.
+  </Accordion>
+
+  <Accordion title="A DataBox360 é uma instituição financeira?">
+    Não. A DataBox360 (Compilando Soluções em Tecnologia e Pagamentos Ltda., CNPJ 15.700.749/0001-19) atua como **correspondente bancário**, devidamente contratada por instituições financeiras autorizadas pelo Banco Central, exclusivamente para fins de coleta e gestão de autorizações e consulta ao SCR.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Base normativa
+
+| Norma | O que determina |
+| --- | --- |
+| **LC nº 105/2001** | Proteção do sigilo bancário e condições legais para compartilhamento de dados financeiros |
+| **Resolução CMN nº 5.037/2022** | Obrigatoriedade de autorização específica do titular para consulta ao SCR |
+| **LGPD — Lei nº 13.709/2018** | Base legal para tratamento de dados pessoais, incluindo direito de revogação de consentimento |
+
+---
+
+## Documentos
+
+- [Termo de Autorização SCR](https://databox360.com.br/termos/termo-autorizacao-scr-banco-central.pdf)
+- [Política de Privacidade](https://compilando.com.br/politica_privacidade.html)
+- [LC nº 105/2001](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp105.htm)
+- [Resolução CMN nº 5.037/2022](https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o%20CMN&numero=5037)
