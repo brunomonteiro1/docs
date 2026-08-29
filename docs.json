@@ -89,9 +89,9 @@
       {
         "tab": "Produtos",
         "pages": [
+          "untitled-page-2",
           "products/credit",
-          "products/risk",
-          "untitled-page-2"
+          "products/risk"
         ]
       },
       {
