@@ -1,4 +1,64 @@
 ---
-title: "Perfil Financeiro"
-description: "O Perfil Financeiro transforma informações sobre operações de crédito e financiamento em indicadores claros e objetivos, permitindo compreender a exposição financeira de pessoas físicas e jurídicas para apoiar decisões de concessão, renovação e monitoramento de crédito."
+title: "Visão Geral"
+description: "Conheça o Perfil Financeiro da DataBox360 e os indicadores disponibilizados pelo produto."
 ---
+
+O **Perfil Financeiro** transforma informações sobre operações de crédito em indicadores claros e objetivos, facilitando a análise da exposição financeira de pessoas físicas e jurídicas.
+
+A consulta utiliza informações originadas no **Sistema de Informações de Créditos — SCR**, disponibilizadas em conformidade com a regulamentação aplicável, e as transforma em indicadores para apoiar decisões de concessão, renovação e monitoramento de crédito.
+
+## O Que o Produto Entrega
+
+O Perfil Financeiro apresenta informações consolidadas sobre o relacionamento do cliente com o sistema financeiro, incluindo:
+
+- composição da carteira por categoria;
+- distribuição dos vencimentos por prazo;
+- concentração das operações a vencer;
+- concentração das operações vencidas;
+- distribuição dos valores baixados como prejuízo;
+- quantidade de operações de crédito;
+- quantidade de instituições financeiras;
+- tempo de relacionamento com o sistema financeiro;
+- intervalo estimado do valor contratado;
+- indicadores e insights sobre o perfil consultado.
+
+## Aplicações
+
+Os indicadores podem ser utilizados em diferentes etapas da gestão de crédito:
+
+- análise para concessão de crédito;
+- renovação de limites e operações;
+- monitoramento da exposição financeira;
+- acompanhamento da concentração da carteira;
+- identificação de alterações no perfil de endividamento;
+- apoio aos processos de cobrança e recuperação de crédito.
+
+## Visualização do Perfil
+
+Além dos dados estruturados retornados pela API, cada consulta gera uma página exclusiva para visualização do Perfil Financeiro.
+
+O endereço dessa página é disponibilizado no campo `url`, localizado na raiz da resposta:
+
+```json
+{
+  "status": "sucesso",
+  "url": "https://sandbox-perfil-financeiro.databox360.com.br/75cb4884-4165-4a91-9c6d-dbdb402cf2be",
+  "versao": "1.0"
+}
+```
+
+<Note>
+  O campo `url` é exclusivo para a consulta realizada e permite acessar a apresentação visual dos indicadores.
+</Note>
+
+## Próximos Passos
+
+<CardGroup cols={2}>
+  <Card title="Integração" icon="plug" href="/api-reference/perfil-financeiro/integracao">
+    Consulte os ambientes, a autenticação e os requisitos técnicos.
+  </Card>
+
+  <Card title="Realizar Consulta" icon="code" href="/api-reference/perfil-financeiro/consulta">
+    Veja o endpoint, o payload e a estrutura completa da resposta.
+  </Card>
+</CardGroup>
