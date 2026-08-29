@@ -78,11 +78,12 @@
           {
             "group": "Perfil Financeiro",
             "icon": "money-bill-trend-up",
-            "pages": []
-          },
-          "perfil-financeiro/visao-geral",
-          "perfil-financeiro/consulta",
-          "perfil-financeiro/integracao"
+            "pages": [
+              "perfil-financeiro/visao-geral",
+              "perfil-financeiro/integracao",
+              "perfil-financeiro/consulta"
+            ]
+          }
         ]
       },
       {
