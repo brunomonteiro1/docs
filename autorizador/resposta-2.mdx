@@ -1,0 +1,55 @@
+---
+title: "Conceitos"
+description: "Entenda como funcionam o registro, a validade, o reenvio e os formatos de resposta do Autorizador SCR."
+---
+
+Esta página reúne as regras comuns aos três endpoints do Autorizador SCR.
+
+## Endpoints
+
+Todas as rotas partem do host `https://api.databox360.com.br/api` e exigem autenticação via [Bearer Token](/api-reference/autenticacao).
+
+| Operação | Método | Rota |
+| --- | --- | --- |
+| [Enviar autorização](/autorizador/enviar-autorizacao) | `POST` | `/autorizacoes` |
+| [Consultar autorização](/autorizador/consultar-autorizacao) | `GET` | `/autorizacoes/autorizacao/:documento` |
+| [Listar autorizações](/autorizador/listar-autorizacoes) | `GET` | `/autorizacoes/` |
+
+## Reenvio atualiza o registro
+
+{/* TODO: confirmar com o time de produto antes de publicar. Observado: reenviar para o mesmo documento manteve o id e a dataCriacao e alterou a dataAtualizacao. */}
+
+Cada documento possui uma autorização. Ao enviar novamente os dados de um documento que já tem autorização, o registro existente é atualizado: o `id` e a `dataCriacao` permanecem, e a `dataAtualizacao` muda.
+
+## Validade
+
+O campo `dataExpiracao` informa até quando a autorização está vigente. Para o prazo de guarda dos registros e as regras de revogação, consulte [Sobre o Autorizador SCR](/autorizador/sobre).
+
+{/* TODO: confirmar a regra de cálculo de dataExpiracao (observado: cerca de 5 anos após o processamento do envio). */}
+
+## Formatos de data
+
+| Campo | Formato | Exemplo |
+| --- | --- | --- |
+| `metadata.timestamp` (envio) | ISO 8601 com fuso horário | `2026-01-15T10:00:00-03:00` |
+| `dataCriacao`, `dataAtualizacao`, `dataExpiracao`, `data` (resposta) | `DD/MM/YYYY HH:mm:ss` | `15/01/2026 10:00:05` |
+
+## Documento e tipo
+
+- O `documento` pode ser enviado com ou sem pontuação. As respostas devolvem apenas os dígitos.
+- Na consulta por documento, informe apenas os dígitos na rota.
+- O `tipoDocumento` (`cpf` ou `cnpj`) deve corresponder ao número informado: 11 dígitos para `cpf` e 14 para `cnpj`.
+
+## Formatos de resposta
+
+Cada rota devolve um envelope próprio. Trate cada uma de acordo com a sua estrutura.
+
+| Rota | Indicador de sucesso | Conteúdo | Observações |
+| --- | --- | --- | --- |
+| Enviar | `sucesso: true` | `data` (objeto) | Inclui `message`. |
+| Consultar | `status: "sucesso"` | `dados` (objeto) | `data` é a data/hora do processamento. |
+| Listar | `sucesso: true` | `data` (lista) | Inclui `total`. |
+
+<Warning>
+  O campo `data` tem significados diferentes conforme a rota: o conteúdo (envio e listagem) ou a data/hora do processamento (consulta).
+</Warning>

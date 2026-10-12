@@ -1,0 +1,201 @@
+---
+title: "Consultar autorização"
+description: "Consulta a autorização registrada para um CPF ou CNPJ, com os dados do titular e da coleta do consentimento."
+---
+
+<Info>
+  Esta rota requer autenticação via Bearer Token. Certifique-se de ter sua API Key e token JWT configurados conforme descrito em [Autenticação](/api-reference/autenticacao).
+</Info>
+
+<div class="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard">
+  <div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-green-400/20 dark:bg-green-400/20 text-green-700 dark:text-green-400">
+    GET
+  </div>
+
+  /autorizacoes/autorizacao/:documento
+</div>
+
+<RequestExample>
+
+```bash cURL
+curl -X GET https://api.databox360.com.br/api/autorizacoes/autorizacao/11222333000181 \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
+```
+
+```javascript JavaScript
+const documento = "11222333000181";
+
+const response = await fetch(
+  `https://api.databox360.com.br/api/autorizacoes/autorizacao/${documento}`,
+  {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer YOUR_JWT_TOKEN",
+    },
+  }
+);
+
+const data = await response.json();
+console.log(data);
+```
+
+```python Python
+import requests
+
+documento = "11222333000181"
+url = f"https://api.databox360.com.br/api/autorizacoes/autorizacao/{documento}"
+headers = {"Authorization": "Bearer YOUR_JWT_TOKEN"}
+
+response = requests.get(url, headers=headers)
+data = response.json()
+```
+
+```php PHP
+<?php
+$documento = '11222333000181';
+$url = "https://api.databox360.com.br/api/autorizacoes/autorizacao/{$documento}";
+
+$options = [
+    'http' => [
+        'header' => "Authorization: Bearer YOUR_JWT_TOKEN",
+        'method' => 'GET'
+    ]
+];
+
+$context = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+$data = json_decode($result, true);
+?>
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Sucesso
+{
+    "status": "sucesso",
+    "dados": {
+        "id": "3f2b8c1e-7a4d-4e5f-9b6a-1c2d3e4f5a6b",
+        "nome": "EMPRESA EXEMPLO LTDA",
+        "documento": "11222333000181",
+        "tipoDocumento": "cnpj",
+        "consentimento": true,
+        "metadata": {
+            "ip": "203.0.113.10",
+            "host": "app.exemplo.com.br",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
+            "timestamp": "2026-01-15T13:00:05Z",
+            "location": {
+                "accuracy": 1000.0,
+                "latitude": -23.5505,
+                "longitude": -46.6333
+            }
+        },
+        "dataExpiracao": "15/01/2031 10:00:05",
+        "dataCriacao": "15/01/2026 10:00:05",
+        "dataAtualizacao": "15/01/2026 10:00:05"
+    },
+    "data": "15/01/2026 10:05:00"
+}
+```
+
+</ResponseExample>
+
+{/* TODO: confirmar o exemplo e o código HTTP quando o documento não possui autorização (404?). Preencher em /autorizador/erros. */}
+
+{/* TODO: confirmar o fuso de metadata.timestamp e das datas no formato DD/MM/YYYY. */}
+
+## Parâmetros de caminho
+
+<ParamField path="documento" type="string" required>
+  CPF ou CNPJ do titular, apenas com dígitos. Ex: `11222333000181`.
+</ParamField>
+
+## Resposta
+
+<ResponseField name="status" type="string" required>
+  Status da requisição. Valor esperado: `sucesso`.
+</ResponseField>
+
+<ResponseField name="data" type="string" required>
+  Data e hora do processamento da requisição, no formato `DD/MM/YYYY HH:mm:ss`.
+</ResponseField>
+
+<ResponseField name="dados" type="object" required>
+  Objeto com os dados da autorização.
+
+  <Expandable title="dados properties">
+    <ResponseField name="dados.id" type="string" required>
+      Identificador único da autorização no formato UUID.
+    </ResponseField>
+
+    <ResponseField name="dados.nome" type="string" required>
+      Nome completo ou razão social do titular do consentimento.
+    </ResponseField>
+
+    <ResponseField name="dados.documento" type="string" required>
+      Número do documento do titular sem formatação (apenas dígitos).
+    </ResponseField>
+
+    <ResponseField name="dados.tipoDocumento" type="string" required>
+      Tipo do documento: `cpf` ou `cnpj`.
+    </ResponseField>
+
+    <ResponseField name="dados.consentimento" type="boolean" required>
+      Confirma o consentimento registrado. Valor esperado: `true`.
+    </ResponseField>
+
+    <ResponseField name="dados.dataExpiracao" type="string" required>
+      Data e hora de expiração da autorização, no formato `DD/MM/YYYY HH:mm:ss`.
+    </ResponseField>
+
+    <ResponseField name="dados.dataCriacao" type="string" required>
+      Data e hora de criação da autorização, no formato `DD/MM/YYYY HH:mm:ss`.
+    </ResponseField>
+
+    <ResponseField name="dados.dataAtualizacao" type="string" required>
+      Data e hora da última atualização da autorização, no formato `DD/MM/YYYY HH:mm:ss`.
+    </ResponseField>
+
+    <ResponseField name="dados.metadata" type="object" required>
+      Dados de contexto da coleta do consentimento, para rastreabilidade e auditoria.
+
+      <Expandable title="metadata properties">
+        <ResponseField name="dados.metadata.ip" type="string">
+          Endereço IP registrado no momento da coleta.
+        </ResponseField>
+
+        <ResponseField name="dados.metadata.host" type="string">
+          Host da aplicação que realizou a coleta.
+        </ResponseField>
+
+        <ResponseField name="dados.metadata.userAgent" type="string">
+          User agent registrado no momento da coleta.
+        </ResponseField>
+
+        <ResponseField name="dados.metadata.timestamp" type="string">
+          Data e hora da coleta no formato ISO 8601.
+        </ResponseField>
+
+        <ResponseField name="dados.metadata.location" type="object">
+          Dados de geolocalização registrados, quando informados.
+
+          <Expandable title="location properties">
+            <ResponseField name="dados.metadata.location.accuracy" type="number">
+              Precisão da geolocalização em metros.
+            </ResponseField>
+
+            <ResponseField name="dados.metadata.location.latitude" type="number">
+              Latitude geográfica registrada.
+            </ResponseField>
+
+            <ResponseField name="dados.metadata.location.longitude" type="number">
+              Longitude geográfica registrada.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>

@@ -1,199 +1,65 @@
 ---
-title: "Requisição"
-description: "Registra o consentimento do titular para consulta ao SCR Bacen, coletando dados de identificação e metadata da solicitação."
+title: "Início rápido"
+description: "Autentique-se, registre uma autorização, consulte por documento e liste os registros em poucos passos."
 ---
 
-<Info>
-  Esta rota requer autenticação via Bearer Token. Certifique-se de ter sua API Key e token JWT configurados conforme descrito em [Autenticação](/api-reference/autenticacao).
-</Info>
+Siga os passos abaixo para fazer a primeira integração com o Autorizador SCR. Todos os exemplos usam dados fictícios.
 
-<div class="relative flex-1 flex gap-2 min-w-0 rounded-xl items-center cursor-pointer p-1.5 border-standard">
-  <div class="method-pill rounded-lg font-bold px-1.5 py-0.5 text-sm leading-5 bg-blue-400/20 dark:bg-blue-400/20 text-blue-700 dark:text-blue-400">
-    POST
-  </div>
+<Steps>
+  <Step title="Autentique-se">
+    Obtenha o token JWT a partir da sua API Key, conforme descrito em [Autenticação](/api-reference/autenticacao). Use o token no cabeçalho `Authorization: Bearer` das próximas chamadas.
+  </Step>
+  <Step title="Registre a autorização">
+    Envie os dados do titular e da coleta do consentimento. Veja todos os campos em [Enviar autorização](/autorizador/enviar-autorizacao).
 
-  /consents/authorizations/
-</div>
+    ```bash
+    curl -X POST https://api.databox360.com.br/api/autorizacoes \
+      -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+            "nome": "EMPRESA EXEMPLO LTDA",
+            "documento": "11.222.333/0001-81",
+            "tipoDocumento": "cnpj",
+            "consentimento": true,
+            "metadata": {
+              "ip": "203.0.113.10",
+              "host": "app.exemplo.com.br",
+              "timestamp": "2026-01-15T10:00:00-03:00",
+              "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+            }
+          }'
+    ```
+  </Step>
+  <Step title="Consulte por documento">
+    Confirme o registro informando o CPF ou CNPJ, apenas com dígitos. Veja [Consultar autorização](/autorizador/consultar-autorizacao).
 
-<RequestExample>
+    ```bash
+    curl -X GET https://api.databox360.com.br/api/autorizacoes/autorizacao/11222333000181 \
+      -H "Authorization: Bearer YOUR_JWT_TOKEN"
+    ```
+  </Step>
+  <Step title="Liste os registros">
+    Veja todas as autorizações registradas com a sua API Key. Veja [Listar autorizações](/autorizador/listar-autorizacoes).
 
-```bash cURL
-curl -X POST https://api.databox360.com.br/api/consents/authorizations/ \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-        "nome": "EMPRESA EXEMPLO LTDA",
-        "documento": "00.000.000/0001-00",
-        "consentimento": true,
-        "tipoDocumento": "cnpj",
-        "metadata": {
-          "ip": "000.000.000.000",
-          "host": "api.databox360.com.br",
-          "location": {
-            "accuracy": 1000.0,
-            "latitude": -23.5505,
-            "longitude": -46.6333
-          },
-          "timestamp": "2026-01-01T10:00:00-03:00",
-          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
-        }
-      }'
-```
+    ```bash
+    curl -X GET https://api.databox360.com.br/api/autorizacoes/ \
+      -H "Authorization: Bearer YOUR_JWT_TOKEN"
+    ```
+  </Step>
+</Steps>
 
-```javascript JavaScript
-const response = await fetch("https://api.databox360.com.br/api/consents/authorizations/", {
-  method: "POST",
-  headers: {
-    Authorization: "Bearer YOUR_JWT_TOKEN",
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    nome: "EMPRESA EXEMPLO LTDA",
-    documento: "00.000.000/0001-00",
-    consentimento: true,
-    tipoDocumento: "cnpj",
-    metadata: {
-      ip: "000.000.000.000",
-      host: "api.databox360.com.br",
-      location: {
-        accuracy: 1000.0,
-        latitude: -23.5505,
-        longitude: -46.6333,
-      },
-      timestamp: "2026-01-01T10:00:00-03:00",
-      userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
-    },
-  }),
-});
+<Tip>
+  Para conhecer a plataforma antes de integrar, use o ambiente de testes em [autorizadorscr.com.br/app](https://www.autorizadorscr.com.br/app).
+</Tip>
 
-const data = await response.json();
-console.log(data);
-```
+## Próximos passos
 
-```python Python
-import requests
+<CardGroup cols={2}>
+  <Card title="Conceitos" icon="book" href="/autorizador/conceitos">
+    Validade, reenvio e formatos de resposta.
+  </Card>
 
-url = "https://api.databox360.com.br/api/consents/authorizations/"
-headers = {
-    "Authorization": "Bearer YOUR_JWT_TOKEN",
-    "Content-Type": "application/json"
-}
-payload = {
-    "nome": "EMPRESA EXEMPLO LTDA",
-    "documento": "00.000.000/0001-00",
-    "consentimento": True,
-    "tipoDocumento": "cnpj",
-    "metadata": {
-        "ip": "000.000.000.000",
-        "host": "api.databox360.com.br",
-        "location": {
-            "accuracy": 1000.0,
-            "latitude": -23.5505,
-            "longitude": -46.6333
-        },
-        "timestamp": "2026-01-01T10:00:00-03:00",
-        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
-    }
-}
-
-response = requests.post(url, json=payload, headers=headers)
-data = response.json()
-```
-
-```php PHP
-<?php
-$url = 'https://api.databox360.com.br/api/consents/authorizations/';
-$data = [
-    'nome' => 'EMPRESA EXEMPLO LTDA',
-    'documento' => '00.000.000/0001-00',
-    'consentimento' => true,
-    'tipoDocumento' => 'cnpj',
-    'metadata' => [
-        'ip' => '000.000.000.000',
-        'host' => 'api.databox360.com.br',
-        'location' => [
-            'accuracy' => 1000.0,
-            'latitude' => -23.5505,
-            'longitude' => -46.6333
-        ],
-        'timestamp' => '2026-01-01T10:00:00-03:00',
-        'userAgent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36'
-    ]
-];
-
-$options = [
-    'http' => [
-        'header' => [
-            "Authorization: Bearer YOUR_JWT_TOKEN",
-            "Content-type: application/json"
-        ],
-        'method' => 'POST',
-        'content' => json_encode($data)
-    ]
-];
-
-$context = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-$data = json_decode($result, true);
-?>
-```
-
-</RequestExample>
-
-## Requisição
-
-<ParamField body="nome" type="string" required>
-  Nome completo da pessoa física ou razão social da pessoa jurídica titular do consentimento.
-</ParamField>
-
-<ParamField body="documento" type="string" required>
-  Número do documento do titular. Pode ser `CPF` (pessoa física) ou `CNPJ` (pessoa jurídica).
-</ParamField>
-
-<ParamField body="tipoDocumento" type="string" required>
-  Tipo do documento informado. Valores aceitos: `cpf` ou `cnpj`.
-</ParamField>
-
-<ParamField body="consentimento" type="boolean" required>
-  Indica se o titular concedeu o consentimento expresso para consulta ao SCR. Deve ser `true` para registrar a autorização.
-</ParamField>
-
-<ParamField body="metadata" type="object" required>
-  Objeto com dados de contexto da coleta do consentimento, utilizados para rastreabilidade e auditoria.
-
-  <Expandable title="metadata properties">
-    <ParamField body="metadata.ip" type="string" required>
-      Endereço IP do dispositivo no momento da coleta do consentimento.
-    </ParamField>
-
-    <ParamField body="metadata.host" type="string" required>
-      Host da aplicação que realizou a coleta.
-    </ParamField>
-
-    <ParamField body="metadata.timestamp" type="string" required>
-      Data e hora da coleta do consentimento no formato ISO 8601. Ex: `2026-01-01T10:00:00-03:00`.
-    </ParamField>
-
-    <ParamField body="metadata.userAgent" type="string" required>
-      User agent do navegador ou aplicação utilizada pelo titular no momento do consentimento.
-    </ParamField>
-
-    <ParamField body="metadata.location" type="object">
-      Dados de geolocalização do dispositivo no momento da coleta (quando disponível).
-
-      <Expandable title="location properties">
-        <ParamField body="metadata.location.accuracy" type="number">
-          Precisão da geolocalização em metros.
-        </ParamField>
-
-        <ParamField body="metadata.location.latitude" type="number">
-          Latitude geográfica do dispositivo.
-        </ParamField>
-
-        <ParamField body="metadata.location.longitude" type="number">
-          Longitude geográfica do dispositivo.
-        </ParamField>
-      </Expandable>
-    </ParamField>
-  </Expandable>
-</ParamField>
+  <Card title="Erros" icon="triangle-exclamation" href="/autorizador/erros">
+    Códigos de status e mensagens de erro.
+  </Card>
+</CardGroup>

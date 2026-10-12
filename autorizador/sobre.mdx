@@ -1,14 +1,16 @@
 ---
-title: "AutorizadorSCR"
+title: "Autorizador SCR"
 description: "Conheça o Autorizador SCR, plataforma de gestão de autorizações para consulta ao SCR Bacen."
 ---
 
-O **Autorizador SCR** é uma plataforma tecnológica desenvolvida pela Compilando Soluções que controla todo o processo de gestão das autorizações exigidas para a consulta ao Sistema de Informações de Crédito do Banco Central do Brasil (SCR), desde a coleta até o armazenamento digital do consentimento do titular, nos termos da legislação e da regulamentação vigentes.
+O **Autorizador SCR** é uma plataforma tecnológica desenvolvida pela Compilando Soluções para gerenciar as autorizações exigidas na consulta ao Sistema de Informações de Crédito do Banco Central do Brasil (SCR).
+
+Ele cobre todo o processo, desde a coleta até o armazenamento digital do consentimento do titular, nos termos da legislação e da regulamentação vigentes.
 
 ## Pilares
 
 <CardGroup cols={3}>
-  <Card title="Governança" icon="shield-check">
+  <Card title="Governança" icon="shield-halved">
     Controle estruturado do processo de autorizações para consulta ao SCR.
   </Card>
 
@@ -21,22 +23,65 @@ O **Autorizador SCR** é uma plataforma tecnológica desenvolvida pela Compiland
   </Card>
 </CardGroup>
 
+## Como funciona
+
+<Steps>
+  <Step title="Coleta do consentimento">
+    O titular concede o consentimento expresso, e a aplicação que fez a coleta captura os dados do aceite: IP, host, data e hora, user agent e, quando disponível, localização.
+  </Step>
+  <Step title="Registro da autorização">
+    A aplicação envia os dados do titular e da coleta à API do Autorizador SCR. Veja [Enviar autorização](/autorizador/enviar-autorizacao).
+  </Step>
+  <Step title="Consulta ao SCR">
+    Com a autorização registrada e dentro da validade, a consulta ao SCR pode ser realizada.
+  </Step>
+  <Step title="Guarda e auditoria">
+    Os registros ficam armazenados e podem ser consultados por documento ou listados. Veja [Consultar autorização](/autorizador/consultar-autorizacao) e [Listar autorizações](/autorizador/listar-autorizacoes).
+  </Step>
+</Steps>
+
 ## Base Legal
 
-- [Lei Complementar nº 105/2001](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp105.htm) Estabelece o sigilo das informações financeiras e exige consentimento expresso do titular para o compartilhamento de dados.
-- [Resolução CMN nº 5.037/2022](https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o%20CMN&numero=5037) Consolida e atualiza as normas sobre o SCR, estabelecendo regras para o funcionamento do sistema.
+- [Lei Complementar nº 105/2001](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp105.htm): estabelece o sigilo das informações financeiras e exige consentimento expresso do titular para o compartilhamento de dados.
+- [Resolução CMN nº 5.037/2022](https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=Resolu%C3%A7%C3%A3o%20CMN&numero=5037): consolida e atualiza as normas sobre o SCR, estabelecendo regras para o funcionamento do sistema.
 
 ## Sobre a Autorização
 
 O consentimento coletado pelo Autorizador SCR é **livre, informado, inequívoco, específico e expresso**, conforme exigido pela regulamentação do Banco Central do Brasil.
 
-- A autorização permanece válida por tempo indeterminado, enquanto durar a relação contratual entre o titular e a instituição responsável pela coleta.
-- O aceite eletrônico é plenamente válido, inclusive quando realizado fora dos padrões ICP-Brasil, conforme a Medida Provisória nº 2.200-2/2001.
-- A autorização e os registros de consentimento são mantidos armazenados por no mínimo **5 anos** após a última consulta ao SCR, conforme o Art. 12, §3º da Resolução CMN nº 5.037/2022.
-- O titular pode revogar a autorização a qualquer momento pelo e-mail [**dpo@databox360.com.br**](mailto:dpo@databox360.com.br). A revogação produz efeitos apenas para consultas futuras.
+- **Validade:** o prazo da autorização é de **5 anos**, conforme a legislação. Observe sempre a data de expiração (`dataExpiracao`) retornada pela API.
+- **Aceite eletrônico:** é plenamente válido, inclusive quando realizado fora dos padrões ICP-Brasil, conforme a Medida Provisória nº 2.200-2/2001.
+- **Guarda dos registros:** a autorização e os registros de consentimento são mantidos armazenados por no mínimo **5 anos** após a última consulta ao SCR, conforme o Art. 12, §3º da Resolução CMN nº 5.037/2022.
+- **Revogação:** o titular pode revogar a autorização a qualquer momento pelo e-mail [**dpo@databox360.com.br**](mailto:dpo@databox360.com.br). A revogação produz efeitos apenas para consultas futuras e, depois dela, o sistema passa a retornar a autorização com o status **revogada**.
+
+{/* TODO: confirmar o nome e o formato do campo que indica a revogação (status "revogada") e em quais rotas ele aparece. */}
 
 O [Termo de Autorização](https://databox360.com.br/termos/termo-autorizacao-scr-banco-central.pdf) está disponível para consulta.
 
 ## Conheça a Plataforma
 
-Acesse [autorizadorscr.com.br](https://www.autorizadorscr.com.br) para conhecer o produto, e utilize o ambiente de testes disponível em [autorizadorscr.com.br/app](https://www.autorizadorscr.com.br/app) para explorar a plataforma antes de iniciar a integração.
+Acesse [autorizadorscr.com.br](https://www.autorizadorscr.com.br) para conhecer o produto, e utilize o ambiente de testes da plataforma web, disponível em [autorizadorscr.com.br/app](https://www.autorizadorscr.com.br/app), para explorar o Autorizador SCR antes de iniciar a integração.
+
+<Warning>
+  A API funciona somente em produção (`https://api.databox360.com.br/api`). As chamadas gravam registros reais.
+</Warning>
+
+## Integre pela API
+
+<CardGroup cols={2}>
+  <Card title="Início rápido" icon="rocket" href="/autorizador/inicio-rapido">
+    Autentique-se e faça o primeiro registro em poucos passos.
+  </Card>
+
+  <Card title="Conceitos" icon="book" href="/autorizador/conceitos">
+    Validade, revogação, reenvio e formatos de resposta.
+  </Card>
+
+  <Card title="Enviar autorização" icon="file-signature" href="/autorizador/enviar-autorizacao">
+    Registre o consentimento do titular.
+  </Card>
+
+  <Card title="Consultar e listar" icon="list" href="/autorizador/listar-autorizacoes">
+    Consulte por documento ou liste os registros.
+  </Card>
+</CardGroup>
